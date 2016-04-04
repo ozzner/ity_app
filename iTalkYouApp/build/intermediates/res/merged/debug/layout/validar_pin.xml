@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_normal">
+
+    <LinearLayout
+        android:id="@+id/lnlyCabeceraDialogo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/et_height_65dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/cabeceraDialogo"
+            layout="@layout/cabecera_dialogo" />
+    </LinearLayout>
+
+    <!-- Texto -->
+    <LinearLayout
+        android:id="@+id/lnlyDatosDialogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lnlyCabeceraDialogo"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tvTextoPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_20"
+            android:layout_weight="1.11"
+            android:gravity="center"
+            android:padding="@dimen/space_8dp"
+            android:text="@string/label_info_pin"
+            android:textColor="@color/Gray"
+            android:textSize="@dimen/txt_sp18" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvValorPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="91dp"
+        android:gravity="center"
+        android:text="@string/lbl_telefono"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/pantone_2405C"
+        android:textSize="@dimen/txt_sp44"
+        android:textStyle="bold"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tvTimerPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1:30 min"
+        android:textColor="@color/my_green"
+        android:textSize="@dimen/txt_sp24"
+        android:textStyle="bold"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="54dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <Button
+            android:id="@+id/btnEnviarPin"
+            style="@style/styleBtnTexto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone"
+            android:background="@drawable/button_update_selector"
+            android:drawableLeft="@drawable/ic_call_white"
+            android:paddingLeft="@dimen/space_40"
+            android:paddingRight="@dimen/space_40"
+            android:text="@string/btn_call_pin" />
+
+        <!-- progress show here-->
+        <ProgressBar
+            android:id="@+id/pbLoader"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_centerInParent="true"
+            style="?android:attr/progressBarStyle">
+        </ProgressBar>
+
+
+        <!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/pad_1dp">
+
+                </LinearLayout>-->
+
+      <!--  <Button
+            android:id="@+id/bt_send_sms"
+            style="@style/styleBtnTexto"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/button_update_selector"
+            android:drawableLeft="@drawable/ic_email_white"
+            android:paddingLeft="@dimen/space_40"
+            android:paddingRight="@dimen/space_40"
+            android:text="@string/btn_enviar_sms" />-->
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

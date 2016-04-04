@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="5dp"
+              >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/borde_fondo_superior_dialogo"
+        android:padding="5dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="50dp"
+                  android:layout_gravity="center_vertical"
+                  android:background="@color/iTalkYou_Gris"
+                  android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="center_vertical"
+            android:scaleType="center"
+            android:background="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/tvTituloDialogo"
+            style="@style/styleTextoCabeceraDialogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:gravity="left"
+            android:layout_gravity="center_vertical"
+            android:text="@string/app_name" />
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/borde_fondo_dialogo"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/dialoglist"
+            android:background="@color/blanco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlyCabeceraDialogo"
+            android:divider="@color/iTalkYou_Gris"
+            android:dividerHeight="0.5dip"
+         />
+    </LinearLayout>
+
+</LinearLayout>

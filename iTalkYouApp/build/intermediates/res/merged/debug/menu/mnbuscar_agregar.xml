@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:appitalkyou="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/itBuscar"
+          android:title="@string/mn_buscar"
+          android:icon="@drawable/ic_search_white"
+          appitalkyou:showAsAction="always|collapseActionView"
+          appitalkyou:actionViewClass="android.support.v7.widget.SearchView" />
+    
+    <item
+        android:id="@+id/itAgregar"
+        android:orderInCategory="100"
+        appitalkyou:showAsAction="always"
+        android:icon="@drawable/aceptar"/>
+
+</menu>

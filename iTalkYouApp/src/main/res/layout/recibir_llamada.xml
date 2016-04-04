@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/call_background"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCallStatus"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:padding="@dimen/pad_15dp"
+            android:text="@string/label_incoming_call"
+            android:textColor="@color/White"
+            android:textSize="@dimen/txt_sp32" />
+
+        <TextView
+            android:id="@+id/NroAnexoEntrante"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="@string/lbl_anexo"
+            android:textColor="@color/WhiteSmoke"
+            android:textSize="@dimen/txt_sp24" />
+
+        <TextView
+            android:id="@+id/CelularAnexoEntrante"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:padding="@dimen/pad_8dp"
+            android:text="51993297151"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowColor="@color/White"
+            android:shadowRadius="1"
+            android:textColor="@color/pantone_306C"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_perfilllamada"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.25"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_incoming_call_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/small_logo"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.75"
+        android:weightSum="2"
+        android:visibility="visible"
+        android:orientation="horizontal">
+
+        <LinearLayout
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btnAceptarLlamada"
+                android:layout_width="@dimen/et_height_65dp"
+                android:layout_height="@dimen/et_height_65dp"
+                android:padding="@dimen/pad_8dp"
+                android:src="@drawable/ic_call_accept"
+                android:background="@drawable/button_speaker_call_selector_circle"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btnIgnorarLlamada"
+                android:layout_width="@dimen/et_height_65dp"
+                android:layout_height="@dimen/et_height_65dp"
+                android:src="@drawable/ic_call_decline"
+                android:padding="@dimen/pad_8dp"
+                android:background="@drawable/button_cancel_call_selector_circle"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:id="@+id/lay_end_call"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="0.75"
+       android:visibility="gone"
+       android:weightSum="3"
+       android:orientation="vertical"
+       >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:gravity="center"
+           android:layout_weight="1.6">
+
+           <ImageView
+               android:id="@+id/iv_speaker"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center|top"
+               android:src="@drawable/ic_speaker"
+               android:background="@drawable/button_speaker_call_selector_circle"/>
+
+       </LinearLayout>
+
+       <ImageButton
+           android:id="@+id/btnFinalizarLlamada"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1.4"
+           android:layout_gravity="bottom"
+           android:background="@drawable/button_cancel_selector"
+           android:src="@drawable/ic_enc_call"
+           android:textColor="@color/White" />
+   </LinearLayout>
+
+</LinearLayout>

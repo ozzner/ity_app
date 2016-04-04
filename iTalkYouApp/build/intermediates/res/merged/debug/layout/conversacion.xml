@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_normal">
+
+    <LinearLayout
+        android:id="@+id/lnlyCabeceraConversacion"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/height_header"
+        android:background="@color/italkyou_primary_blue"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/textoChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/space_15"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/vista_chat"
+                android:textAllCaps="false"
+                android:textColor="@color/White"
+                android:textSize="@dimen/txt_sp14"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/space_8dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/btnAgregarContacto"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:clickable="true"
+                android:gravity="right"
+                android:src="@drawable/ic_person_add" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.5">
+
+
+            <ImageView
+                android:id="@+id/btnCrearGrupo"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginRight="@dimen/pad_8dp"
+                android:src="@drawable/ic_group_add" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- progress show here-->
+    <ProgressBar
+        android:id="@+id/pbLoader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        style="?android:attr/progressBarStyle">
+    </ProgressBar>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/lnlyCabeceraConversacion"
+                android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listConversaciones"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            android:divider="@color/gray_color_2"
+            android:dividerHeight="0.7dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="2dp"
+            android:scrollbars="none" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>
+

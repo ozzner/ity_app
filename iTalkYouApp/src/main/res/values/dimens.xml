@@ -1,0 +1,87 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="alto_caja_texto">50dp</dimen>
+    <dimen name="alto_boton">50dp</dimen>
+    <dimen name="ancho_boton">100dp</dimen>
+
+    <dimen name="separacion_imagen_texto">10dp</dimen>
+
+    <dimen name="margen_texto_contactos">2dp</dimen>
+    <dimen name="margen_celda_contacto">1dp</dimen>
+
+    <dimen name="ancho_icono">20dp</dimen>
+    <dimen name="alto_icono">20dp</dimen>
+
+    <dimen name="ancho_imagen_contacto_detalle">150dp</dimen>
+    <dimen name="alto_imagen_contacto_detalle">150dp</dimen>
+
+    <dimen name="ancho_imagen_contacto">55dp</dimen>
+    <dimen name="alto_imagen_contacto">55dp</dimen>
+
+    <dimen name="ancho_icono_contacto">30dp</dimen>
+    <dimen name="alto_icono_contacto">30dp</dimen>
+
+    <!--Custom rsantillan dimens-->
+    <dimen name="default_padding">6dp</dimen>
+    <dimen name="txt_sp12">12sp</dimen>
+    <dimen name="txt_sp14">14sp</dimen>
+    <dimen name="txt_sp16">16sp</dimen>
+    <dimen name="txt_sp18">18sp</dimen>
+    <dimen name="txt_sp20">20sp</dimen>
+    <dimen name="txt_sp24">24sp</dimen>
+    <dimen name="txt_sp32">32sp</dimen>
+    <dimen name="txt_sp44">44sp</dimen>
+
+    <dimen name="et_height_25dp">25dp</dimen>
+    <dimen name="et_height_35dp">35dp</dimen>
+    <dimen name="et_height_45dp">45dp</dimen>
+    <dimen name="et_height_55dp">55dp</dimen>
+    <dimen name="et_height_65dp">65dp</dimen>
+    <dimen name="et_height_75dp">75dp</dimen>
+    <dimen name="et_height_85dp">85dp</dimen>
+    <dimen name="et_height_100dp">100dp</dimen>
+    <dimen name="et_height_150dp">150dp</dimen>
+    <dimen name="et_height_180dp">180dp</dimen>
+    <dimen name="height_alert_imagen">380dp</dimen>
+
+    <!--RSANTILLANC-->
+    <dimen name="pad_2.5dp">2.5dp</dimen>
+    <dimen name="pad_5dp">5dp</dimen>
+    <dimen name="pad_8dp">8dp</dimen>
+    <dimen name="pad_10dp">10dp</dimen>
+    <dimen name="pad_15dp">15dp</dimen>
+    <dimen name="pad_20dp">20dp</dimen>
+    <dimen name="pad_25dp">25dp</dimen>
+    <dimen name="pad_30dp">30dp</dimen>
+
+
+    <dimen name="space_4dp">4dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_15">15dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+
+    <!--Header config-->
+    <dimen name="height_header">50dp</dimen>
+    <dimen name="header_image_size">40dp</dimen>
+
+    <dimen name="button_dial_corner">1dp</dimen>
+    <dimen name="button_dial_text_size">25sp</dimen>
+    <dimen name="height_row">75dp</dimen>
+    <dimen name="pad_4dp">4dp</dimen>
+    <dimen name="pad_1dp">1dp</dimen>
+    <dimen name="et_height_50dp">50dp</dimen>
+    <dimen name="width_conversation_image">120dp</dimen>
+    <dimen name="height_conversation_image">80dp</dimen>
+    <dimen name="txt_sp13">13sp</dimen>
+    <dimen name="et_height_120dp">120dp</dimen>
+    <dimen name="et_height_140dp">140dp</dimen>
+    <dimen name="space_40">40dp</dimen>
+    <dimen name="space_80">80dp</dimen>
+    <dimen name="row_dial_height">70dp</dimen>
+
+
+</resources>

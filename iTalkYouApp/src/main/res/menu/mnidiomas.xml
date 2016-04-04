@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:appitalkyou="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ites"
+        android:orderInCategory="100"
+        appitalkyou:showAsAction="ifRoom"
+        android:icon="@drawable/esp"
+        android:title="@string/mn_espanol"/>
+    
+    <item
+        android:id="@+id/iten"
+        android:orderInCategory="100"
+        appitalkyou:showAsAction="ifRoom"
+        android:icon="@drawable/usa"
+        android:title="@string/mn_ingles"/>
+
+</menu>

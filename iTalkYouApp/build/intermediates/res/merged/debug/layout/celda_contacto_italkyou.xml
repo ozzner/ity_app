@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/pad_15dp"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+   >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgContactoItalkyou"
+        android:layout_width="@dimen/ancho_imagen_contacto"
+        android:layout_height="@dimen/alto_imagen_contacto"
+/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/alto_imagen_contacto"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/pad_10dp"
+        android:paddingTop="@dimen/pad_5dp"
+        android:layout_weight="0.5"
+        >
+
+        <TextView
+            android:id="@+id/tvNombreContactoItalkyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_nombre"
+            android:textSize="16sp"
+            android:textColor="@color/Black"
+             />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/space_4dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/tvNumeroContactoItalkyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_telefono"
+            android:textColor="@color/Gray"
+            android:textSize="@dimen/txt_sp12"
+
+            />
+
+        <TextView
+            android:id="@+id/tvAnexoContactoItalkyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hnt_extension"
+            android:textColor="@color/Purple"
+            android:textSize="@dimen/txt_sp12"
+            android:layout_marginLeft="@dimen/pad_10dp"
+            />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/pad_25dp"
+            android:layout_height="@dimen/pad_25dp"
+            android:id="@+id/iv_chat_status"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="-5dp"
+            android:src="@drawable/ic_chat_status"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_weight="0.2"-->
+        <!-->-->
+    	<!--<CheckedTextView-->
+	    	<!--android:id="@+id/chkAgregarContacto"-->
+	    	<!--android:layout_width="wrap_content"-->
+	     	<!--android:layout_height="wrap_content"-->
+	     	<!--android:checkMark="@drawable/seleccion_checkbox"-->
+	     	<!--android:enabled="true"-->
+	     	<!--android:layout_gravity="center"-->
+         	<!--android:visibility="visible"/>-->
+	<!--</LinearLayout>-->
+
+</LinearLayout>

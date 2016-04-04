@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_menu_actions">
+        <item>@string/menu_actions_ity</item>
+        <item>@string/menu_actions_telephone</item>
+        <item>@string/menu_actions_sms</item>
+    </string-array>
+    <string name="action_cancel">Cancell</string>
+    <string name="action_close">Close</string>
+    <string name="action_dial_info">Information</string>
+    <string name="action_redirect">Redirect</string>
+    <string name="action_settings">Setting</string>
+    <string name="action_update">Update</string>
+    <string name="active_call">Active call</string>
+    <string name="anexo_estado_enlinea">OnLine</string>
+    <string name="anexo_estado_fueralinea">OffLine</string>
+    <string name="app_name">iTalkYou</string>
+    <string name="bar_annex">Extension:\t</string>
+    <string name="bar_balance">Balance:\t</string>
+    <string name="btn_0">0</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+    <string name="btn_SMS">+SMS</string>
+    <string name="btn_aceptar">Accept</string>
+    <string name="btn_actualizar">Update Information</string>
+    <string name="btn_asterisco">*</string>
+    <string name="btn_borrar">Delete</string>
+    <string name="btn_call">Call</string>
+    <string name="btn_cancelar">Cancel</string>
+    <string name="btn_comprar">Buy </string>
+    <string name="btn_entrar">Enter</string>
+    <string name="btn_enviar">Send</string>
+    <string name="btn_enviar_sms">By sms</string>
+    <string name="btn_finalizar">Finish</string>
+    <string name="btn_llamar">Call</string>
+    <string name="btn_numeral">#</string>
+    <string name="btn_redireccionar">Save</string>
+    <string name="btn_registro">Register</string>
+    <string name="btn_speaker">Speaker</string>
+    <string name="button_support">Send data</string>
+    <string name="call_status_connected">\"Connected to \"</string>
+    <string name="chat_copy">copied!</string>
+    <string name="chat_copy_no_found">only text!</string>
+    <string name="condiciones_de_uso">		These terms and conditions of service apply to service called iTalkYou property of INTICO USA CORP, here in after THE COMPANY, and on the other hand, THE USER, who accepts the conditions detailed below:
+
+        FIRST: THE COMPANY provide services, support and technology products, both individuals and companies. In this context makes consistent efforts primarily on the development of services and computer systems, technical support, research and development, among others.
+
+
+        SECOND: In the turn of this business, THE USER have the opportunity to register their details on the website of the service www.italkyou.com to use the virtual platform for customer service, which will have various applications for entry of data and information as well as messaging services such chat messages to mobile phones, calls to mobile phones and fixed, and so on. In any case, the user is solely responsible for the accuracy of data input to the website and also uses the client to make these, which constitutes a serious breach of fundamental obligations laid down in this contract and authorize the company to disable the offending users account without notice at any time.
+
+        THIRD: For this instrument, you authorize the company to which it requires of others, whenever it deems necessary or justified, the background check provided by the user to the company.
+
+        FOURTH: Because the service covered by this instrument is essentially intangible electronic data, means that the user gives his total acceptance and / or consent to the conditions set by pressing or clicking on the “Accept Terms and Conditions” where the portal company to offer this option.
+
+        FIFTH: According to the nature of the services, the company is constantly renewing and updating processes to provide better quality services, so that the user accepts and acknowledges that the content of this instrument may differ from time. In the foregoing, you agree that the Company may, at its discretion, suspend either temporarily or permanently, the services or some of the features included in them and thus prevent access to information or records their data.
+
+        SIXTH: This contract will be valid indefinitely and may be terminated under the circumstances already described herein.
+
+        SEVENTH: This agreement, its validity, interpretation, effect and compliance as well as the relationship between THE COMPANY and THE USER. Will be regulated according to the laws of the State of Florida and the federal laws of the United States to implement and take effect in the State of Florida. Any dispute between THE USER and THE COMPANY related to this Agreement shall be subject to the exclusive jurisdiction of the state and federal courts in the State of Florida, and THE USER expressly waives all defenses to jurisdiction.</string>
+    <string name="contacts_no_found">Contacts no found!</string>
+    <string name="end_call">Call ended</string>
+    <string name="error_deleting">Error deleting.</string>
+    <string name="error_unknow">Unknown error.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_world">Welcome a ITALKYOU</string>
+    <string name="hint_edmensaje">Enter your message here.</string>
+    <string name="hnt_buscar_contactos">Search contacts</string>
+    <string name="hnt_clave">Password</string>
+    <string name="hnt_clave_actual">Current Password </string>
+    <string name="hnt_clave_confirmar">Confirm Password</string>
+    <string name="hnt_clave_nueva">New Password</string>
+    <string name="hnt_email">Email</string>
+    <string name="hnt_extension">Extension</string>
+    <string name="hnt_filtro_busqueda">Introduce data</string>
+    <string name="hnt_marcador">Phone number</string>
+    <string name="hnt_monto">US$</string>
+    <string name="hnt_nombre_usuario">Username</string>
+    <string name="hnt_numero">Phone Number</string>
+    <string name="hnt_pin">Pin</string>
+    <string name="hnt_repetir_clave">Repeat Password</string>
+    <string name="htn_nombre_grupo">Group Name</string>
+    <string name="htn_texto">Introduce Message</string>
+    <string name="incoming_call">Incoming  call...</string>
+    <string name="incorrect_number">Incorrect number</string>
+    <string name="incorrect_pin">Incorrect PIN</string>
+    <string name="is_on_ity">This contact is in ItalkYou</string>
+    <string name="label_balance_current">Current balance: </string>
+    <string name="label_chat_status_is_typing">typing...</string>
+    <string name="label_chat_status_online">online!</string>
+    <string name="label_close_image">Close</string>
+    <string name="label_disabled">Disabled</string>
+    <string name="label_download_image">Download</string>
+    <string name="label_enabled">Enabled</string>
+    <string name="label_incoming_call">Incoming call</string>
+    <string name="label_info_pin">Shortly receiver an SMS, which validate the PIN generated automatically</string>
+    <string name="label_opening_image">Opening image...</string>
+    <string name="label_redirect_always">Redirect permanent?</string>
+    <string name="label_redirect_temp">Temporary redirect.</string>
+    <string name="label_sending_error">Sending error...</string>
+    <string name="lbl_acepta_condiciones">I accept the Terms of Use and Privacy Policy from iTalkYou </string>
+    <string name="lbl_agendar_mensaje">want to schedule your message</string>
+    <string name="lbl_anexo">Anexo</string>
+    <string name="lbl_cambiar_clave">Change Password</string>
+    <string name="lbl_celda_camara">Camera</string>
+    <string name="lbl_celda_galeria">Gallery</string>
+    <string name="lbl_clave">Password:</string>
+    <string name="lbl_clave_datos">Introduce data </string>
+    <string name="lbl_codigo_pais">Country Code: </string>
+    <string name="lbl_condiciones_uso">Terms of Use</string>
+    <string name="lbl_contactos">Contacts</string>
+    <string name="lbl_correo">Email</string>
+    <string name="lbl_datos_llamada">Data</string>
+    <string name="lbl_favoritos">Favorites</string>
+    <string name="lbl_fecha_fin">Date to:</string>
+    <string name="lbl_fecha_inicio">Date from:</string>
+    <string name="lbl_fecha_sms">Date: </string>
+    <string name="lbl_historial_MensajesVoz">Voice Message </string>
+    <string name="lbl_historial_llamadas">Recent Calls </string>
+    <string name="lbl_historial_saldo">Resume Balance: </string>
+    <string name="lbl_hora_sms">Hour/Minutes:</string>
+    <string name="lbl_idioma">Language:</string>
+    <string name="lbl_informacion_usuario">Username:</string>
+    <string name="lbl_marcando">Dialing...</string>
+    <string name="lbl_nombre">Name:</string>
+    <string name="lbl_nombres">Name</string>
+    <string name="lbl_notificacion_sin_sonido">No Sound</string>
+    <string name="lbl_notificacion_sonido">With Sound</string>
+    <string name="lbl_notificacion_vibrador">Vibrate</string>
+    <string name="lbl_numero">Number:</string>
+    <string name="lbl_numeros_telefonicos">Telephones</string>
+    <string name="lbl_pais">Country:</string>
+    <string name="lbl_pais_telefono">Country Phone</string>
+    <string name="lbl_pin">Pin:</string>
+    <string name="lbl_politicas_privacidad">Privacy Policy</string>
+    <string name="lbl_registar_correo">Register an account mail:</string>
+    <string name="lbl_saldo_actual">Your current balance is:</string>
+    <string name="lbl_seleccione_pais">Select country contact:</string>
+    <string name="lbl_telefono">Telephone: </string>
+    <string name="lbl_terminos_politicas">Terms of Use and Privacy Policy from iTalkYou</string>
+    <string name="lbl_tipo">Type:</string>
+    <string name="lbl_tipo_notificacion">Sound Notification</string>
+    <string name="llamada_entrando">Incoming Call</string>
+    <string name="mail_error">rsantillan@intico.com.pe</string>
+    <string name="menu_acc_delete">Delete</string>
+    <string name="menu_acc_edit">Edit</string>
+    <string name="menu_acc_profile">Profile</string>
+    <string name="menu_actions_ity" translatable="false">Call the Annex (free)</string>
+    <string name="menu_actions_sms">Send a SMS</string>
+    <string name="menu_actions_telephone">Call the phone number</string>
+    <string name="message_alert_balance_none">You have not got balance to call.</string>
+    <string name="message_alert_balance_sms">You have not got balance to send a SMS.</string>
+    <string name="message_alert_call_no_supported">Call no supported</string>
+    <string name="message_chat_no_found">No active chats</string>
+    <string name="message_chat_registering">Enabling chat...</string>
+    <string name="message_finish_calling">End the call using the red button.</string>
+    <string name="message_list_updated">Updated list</string>
+    <string name="message_option_call">We could no validate the PIN by SMS. Please press the green button to receive a call and which asked to enter the PIN you have on screen. Note the PIN please.</string>
+    <string name="message_option_call_start">Wait while the call is made.</string>
+    <string name="message_option_email">Please send your data by pressing the button and we will contact with you shortly. Thank you.</string>
+    <string name="message_send_success">Message sended correctly.</string>
+    <string name="message_user_created_success">"You extension number is: "</string>
+    <string name="message_wait_sms">When you receive sms confirmation, automatically start session and you can enjoy italkYou App. Thank you for waiting.</string>
+    <string name="message_warning">Are you sure to want to delete the contact?, remember also be removed from device contacts.</string>
+    <string name="mn_agendarsms">Schedule SMS</string>
+    <string name="mn_buscar">Search</string>
+    <string name="mn_buscar_contacto">Contact iTalkYou</string>
+    <string name="mn_cerrar">Exit Session</string>
+    <string name="mn_configuracion">Profile</string>
+    <string name="mn_contacto">Contact</string>
+    <string name="mn_eliminar_llamadas">Delete recent calls</string>
+    <string name="mn_eliminar_mensajes">Delte voice messages</string>
+    <string name="mn_espanol">Spanish</string>
+    <string name="mn_ingles">English</string>
+    <string name="mn_redireccionar">Redirect</string>
+    <string name="mn_saldo">Balance</string>
+    <string name="msj_actualizando_informacion">Updating information</string>
+    <string name="msj_cancelar_compra">User cancel buy </string>
+    <string name="msj_cerrando_sesion">Closing session .....</string>
+    <string name="msj_cerrar_sesion">¿Sure do you like close session account?</string>
+    <string name="msj_compra_exito">Buy successfully</string>
+    <string name="msj_compra_invalida">Buy invalid</string>
+    <string name="msj_descargando_informacion">Downloading information</string>
+    <string name="msj_eliminando_llamadas">Deleting calls</string>
+    <string name="msj_eliminando_mensajes">Deleting voice messages</string>
+    <string name="msj_eliminar_llamadas">Delete calls successfully</string>
+    <string name="msj_eliminar_mensajes">Delete voice messages successfully</string>
+    <string name="msj_enviando_informacion">Sending data ....</string>
+    <string name="msj_enviando_sms">Sending SMS</string>
+    <string name="msj_enviar_sms">SMS sent</string>
+    <string name="msj_error_ambos_envio">You can not send in the past.</string>
+    <string name="msj_error_conexion_internet">There is no Internet Connection Available</string>
+    <string name="msj_error_conexion_ws">Could not connect to server iTalkYou</string>
+    <string name="msj_error_datos_incompletos">Data account incomplete</string>
+    <string name="msj_error_eliminar_llamadas">No delete all calls select</string>
+    <string name="msj_error_eliminar_mensajes">No delete all voice messages select</string>
+    <string name="msj_error_enviar_mensaje">Error sending message</string>
+    <string name="msj_error_enviar_sms">No send SMS, not balance</string>
+    <string name="msj_error_estado_escuchado">No cant update state message</string>
+    <string name="msj_error_falta_clave">Introduce your password</string>
+    <string name="msj_error_falta_mensaje">Must Introduce text</string>
+    <string name="msj_error_falta_nombre">Introduce group name</string>
+    <string name="msj_error_falta_participantes">Select members of group</string>
+    <string name="msj_error_falta_telefono">Introduce phone number correctly</string>
+    <string name="msj_error_fechas">Start date must be lowest end date</string>
+    <string name="msj_error_llamada">The Communication Server can not make the call right now.</string>
+    <string name="msj_error_load_image">Error loading imageAction. Empty</string>
+    <string name="msj_error_producido_servidor">An error occurred on the server iTalkYou</string>
+    <string name="msj_error_reproducir_mensaje">Error to play voice message</string>
+    <string name="msj_error_required_email">You must introduce a valid email.</string>
+    <string name="msj_estado_escuchado_exito">Message listening</string>
+    <string name="msj_image_download_error">Error downloading image</string>
+    <string name="msj_image_download_exist">The image has been downloaded</string>
+    <string name="msj_image_download_success">Downloaded image!</string>
+    <string name="msj_modificar_estado_escuchado">Update state message to listening</string>
+    <string name="msj_no_seleccionados">Select contacts</string>
+    <string name="msj_obtener_historial_Llamadas">Loading Summary</string>
+    <string name="msj_obtener_historial_saldo">Loading resume balance</string>
+    <string name="msj_redireccionar_existe">By default, ITY redirect the call to this number.</string>
+    <string name="msj_redireccionar_exito">Anexo redirect a phone introduce</string>
+    <string name="msj_redireccionar_invalido">Extension not exist, can not redirect</string>
+    <string name="msj_redirect_can_redirect">First you must redirect its annex.</string>
+    <string name="msj_texto_compra_saldo">Introduce amount:</string>
+    <string name="msj_texto_sms">Introduce text SMS:</string>
+    <string name="msjbc_enviando_consulta_contactos">Loading contacts iTalkYou</string>
+    <string name="msjbc_error_falta_dato">Must introduce data</string>
+    <string name="msjbc_no_hay_coincidencia">No data</string>
+    <string name="msjcp_enviando_actualizar_perfil">Update user information </string>
+    <string name="msjcp_enviando_cambio_clave">Registering change password</string>
+    <string name="msjcp_error_correo_existente">Account mail exist register other email</string>
+    <string name="msjcp_error_falta_clave_actual">Introduce your current password</string>
+    <string name="msjcp_error_falta_clave_confirmar">Introduce your new password to confirm</string>
+    <string name="msjcp_error_falta_clave_nueva">Introduce your new password</string>
+    <string name="msjcp_error_falta_datos_clave">Incomplete Data</string>
+    <string name="msjcp_error_falta_pin">Introduce pin</string>
+    <string name="msjcp_info_actualizar_perfil">Update data successfully</string>
+    <string name="msjcp_info_cambio_clave">Password Changed successfully</string>
+    <string name="msjis_enviando_mail">Sending email</string>
+    <string name="msjis_error_falta_email">Introduce email</string>
+    <string name="msjis_error_falta_extension">Introduce Extension</string>
+    <string name="msjis_error_falta_monto">Must introduce amount</string>
+    <string name="msjis_error_recuperar_clave">Email not registered in iTalkYou</string>
+    <string name="msjis_error_usuario_no_existe">User not exist</string>
+    <string name="msjis_info_envio_mail">email sent review your </string>
+    <string name="msjis_inicio_sesion">Validating information</string>
+    <string name="msjis_texto_enviar_email">Introduce the email account you registered with to iTalkYou</string>
+    <string name="msjrc_error_claves_diferente">Passwords must be equal</string>
+    <string name="msjrc_error_existe_telefono">Telephone already exist</string>
+    <string name="msjrc_error_falta_aceptar_condiciones">You must accept the Terms of Use and Privacy Policy </string>
+    <string name="msjrc_error_falta_nombre">Introduce username</string>
+    <string name="msjrc_error_falta_reclave">Introduce new password</string>
+    <string name="msjrc_error_validar_pin">Pin not validated</string>
+    <string name="msjrc_realizar_llamada">Call in progress</string>
+    <string name="msjrc_registrar_usuario">Sending data account</string>
+    <string name="msjrc_texto_validar_pin">Press button Send to receive the call validation</string>
+    <string name="msjrc_validando_telefono">Validating data telephone</string>
+    <string name="msjrc_validar_pin">Validating Pin</string>
+    <string name="no_changed_detected">No change detected</string>
+    <string name="notificador_mensaje_voz">Voice Messages</string>
+    <string name="offline">Offline</string>
+    <string name="olvido_clave">Forgot Extension/Pass?</string>
+    <string name="online">Online</string>
+    <string name="politica_de_privacidad">		Federal law gives to users the right iTalkYou and USA CORP Intica iTalkYou the owner of the duty to protect the confidentiality of customer proprietary information. The customer information includes your personal details (name, email address, cell phone number and country of residence).
+
+
+        This notice allows Intica USA CORP use this customer information to improve the ability to offer products and services tailored to the specific needs of the Customertelecommunications.
+
+
+
+        You have the right not to approve or cancel Intico USA CORP use your information for thesepurposes. His decision to restrict the use of your information will not affect the service youreceive from Intico USA CORP iTalkYou or through.
+
+        If you are not restricted to USA CORP Intico use your information, we may use your information for the purposes described in this notice, such as offering products andservices you may find useful.
+
+        If you want to restrict the use of iTalkYou information, please notify iTalkYou through our contact form stating your username, password and the keyword RESTRICT or in writing to the following address: 6355 NW 36th St. Suite 407 , Virginia Gardens, FL 33166.
+
+        You can change your mind at any time and your decision will remain valid until you notify usotherwise. Note that you may receive periodic consumer marketing information even if youiTalkYou Intico USA CORP restricts the use of your personal information.
+
+        These materials are developed independently without use customer information describedin this notice. You can contact us at any time to obtain information about products and services iTalkYou.</string>
+    <string name="prefijo_moneda">US$ </string>
+    <string name="press_again_to_exit">Press again to exit</string>
+    <string name="registration_failed">failed</string>
+    <string name="registration_ok">conected!</string>
+    <string name="registration_other">error</string>
+    <string name="registration_progress">conecting...</string>
+    <string name="restore_password_2">Receiver my password by SMS</string>
+    <string name="sending">Sending...</string>
+    <string name="synchronizing">Synchronizing...</string>
+    <string name="texto_camara">Camera</string>
+    <string name="texto_eliminar">Delete</string>
+    <string name="texto_enviar_sms">Send SMS</string>
+    <string name="texto_escuchar">Listen</string>
+    <string name="texto_galeria">Gallery</string>
+    <string name="texto_llamada_gratis">Call Free</string>
+    <string name="texto_llamada_pago">Call with Cost</string>
+    <string name="texto_llamar">Call</string>
+    <string name="texto_monto">Amount Italkyou</string>
+    <string name="texto_participantes">Members</string>
+    <string name="texto_tu">You</string>
+    <string name="texto_version">Version: </string>
+    <string name="title_activity_agendar_sms">SMSActivity</string>
+    <string name="title_activity_dial">Dial</string>
+    <string name="title_activity_how_to_call">How to call?</string>
+    <string name="title_activity_visualizar_imagen">ImagenActivity</string>
+    <string name="title_alert_button_ok">Ok</string>
+    <string name="title_alert_info">Notice!</string>
+    <string name="title_alert_warning">Warning!</string>
+    <string name="title_alert_yes">Yes</string>
+    <string name="title_contact">Contacts</string>
+    <string name="title_contact_ity">Ity contacts</string>
+    <string name="title_menu_choose_actions">Choose one option.</string>
+    <string name="title_menu_choose_annex">Choose one annex.</string>
+    <string name="title_menu_choose_telephone">Choose one telephone.</string>
+    <string name="title_sms">SMS</string>
+    <string name="titulo_cambiar_clave">Change Password</string>
+    <string name="titulo_cerrar_sesion">Exit Session</string>
+    <string name="titulo_comprar_saldo">PayPal</string>
+    <string name="titulo_descripcion_movimiento">Description </string>
+    <string name="titulo_fecha_movimiento">Date </string>
+    <string name="titulo_monto_movimiento">Amount </string>
+    <string name="titulo_recuperar_clave">Recover Password</string>
+    <string name="titulo_reproducir_mensaje">Listening Voice Message</string>
+    <string name="titulo_seleccionar">Select</string>
+    <string name="titulo_sms">Text SMS</string>
+    <string name="titulo_terminos_condiciones">Terms of Use and Privacy Policy</string>
+    <string name="titulo_validar_pin">Validate PIN</string>
+    <string name="try_again">Try again please.</string>
+    <string name="vista_chat">iTalk</string>
+    <string name="vista_favorito">Favorite</string>
+    <string name="vista_llamada">Call</string>
+</resources>

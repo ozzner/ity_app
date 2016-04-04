@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_normal"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="15dp">
+
+        <!--<Space-->
+        <!--android:layout_width="20px"-->
+        <!--android:layout_height="20px"-->
+        <!--android:layout_weight="0.5" />-->
+
+        <TextView
+            android:id="@+id/tvEtiquetaSaldo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lbl_saldo_actual"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvSaldoLlamadas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:text="$/. 0.00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp">
+
+        <!--<TextView-->
+        <!--android:id="@+id/tvSeleccionPais"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="16sp"-->
+        <!--android:text="@string/lbl_seleccione_pais"-->
+        <!--android:layout_marginBottom="5dp"/>-->
+
+        <Spinner
+            android:id="@+id/spListaPrefijos"
+            style="@style/custom_edittext_style"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/et_height_55dp"
+            android:prompt="@string/app_name"
+            android:spinnerMode="dialog"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnlyMarcado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_zipcode"
+            style="@style/custom_imagebutton_style"
+            android:layout_width="@dimen/et_height_55dp"
+            android:layout_height="@dimen/et_height_55dp"
+            android:layout_marginRight="1dp"
+            android:src="@drawable/ic_add_contact"
+            android:text="51"
+            android:textSize="@dimen/txt_sp18"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNumeroMarcado"
+            style="@style/custom_edittext_style"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/et_height_55dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:cursorVisible="true"
+            android:longClickable="true"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:hint="@string/hnt_marcador"
+            android:textSize="@dimen/txt_sp18"
+            android:textStyle="bold" />
+
+        <!--<ImageButton style="@style/AppBaseTheme.BotonBorrar"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="@string/btn_borrar"-->
+        <!--android:id="@+id/borrar"-->
+        <!--android:textColor="@color/White"-->
+        <!--android:src="@drawable/borrar"-->
+        <!--android:textSize="18sp"-->
+        <!--/>-->
+        <ImageButton
+            android:id="@+id/ib_add_number"
+            style="@style/custom_imagebutton_style"
+            android:layout_width="@dimen/et_height_55dp"
+            android:layout_height="@dimen/et_height_55dp"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/ic_add_contact" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnlyNumeros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lnlyMarcado"
+        android:layout_gravity="center"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <Button
+                android:id="@+id/num_1"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_1"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/num_2"
+                android:layout_width="60dp"
+                android:layout_height="40dip"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_2"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/num_3"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_3"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/num_4"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_4"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/num_5"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_5"
+                android:textColor="@color/White"
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/num_6"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_6"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/num_7"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_7"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/num_8"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_8"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/num_9"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_9"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/num_ast"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="*"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/num_0"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="@string/btn_0"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/boton_numeral"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="#"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/boton_numero"
+                android:text="«"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <ImageButton
+            android:id="@+id/btnHistorialLlamadas"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btn_realizar_llamada"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/fondo_boton_gris"
+            android:scaleType="centerInside"
+            android:src="@drawable/historial_llamadas"
+            android:text="Historial"
+            android:textColor="@color/White" />
+
+        <ImageButton
+            android:id="@+id/btn_realizar_llamada"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/fondo_boton_gris"
+            android:scaleType="centerInside"
+            android:src="@drawable/llamada"
+            android:text="@string/btn_llamar"
+            android:textColor="@color/White" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

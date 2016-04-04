@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:appitalkyou="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/acc_archive"
+        android:orderInCategory="100"
+        appitalkyou:showAsAction="always"
+        android:icon="@drawable/ic_archive"
+        android:title="@string/menu_acc_archive_chat"/>
+
+    <item
+        android:id="@+id/itConfiguracion"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/perfil"
+        android:title="@string/mn_configuracion"/>
+
+    <item
+        android:id="@+id/itSaldo"
+        appitalkyou:showAsAction="never|withText"
+        android:title="@string/mn_saldo"
+        android:icon="@drawable/saldo"/>
+
+    <item
+        android:id="@+id/itRedireccionar"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/redireccionar"
+        android:title="@string/mn_redireccionar"/>
+
+
+    <item
+        android:id="@+id/itCerrarSesion"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/cerrar"
+        android:title="@string/mn_cerrar"/>
+
+    <item
+        android:id="@+id/itTesting"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/cerrar"
+        android:title="Testing"/>
+
+
+
+</menu>

@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\linphonerc",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\linphonerc"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\waiting_for_contact.ogg",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\waiting_for_contact.ogg"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\muestra.mp3",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\muestra.mp3"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\ringback.wav",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\ringback.wav"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\rootca.pem",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\rootca.pem"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\italkyou.mp3",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\italkyou.mp3"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\fake_phone_book_picture.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\fake_phone_book_picture.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\pause.wav",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\pause.wav"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\encryption_handshake.ogg",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\encryption_handshake.ogg"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\raw\\call_interruption.ogg",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\raw\\call_interruption.ogg"
+    }
+]

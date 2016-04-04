@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileOptions.encoding = 'UTF-8'
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+//    useLibrary 'org.apache.http.legacy'
+    
+
+    defaultConfig {
+        applicationId "com.italkyou.gui"
+        minSdkVersion 11
+        targetSdkVersion 22
+        multiDexEnabled true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+    }
+
+}
+
+dependencies {
+//    compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    compile project(':crouton')
+    compile project(':viewPagerIndicator')
+    compile files('libs/gson-2.2.4.jar')
+    compile files('libs/PayPalAndroidSDK-2.9.7.jar')
+    compile files('libs/liblinphone.jar')
+    compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:multidex:1.0.1'
+//    compile 'com.parse.bolts:bolts-android:1.2.1'
+    compile 'com.parse:parse-android:1.10.2'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+}

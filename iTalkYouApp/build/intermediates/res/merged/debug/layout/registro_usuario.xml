@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_trans_50"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lnlyCabeceraDialogo"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/cabeceraDialogo"
+            layout="@layout/cabecera_dialogo" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/lnlyCombo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvPais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_pais_telefono" />
+
+                <Spinner
+                    android:id="@+id/cbxPaises"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnlyInformacionUsuario"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lnlyCombo"
+                android:layout_below="@+id/lnlyCombo"
+                android:orientation="vertical">
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tvTelefono"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/lbl_telefono" />-->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvPrefijo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="4sp"
+                        android:text="@string/lbl_telefono"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etRegTelefono"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/hnt_numero"
+                            android:inputType="phone">
+
+                            <!--<requestFocus />-->
+                        </EditText>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/tvClave"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dip"-->
+                <!--android:text="@string/lbl_clave" />-->
+
+
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/etRepetirClave"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:ems="10"-->
+                        <!--android:hint="@string/hnt_repetir_clave"-->
+                        <!--android:inputType="textPassword"-->
+                        <!--android:maxLength="10" />-->
+                    <!---->
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tvNombreUsuario"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="10dip"-->
+                    <!--android:text="@string/lbl_informacion_usuario" />-->
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etNombreUsuario"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/hnt_nombre_usuario"
+                        android:inputType="textCapWords" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_register_email"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/hnt_email"
+                        android:inputType="textCapWords" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="5"
+                    android:orientation="horizontal">
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etRegClave"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:hint="@string/hnt_clave"
+                        android:inputType="textPassword"
+                        android:maxLength="10" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_show_password"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:padding="@dimen/pad_8dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/components_selector"
+                            android:src="@drawable/vec_visibility_off"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnlyAceptarCondiciones"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lnlyInformacionUsuario"
+                android:layout_below="@+id/lnlyInformacionUsuario"
+                android:layout_marginTop="15dip"
+                android:orientation="horizontal">
+
+                <CheckedTextView
+                    android:id="@+id/chkTerminosCondiciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkMark="@drawable/seleccion_checkbox"
+                    android:enabled="true" />
+
+                <TextView
+                    android:id="@+id/tvAceptaCondiciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:text="@string/lbl_acepta_condiciones"
+                    android:textColor="@color/Blue"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnlyBoton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lnlyAceptarCondiciones"
+                android:layout_below="@+id/lnlyAceptarCondiciones"
+                android:layout_marginTop="15dip"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnRegistrarse"
+                    style="@style/styleBtnTexto"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/button_selector"
+                    android:text="@string/btn_registro" />
+
+
+
+            </LinearLayout>
+            <!--Restore password 2-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/et_height_45dp"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/tv_restore_password_2"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/components_selector"
+                    android:layout_height="@dimen/et_height_45dp"
+                    android:textSize="@dimen/txt_sp16"
+                    android:padding="@dimen/space_8dp"
+                    android:visibility="invisible"
+                    android:textColor="@color/my_green"
+                    android:text="@string/restore_password_2"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

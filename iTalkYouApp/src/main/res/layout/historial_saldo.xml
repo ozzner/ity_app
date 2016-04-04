@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_normal"
+    tools:context=".SaldoActivity">
+
+
+    <LinearLayout
+        android:id="@+id/lnlyHistorial"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textoHistorial"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/iTalkYou_Azul_Suave"
+                android:textStyle="bold"
+                android:textSize="@dimen/txt_sp20"
+                android:layout_marginLeft="@dimen/space_8dp"
+                android:layout_gravity="left|center_vertical"
+                android:text="@string/label_balance_current"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_balance_current"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space_8dp"
+                android:layout_gravity="left|center_vertical"
+                android:gravity="right"
+                android:textColor="@color/iTalkYou_Azul_Suave"
+                android:textStyle="bold"
+                android:textSize="@dimen/txt_sp20"
+                android:text="20.00 USD"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lnlyDivision"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:weightSum="3"
+            android:background="@color/pantone_240C"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/fechaMovimiento"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:paddingLeft="@dimen/space_15"
+                android:text="@string/titulo_fecha_movimiento"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/montoMovimiento"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_gravity="center"
+                android:text="@string/titulo_monto_movimiento"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/descripcionMovimiento"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/titulo_descripcion_movimiento"
+                android:textColor="@color/White" />
+
+        </LinearLayout>
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout_balance"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/lay_header_contact"
+            android:layout_height="0dp"
+            android:layout_weight="7.5">
+
+        <ListView
+            android:id="@+id/listMovimientosSaldo"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/space_8dp"
+            android:paddingRight="@dimen/space_8dp"
+            android:divider="@color/gray_color_2"
+            android:dividerHeight="0.5dip"/>
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/lnlyComprar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@+id/listMovimientosSaldo"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnComprarPayPal"
+                style="@style/styleBtnTexto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button_selector"
+                android:text="@string/btn_comprar" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

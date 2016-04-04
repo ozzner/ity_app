@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:padding="@dimen/pad_8dp">
+
+    <!--android:background="@drawable/list_selector"-->
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/pad_10dp">
+
+        <TextView
+            android:id="@+id/tv_menu_chat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center"
+            android:singleLine="false"
+            android:text="@string/lbl_celda_galeria"
+            android:textColor="@color/Black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_menu_chat_annex"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/pad_20dp"
+            android:text="New Text"
+            android:layout_marginTop="@dimen/space_8dp"
+            android:layout_alignParentBottom="true"
+       />
+
+        <ImageView
+            android:layout_width="@dimen/pad_20dp"
+            android:layout_height="@dimen/pad_20dp"
+            android:id="@+id/iv_menu_chat_status"
+            android:src="@drawable/ic_chat_status"
+            android:layout_marginLeft="@dimen/space_8dp"
+            android:layout_alignBottom="@+id/tv_menu_chat_annex"
+            android:layout_toRightOf="@+id/tv_menu_chat_annex"
+            android:layout_toEndOf="@+id/tv_menu_chat_annex" />
+
+    </RelativeLayout>
+
+    <!-- Image to Acction -->
+    <ImageView
+        android:id="@+id/iv_menu_chat_action"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="center"
+        android:layout_marginRight="@dimen/pad_10dp"
+        android:background="@drawable/seleccion_fondo_fila_lista"
+        android:tint="@color/pantone_2405C"
+        android:src="@drawable/ic_dialer_sip" />
+
+</LinearLayout>

@@ -1,0 +1,200 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_normal"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".RedireccionarAnexoActivity">
+
+        <!-- Enabled - Disabled -->
+        <LinearLayout
+            android:id="@+id/lay_active_redirect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rgActivated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5dp"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbtn_active"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="onRadioButtonClicked"
+                    android:textColor="@color/my_green"
+                    android:checked="true"
+                    android:text="@string/label_enabled" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_disactive"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/label_disabled" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Choose country -->
+        <LinearLayout
+            android:id="@+id/lnlyCombo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_25dp"
+            android:gravity="center"
+            android:layout_below="@+id/lay_active_redirect">
+
+            <TextView
+                android:id="@+id/tvPais"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_pais_telefono"/>
+
+            <Spinner
+                android:id="@+id/cbxPaisesRedireccionar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"/>
+        </LinearLayout>
+
+        <!-- Phone number -->
+        <LinearLayout
+            android:id="@+id/lnlyTelefono"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_10dp"
+            android:layout_alignLeft="@+id/lnlyCombo"
+            android:layout_below="@+id/lnlyCombo">
+
+            <TextView
+                android:id="@+id/tvPrefijoNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="4sp"
+                android:text="@string/lbl_telefono"
+                android:textColor="@color/pantone_2405C"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                style="@style/custom_edittext_style"
+                />
+
+            <EditText
+                android:id="@+id/etTelefonoRedireccionar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/pad_1dp"
+                android:textColor="@color/pantone_240C"
+                android:hint="@string/hnt_numero"
+                android:inputType="phone"
+                style="@style/custom_edittext_style">
+
+                <requestFocus />
+            </EditText>
+
+        </LinearLayout>
+
+        <!-- Switch always -->
+        <LinearLayout
+            android:id="@+id/laySwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlyTelefono"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/space_4dp"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/pad_10dp"
+            android:paddingTop="@dimen/space_4dp">
+
+            <TextView
+                android:id="@+id/tv_redirect_permanent"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/et_height_35dp"
+                android:layout_weight="1.25"
+                android:gravity="center_vertical|left"
+                android:textColor="@color/pantone_306C"
+                android:text="@string/label_redirect_always" />
+
+            <Switch
+                android:id="@+id/swRedireccionar"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/et_height_35dp"
+                android:layout_gravity="right"
+                android:layout_weight="0.75"
+                android:checked="true" />
+        </LinearLayout>
+
+        <!-- Choose between dates-->
+        <LinearLayout
+            android:id="@+id/lnlyFechas"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/laySwitch"
+            android:layout_below="@+id/laySwitch"
+            android:layout_marginTop="@dimen/pad_25dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFechaInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_fecha_inicio" />
+
+            <DatePicker
+                android:id="@+id/dtpFechaInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false" />
+
+            <TextView
+                android:id="@+id/tvFechaFin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_fecha_fin" />
+
+            <DatePicker
+                android:id="@+id/dtpFechaFin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false" />
+
+        </LinearLayout>
+
+        <!-- Redirect button-->
+        <LinearLayout
+            android:id="@+id/lnlyBoton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlyFechas"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/pad_20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRedireccionar"
+                style="@style/styleBtnTexto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button_selector"
+                android:text="@string/btn_redireccionar" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

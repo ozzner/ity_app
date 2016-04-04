@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/call_background"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="3"
+        android:padding="@dimen/pad_8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvLlamadaNombreContacto"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:padding="@dimen/pad_15dp"
+            android:text="@string/app_name"
+            android:textColor="@color/White"
+            android:textSize="@dimen/txt_sp32" />
+
+        <EditText
+            android:id="@+id/etNumeroMarcar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:editable="false"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:inputType="phone"
+            android:shadowColor="@color/pantone_240C"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:textSize="@dimen/txt_sp20"
+            android:text="@string/lbl_datos_llamada"
+            style="@style/custom_edittext_conversation_style"
+            android:textColor="@color/White"/>
+
+
+        <TextView
+            android:id="@+id/tvTextoMarcando"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="@dimen/pad_20dp"
+            android:text="@string/lbl_marcando"
+            android:textColor="@color/my_green"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
+
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/lbl_seleccione_pais"-->
+    <!--android:visibility="visible"-->
+    <!--android:id="@+id/tvSeleccionPais"/>-->
+
+    <!--<LinearLayout-->
+    <!--android:orientation="horizontal"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="60dp"-->
+    <!-->-->
+
+    <!--<Spinner-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1.5"-->
+    <!--android:visibility="invisible"-->
+    <!--android:spinnerMode="dialog"-->
+    <!--android:textSize="14sp"-->
+    <!--android:prompt="@string/app_name"-->
+    <!--android:id="@+id/spListaPaises"-->
+    <!--/>-->
+
+    <!-- -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imagenContacto"
+            android:layout_width="@dimen/et_height_100dp"
+            android:layout_height="@dimen/et_height_180dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/small_logo" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lnlyLlamadaBotones"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btnFinalizar"
+                style="@style/styleBtnTexto"
+                android:layout_width="@dimen/et_height_65dp"
+                android:layout_height="@dimen/et_height_65dp"
+                android:src="@drawable/ic_enc_call"
+                android:background="@drawable/button_cancel_call_selector_circle"/>
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btnSpeaker"
+                android:layout_width="@dimen/et_height_65dp"
+                android:layout_height="@dimen/et_height_65dp"
+                android:background="@drawable/button_speaker_call_unactive"
+                android:src="@drawable/ic_speaker"/>
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/lnlyLlamadaInternacional"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:visibility="visible">-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/btnLlamadaBoton"-->
+            <!--style="@style/styleBtnTexto"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="65dp"-->
+            <!--android:background="@drawable/button_update_selector"-->
+            <!--android:gravity="center"-->
+            <!--android:src="@drawable/ic_action_call"-->
+            <!--android:tint="@color/White"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
+
+</LinearLayout>
+

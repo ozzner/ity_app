@@ -1,0 +1,152 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+<RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondo_normal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AgendarSMSActivity" >
+
+    <LinearLayout
+         android:id="@+id/lnlyTelefono"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content">
+            	
+         <TextView
+            android:id="@+id/tvNumeroAgendar"
+            android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+            android:text="@string/lbl_telefono" 
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingRight="10sp"/>
+                
+         <EditText
+          	android:id="@+id/etTelefonoAgendar"
+           	android:layout_width="fill_parent"
+           	android:layout_height="wrap_content"
+           	android:hint="@string/hnt_marcador"
+           	android:ems="10"
+           	android:inputType="phone" >
+         <requestFocus />
+         </EditText>
+	 </LinearLayout>
+	 
+     <LinearLayout
+         android:id="@+id/lnlyMensaje"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_alignLeft="@+id/lnlyTelefono"
+         android:layout_below="@+id/lnlyTelefono"
+         android:layout_marginTop="10dip">
+         
+         <TextView
+            android:id="@+id/tvTextoSMS"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msj_texto_sms"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/etMensajeAgendar"
+            android:background="@drawable/borde_caja_texto"
+            android:cursorVisible="true"
+            android:gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:ems="10"
+            android:maxLength="255"
+            android:inputType="textMultiLine" >
+
+            <requestFocus />
+        </EditText>
+         
+     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnlyAgendar"
+        android:layout_below="@+id/lnlyMensaje"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/chbAgendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_agendar_mensaje"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:id="@+id/lnlyFecha"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/lnlyAgendar"
+         android:layout_below="@+id/lnlyAgendar"
+         android:orientation="vertical"
+         android:layout_marginTop="10dip" >
+
+         <TextView
+             android:id="@+id/tvFechaEnvio"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/lbl_fecha_sms"
+             android:textSize="18sp"  />
+
+         <DatePicker
+             android:id="@+id/dtpFechaEnvio"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:datePickerMode="spinner"
+             android:calendarViewShown="false"/>
+      </LinearLayout>
+      
+     <LinearLayout
+         android:id="@+id/lnlyHora"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_alignLeft="@+id/lnlyFecha"
+         android:layout_below="@+id/lnlyFecha"
+         android:layout_marginTop="10dip">
+         
+         <TextView
+             android:id="@+id/tvHoraEnvio"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/lbl_hora_sms"
+             android:textSize="18sp"  />
+
+         <TimePicker
+             android:id="@+id/tpHora"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+
+	 </LinearLayout>
+	 <LinearLayout
+            android:id="@+id/lnlyBoton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlyHora"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnAgendar"
+                style="@style/styleBtnTexto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button_selector"
+                android:text="@string/btn_enviar" />
+     </LinearLayout>
+</RelativeLayout>
+</ScrollView>

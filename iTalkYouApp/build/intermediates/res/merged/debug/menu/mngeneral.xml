@@ -1,0 +1,46 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:appitalkyou="http://schemas.android.com/apk/res-auto">
+
+    <!--<item-->
+        <!--android:id="@+id/itContacto"-->
+        <!--appitalkyou:showAsAction="always"-->
+        <!--android:icon="@drawable/contacto"-->
+        <!--android:title="@string/mn_contacto"/>-->
+    <!-- -->
+    <item
+        android:id="@+id/itConfiguracion"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/perfil"
+        android:title="@string/mn_configuracion"/>
+    
+    <item
+        android:id="@+id/itSaldo"
+        appitalkyou:showAsAction="never|withText"
+        android:title="@string/mn_saldo"
+        android:icon="@drawable/saldo"/>
+    
+    <item
+        android:id="@+id/itRedireccionar"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/redireccionar"
+        android:title="@string/mn_redireccionar"/>
+    
+    <!--<item-->
+        <!--android:id="@+id/itAgendarSMS"-->
+        <!--appitalkyou:showAsAction="never|withText"-->
+        <!--android:icon="@drawable/redireccionar"-->
+		<!--android:title="@string/mn_agendarsms"/>-->
+    
+    <item
+        android:id="@+id/itCerrarSesion"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/cerrar"
+		android:title="@string/mn_cerrar"/>
+
+    <item
+        android:id="@+id/itTesting"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/cerrar"
+        android:title="Testing"/>
+
+</menu>

@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+	  xmlns:appitalkyou="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itEliminarLlamadas"
+        android:orderInCategory="100"
+        appitalkyou:showAsAction="never"
+        android:title="@string/mn_eliminar_llamadas"/>
+    
+    <item
+        android:id="@+id/itEliminarMensajes"
+        android:orderInCategory="100"
+        appitalkyou:showAsAction="never"
+        android:title="@string/mn_eliminar_mensajes"/>
+
+</menu>

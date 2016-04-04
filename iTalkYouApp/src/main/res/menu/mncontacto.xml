@@ -1,0 +1,50 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+      xmlns:appitalkyou="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/itBuscar"
+          android:title="@string/mn_buscar"
+          android:icon="@drawable/ic_search_white"
+          appitalkyou:showAsAction="always"
+          appitalkyou:actionViewClass="android.support.v7.widget.SearchView" />
+    
+    <item
+        android:id="@+id/itBuscarContacto"
+        android:orderInCategory="100"
+        appitalkyou:showAsAction="always"
+        android:icon="@drawable/ic_logo_ity"
+        android:title="@string/mn_buscar_contacto"/>
+
+    <item
+        android:id="@+id/itConfiguracion"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/perfil"
+        android:title="@string/mn_configuracion"/>
+
+    <item
+        android:id="@+id/itSaldo"
+        appitalkyou:showAsAction="never|withText"
+        android:title="@string/mn_saldo"
+        android:icon="@drawable/saldo"/>
+
+    <item
+        android:id="@+id/itRedireccionar"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/redireccionar"
+        android:title="@string/mn_redireccionar"/>
+
+
+    <item
+        android:id="@+id/itCerrarSesion"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/cerrar"
+        android:title="@string/mn_cerrar"/>
+
+    <item
+        android:id="@+id/itTesting"
+        appitalkyou:showAsAction="never|withText"
+        android:icon="@drawable/cerrar"
+        android:title="Testing"/>
+
+
+
+</menu>

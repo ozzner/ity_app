@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_row"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="@dimen/space_8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgContacto"
+        android:layout_width="@dimen/ancho_imagen_contacto"
+        android:layout_height="@dimen/alto_imagen_contacto"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dip"
+        android:src="@drawable/ic_chat_user" />
+
+    <LinearLayout
+        android:id="@+id/lnlyDatosChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imgContacto"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/space_4dp">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_nombre"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/Black" />
+
+        <TextView
+            android:id="@+id/tvUltimoMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="This is the last message"
+            android:textColor="@color/italkyou_primary_blue"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvFecha"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:text="19 July 2015"
+        android:textColor="@color/Gray"
+        android:layout_marginRight="@dimen/space_4dp"
+        android:textSize="10sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.1">
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_row_chat_archive"
+        android:layout_width="@dimen/ancho_icono"
+        android:layout_height="@dimen/alto_icono"
+        android:focusable="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

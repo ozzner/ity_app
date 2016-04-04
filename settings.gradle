@@ -1,0 +1,3 @@
+include ':crouton', ':slideDateTimePicker', ':iTalkYouApp-iTalkYou'
+include ':viewPagerIndicator'
+project(':iTalkYouApp-iTalkYou').projectDir = new File('iTalkYouApp')

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+	<ImageView
+        android:id="@+id/imgParticipante"
+        android:layout_width="75dip"
+        android:layout_height="75dip"
+        android:layout_margin="5dip"/>
+
+    <LinearLayout
+        android:id="@+id/lnlyParticipante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:layout_marginTop="20dip"
+        android:layout_marginLeft="5dip"
+         android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvNombreParticipante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_nombre"
+            android:textColor="@color/Black"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+       <TextView
+            android:id="@+id/tvAnexoParticipante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hnt_extension"
+            android:textColor="@color/Purple"
+            android:typeface="serif"
+            android:textStyle="italic"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+    
+    <ImageButton
+         android:id="@+id/imgEliminarParticipante"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/ic_delete_white"
+         android:layout_marginTop="15dip"
+        android:layout_gravity="top"
+         android:background="@drawable/seleccion_boton_eliminar"/>
+</LinearLayout>

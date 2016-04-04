@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_report.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_report.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\mnanexo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\mnanexo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_conversation.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_conversation.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\mnhistorial_llamadas.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\mnhistorial_llamadas.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_archive.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_archive.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_dial.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_dial.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\mnbuscar_agregar.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\mnbuscar_agregar.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\mnchat_grupal.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\mnchat_grupal.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\mngeneral.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\mngeneral.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\sinmenu.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\sinmenu.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_chat.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_chat.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\mncontacto.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\mncontacto.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\mnidiomas.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\mnidiomas.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\visualizar_imagen.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\visualizar_imagen.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_testing.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_testing.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_conversation_group.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_conversation_group.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_how_to_call.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_how_to_call.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\menu\\menu_contact_actions.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\menu\\menu_contact_actions.xml"
+    }
+]

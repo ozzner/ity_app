@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo_normal">
+    <LinearLayout
+        android:id="@+id/lnlyCabeceraDialogo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/et_height_65dp"
+        android:orientation="vertical" >
+
+		<include
+		    android:id="@+id/cabeceraDialogo"
+		    layout="@layout/cabecera_dialogo"
+             />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMensajeCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/msj_cerrar_sesion"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:singleLine="false"
+        android:padding="20dip"
+       />
+
+    <LinearLayout
+         android:id="@+id/lnlyCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+	    android:layout_margin ="20dip"
+	    android:gravity="center_horizontal" >
+		
+         <Button
+	            android:id="@+id/btnAceptarCerrarSesion"
+	            style="@style/styleBtnTexto"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="0.5"
+	            android:background="@drawable/button_selector"
+	            android:text="@string/btn_aceptar" />
+
+	        <Button
+	            android:id="@+id/btnCancelarCerrarSesion"
+	            style="@style/styleBtnTexto"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="0.5"
+	            android:background="@drawable/button_selector"
+	            android:text="@string/btn_cancelar" />
+        
+    </LinearLayout>
+
+</LinearLayout>

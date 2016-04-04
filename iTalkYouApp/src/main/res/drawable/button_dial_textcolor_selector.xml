@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- pressed -->
+    <item android:color="@color/iTalkYou_Azul_Suave" android:state_pressed="true" />
+    <!-- focused -->
+    <item android:color="@color/WhiteSmoke" android:state_focused="true" />
+    <!-- default -->
+    <item android:color="@color/White" />
+</selector>
+

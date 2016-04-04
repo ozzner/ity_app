@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.italkyou.gui.llamada.HowToCallActivity">
+    <item
+        android:id="@+id/acc_how_to_close"
+        android:orderInCategory="100"
+        android:title="@string/action_close"
+        app:showAsAction="never" />
+</menu>

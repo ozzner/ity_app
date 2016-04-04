@@ -1,0 +1,365 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="3"
+    android:orientation="vertical"
+    android:padding="@dimen/pad_8dp"
+    tools:context="com.italkyou.gui.llamada.DialActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lnlyMarcado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNumeroMarcado"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/et_height_100dp"
+                android:layout_marginBottom="@dimen/pad_4dp"
+                android:layout_weight="1"
+                android:background="@color/tranparent"
+                android:cursorVisible="true"
+                android:editable="true"
+                android:gravity="center"
+                android:hint="@string/hnt_marcador"
+                android:textColor="@color/italkyou_primary_purple"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/txt_sp32"
+                android:textStyle="bold" />
+
+            <!--<ImageView-->
+            <!--android:id="@+id/imageView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/et_height_55dp"-->
+            <!--android:layout_marginTop="@dimen/pad_4dp"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/cod_pais" />-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnlyNumeros"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:gravity="top"
+        android:paddingTop="@dimen/pad_5dp"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <!-- Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_dial_height"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <!--One-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_1"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_one"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+            <!--Two-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_2"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_two"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+            <!--Three-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_3"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_three"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- Row 2-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_dial_height"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/pad_5dp"
+            android:weightSum="4">
+            <!--Four-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_4"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_four"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+            <!--Five-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_5"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_five"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+            <!--Six-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_6"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_six"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- Row 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_dial_height"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/pad_5dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <!--Seven-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_7"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_seven"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+            <!--Eight-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_8"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_eight"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+            <!--Nine-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/num_9"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_nine"
+                    android:textColor="@color/White" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- Row 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_dial_height"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/pad_5dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <!--Asterisk-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/num_ast"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:text="*"
+                    android:textColor="@color/White"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+            <!--Zero-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+                <ImageButton
+                    android:id="@+id/num_0"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:src="@drawable/ic_dial_zero"
+                    android:textColor="@color/White"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+
+            <!--Number sign-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+                <Button
+                    android:id="@+id/boton_numeral"
+                    android:layout_width="@dimen/row_dial_height"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button_dial_circle"
+                    android:text="#"
+                    android:textColor="@color/White"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Row 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_dial_height"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/pad_5dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/btnHistorialLlamadas"
+                android:layout_width="@dimen/row_dial_height"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/btn_realizar_llamada"
+                android:background="@drawable/button_speaker_call_selector_circle"
+                android:scaleType="centerInside"
+                android:src="@drawable/historial_llamadas"
+                android:text="Historial"
+                android:textColor="@color/White" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="@dimen/row_dial_height"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_dial_circle_2"
+                android:src="@drawable/ic_backspace"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/btn_realizar_llamada"
+                android:layout_width="@dimen/row_dial_height"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_speaker_call_selector_circle"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_call"
+                android:text="@string/btn_llamar"
+                android:textColor="@color/White" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

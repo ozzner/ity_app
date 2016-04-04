@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\cloning\\ity_app\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\slide_date_time_picker.xml",
+        "source": "D:\\cloning\\ity_app\\slideDateTimePicker\\src\\main\\res\\layout\\slide_date_time_picker.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\custom_tab.xml",
+        "source": "D:\\cloning\\ity_app\\slideDateTimePicker\\src\\main\\res\\layout\\custom_tab.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_date.xml",
+        "source": "D:\\cloning\\ity_app\\slideDateTimePicker\\src\\main\\res\\layout\\fragment_date.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\slideDateTimePicker\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_time.xml",
+        "source": "D:\\cloning\\ity_app\\slideDateTimePicker\\src\\main\\res\\layout\\fragment_time.xml"
+    }
+]

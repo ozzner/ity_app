@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.italkyou.gui.llamada.DialActivity">
+    <item
+        android:id="@+id/acc_dial_info"
+        android:orderInCategory="100"
+        android:title="@string/action_dial_info"
+        android:icon="@drawable/ic_info"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/fondo_normal">
+
+        <ImageView
+        android:id="@+id/imgFotoContacto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/et_height_180dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:src="@drawable/ic_user_profile"
+        />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_nombres"
+        android:background="@color/gray_trans_50"
+        android:paddingLeft="@dimen/space_15"
+        android:paddingTop="@dimen/space_4dp"
+        android:paddingBottom="@dimen/space_4dp"
+        android:textColor="@color/White"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignBottom="@+id/imgFotoContacto"
+        android:layout_alignParentStart="true" />
+    
+
+
+    <TextView
+        android:id="@+id/tvSubtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imgFotoContacto"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dip"
+        android:text="@string/lbl_numeros_telefonicos"
+        android:textSize="18sp" />
+    
+    <LinearLayout
+        android:id="@+id/lnlyDivision"
+	    android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_below="@+id/tvSubtitulo"
+        android:orientation="vertical"
+        android:layout_marginTop="5dip">
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listNumerosTelefonicos"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/lnlyDivision"
+        android:divider="@color/gray_color_2"
+        android:dividerHeight="0.75dip"
+        android:paddingBottom="5dp"
+        />
+
+    
+
+</RelativeLayout>

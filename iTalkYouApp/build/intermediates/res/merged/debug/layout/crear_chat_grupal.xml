@@ -1,0 +1,74 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/fondo_normal"
+    android:paddingBottom="10dip"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="10dip">
+    <LinearLayout
+         android:id="@+id/lnlyCabeceraGrupo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+		<ImageButton
+        	android:id="@+id/btnImagenGrupo"
+        	android:layout_width="100dip"
+        	android:layout_height="100dip"
+        	android:scaleType="centerCrop"
+        	android:src="@drawable/ic_picture"
+        	/>
+		
+		<EditText
+            android:id="@+id/etNombreGrupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/htn_nombre_grupo"
+            android:layout_marginTop="30dip" >
+        </EditText>
+	</LinearLayout>
+	
+    <LinearLayout 
+        android:id="@+id/lnlyCabeceraChatGrupal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pantone_240C"
+        android:layout_below="@+id/lnlyCabeceraGrupo"
+        android:layout_marginTop="10dip">
+
+        <TextView
+            android:id="@+id/textoParticipantes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto_participantes" 
+            android:textColor="@color/White"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip" />
+
+        <ImageView
+            android:id="@+id/btnAgregarParticipantes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" 
+            android:layout_gravity="right"
+        	android:gravity="right"
+        	android:layout_weight="0.2"
+        	android:src="@drawable/agregar"
+        	/>
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/listParticipantes"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/lnlyCabeceraChatGrupal"
+        android:divider="#57157D"
+        android:dividerHeight="2dip"
+        android:padding="5dip" />
+	
+</RelativeLayout>

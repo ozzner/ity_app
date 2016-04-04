@@ -1,0 +1,330 @@
+[
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_messages.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\bg_messages.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\ity_app\\viewPagerIndicator\\unspecified\\res\\drawable\\vpi__tab_indicator.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\borde_dialogo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\borde_dialogo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\snackbar_background.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\drawable\\snackbar_background.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\fondo_boton_gris.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\fondo_boton_gris.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\borde_caja_texto.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\borde_caja_texto.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\list_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\list_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\cod_pais.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\cod_pais.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\focused.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\focused.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_circle.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\bg_circle.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_dial_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_dial_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\call_background.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\call_background.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_focused_9.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\menu_focused_9.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\seleccion_boton_chat.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\seleccion_boton_chat.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_call_accept.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\ic_call_accept.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\seleccion_fondo_fila_lista.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\seleccion_fondo_fila_lista.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_purple.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\btn_purple.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_9.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\menu_9.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\edittext_shape.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\edittext_shape.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_update_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_update_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\component_normal.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\component_normal.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_call_decline.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\ic_call_decline.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_speaker_call_active.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_speaker_call_active.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\borde_fila.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\borde_fila.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_cancel_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_cancel_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\borde_fondo_superior_dialogo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\borde_fondo_superior_dialogo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\sender_bg.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\sender_bg.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\imagebutton_shape.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\imagebutton_shape.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\menu_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\list_item_pressed.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\list_item_pressed.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\logo_ity_cloud.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\logo_ity_cloud.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_cancel_call_selector_circle.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_cancel_call_selector_circle.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\components_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\components_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\seleccion_checkbox.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\seleccion_checkbox.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_dial_textcolor_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_dial_textcolor_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\component_pressed.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\component_pressed.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\messages_background.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\messages_background.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_speaker_call_selector_circle.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_speaker_call_selector_circle.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\edittext_shape_conversation.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\edittext_shape_conversation.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\fab_background.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\drawable\\fab_background.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\call_bg.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\call_bg.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\borde_fondo_dialogo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\borde_fondo_dialogo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_pressed_9.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\menu_pressed_9.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\seleccion_boton_eliminar.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\seleccion_boton_eliminar.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\list_item_normal.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\list_item_normal.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_tab_indicator.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\custom_tab_indicator.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\small_logo.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\small_logo.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_dial_circle.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_dial_circle.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_rounded_corner.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\btn_rounded_corner.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\borde_fila_seleccionado.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\borde_fila_seleccionado.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\seleccion_boton.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\seleccion_boton.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_item_selector.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\menu_item_selector.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\background.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\background.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\receiver_bg.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\receiver_bg.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_selector_chat.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_selector_chat.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\login_background.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\login_background.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\normal.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\normal.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_blue.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\btn_blue.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\pressed.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\pressed.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_dial_circle_2.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_dial_circle_2.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_speaker_call_unactive.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_speaker_call_unactive.xml"
+    }
+]

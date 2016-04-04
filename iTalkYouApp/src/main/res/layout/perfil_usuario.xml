@@ -1,0 +1,208 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_normal"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <ImageButton
+            android:id="@+id/btnImagen"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/foto_contacto" />
+
+        <LinearLayout
+            android:id="@+id/lnlyDatosUsuario"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnImagen"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:layout_marginRight="15dip">
+
+                <TextView
+                    android:id="@+id/tvNombreUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_nombre"
+                    android:layout_marginTop="15dip" />
+
+                <TextView
+                    android:id="@+id/tvPinUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_pin" 
+                    android:layout_marginTop="15dip"/>
+                
+                <TextView
+                    android:id="@+id/tvPaisUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_pais"
+                    android:layout_marginTop="20dip" />
+                
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/etNombreUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/hnt_nombre_usuario" >
+                </EditText>
+                
+                <EditText
+                    android:id="@+id/etPinUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/hnt_pin" >
+                </EditText>  
+           
+                <Spinner
+                    android:id="@+id/cbxPaisesUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRegistrarCorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/lnlyDatosUsuario"
+            android:layout_below="@+id/lnlyDatosUsuario"
+            android:text="@string/lbl_registar_correo"
+            android:layout_marginTop="10dip" />
+
+        <EditText
+            android:id="@+id/etCorreoUsuario"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvRegistrarCorreo"
+            android:layout_below="@+id/tvRegistrarCorreo"
+            android:ems="10"
+            android:hint="@string/hnt_email"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/tvIdiomaUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etCorreoUsuario"
+            android:visibility="gone"
+            android:layout_marginTop="10dip"
+            android:text="@string/lbl_idioma" />
+
+         <RadioGroup
+            android:id="@+id/rgIdioma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+             android:visibility="gone"
+            android:layout_below="@+id/tvIdiomaUsuario" >
+
+            <RadioButton
+                android:id="@+id/rbEspanol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/mn_espanol" />
+
+            <RadioButton
+                android:id="@+id/rbIngles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mn_ingles" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvNotificacionUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgIdioma"
+            android:layout_marginTop="10dip"
+            android:visibility="gone"
+            android:text="@string/lbl_tipo_notificacion" />
+
+        <RadioGroup
+            android:id="@+id/rgNotificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_below="@+id/tvNotificacionUsuario" >
+
+            <RadioButton
+                android:id="@+id/rbSonido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/lbl_notificacion_sonido" />
+
+            <RadioButton
+                android:id="@+id/rbVibrador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_notificacion_vibrador" />
+
+            <RadioButton
+                android:id="@+id/rbSinSonido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_notificacion_sin_sonido" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/lnlyActualizar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgNotificacion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnActualizar"
+                style="@style/styleBtnTexto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button_selector"
+                android:text="@string/btn_actualizar" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvCambiarClave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnlyActualizar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="@string/lbl_cambiar_clave"
+            android:textColor="@color/Blue" />
+
+    </RelativeLayout>
+
+</ScrollView>

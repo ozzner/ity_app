@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_normal">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lay_header_contact"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/height_header"
+            android:background="@color/italkyou_primary_blue"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/tv_contact_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/pad_15dp"
+                    android:layout_weight="3"
+                    android:gravity="left"
+                    android:text="@string/title_contact"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/txt_sp14"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <!-- progress show here-->
+                <ProgressBar
+                    android:id="@+id/pbLoader"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/pad_8dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/sw_contacts_ity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible" />
+
+                <!--<Switch-->
+                <!--android:id="@+id/sw_contacts_ity"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textOff="No"-->
+                <!--android:textOn="Yes"-->
+                <!--android:textSize="14sp"-->
+                <!--/>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_contact_dial"
+                    android:layout_width="@dimen/header_image_size"
+                    android:layout_height="@dimen/header_image_size"
+                    android:src="@drawable/ic_dialpad" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lay_header_contact">
+
+            <ListView
+                android:id="@+id/listcontactos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/lay_header_contact"
+                android:divider="@color/gray_color_2"
+                android:dividerHeight="0.7dp"
+                android:padding="2dp" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+
+
+
+
+

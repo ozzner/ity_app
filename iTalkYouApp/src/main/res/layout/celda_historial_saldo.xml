@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/et_height_55dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tvFechaMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_fecha_movimiento"
+        android:padding="@dimen/space_8dp"
+        android:layout_gravity="center"
+        android:textColor="@color/Black"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tvMontoMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_monto_movimiento"
+        android:padding="@dimen/space_8dp"
+
+        android:textColor="@color/Black"
+		android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvDescripcionMovimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_descripcion_movimiento"
+        android:layout_gravity="center"
+        android:textColor="@color/Black"
+        android:gravity="right"
+        android:padding="@dimen/space_8dp"
+
+        android:layout_weight="1" />
+
+</LinearLayout>

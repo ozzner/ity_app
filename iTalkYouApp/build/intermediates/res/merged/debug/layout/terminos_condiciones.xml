@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@drawable/fondo_normal">
+    
+    <LinearLayout
+        android:id="@+id/lnlyCabeceraDialogo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/et_height_65dp"
+        android:orientation="vertical" >
+
+		<include
+		    android:id="@+id/cabeceraDialogo"
+		    layout="@layout/cabecera_dialogo" />
+
+    </LinearLayout>
+    
+<!--  -->
+
+    <LinearLayout
+        android:id="@+id/lnlyTerminosCondiciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lnlyCabeceraDialogo"
+        android:layout_marginTop="10dip"
+        android:orientation="vertical" >
+		 <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+		  <LinearLayout
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+       		android:orientation="vertical" >
+		    <TextView
+        		android:id="@+id/tvTituloCondUso"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="@string/lbl_condiciones_uso"
+        		android:layout_gravity="center"
+        		android:textAppearance="?android:attr/textAppearanceLarge" />
+		   <TextView
+		        android:id="@+id/tvCondicionesUso"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dip"
+		        android:layout_marginRight="10dip"
+		        android:layout_marginTop="5dip"
+		        android:text="@string/condiciones_de_uso"
+		        android:textSize="10sp" />
+		   <TextView
+        		android:id="@+id/tvTituloPolitPriv"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="@string/lbl_politicas_privacidad"
+        		android:layout_gravity="center"
+        		android:layout_marginTop="5dip"
+        		android:textAppearance="?android:attr/textAppearanceLarge" />
+		   <TextView
+		        android:id="@+id/tvPoliticasPrivacidad"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dip"
+		        android:layout_marginRight="10dip"
+		        android:layout_marginTop="5dip"
+		        android:text="@string/politica_de_privacidad"
+		        android:textSize="10sp" />
+           </LinearLayout>
+         </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

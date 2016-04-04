@@ -1,0 +1,426 @@
+[
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\row_contact_device.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\row_contact_device.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\enviar_sms.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\enviar_sms.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\crear_chat_grupal.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\crear_chat_grupal.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\comprar_saldo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\comprar_saldo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\row_popup_menu_contact.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\row_popup_menu_contact.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\cambiar_clave.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\cambiar_clave.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\activity_testing.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\activity_testing.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\visualizar_imagen.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\visualizar_imagen.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_chat.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_chat.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\historial_llamadas.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\historial_llamadas.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\conversacion.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\conversacion.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_dato.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_dato.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\fragmento_fecha_sms.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\fragmento_fecha_sms.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_imagen.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_imagen.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\redireccionar_anexo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\redireccionar_anexo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_participante.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_participante.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\barra_acciones.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\barra_acciones.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_contacto_italkyou_chatgrupal.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_contacto_italkyou_chatgrupal.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\historial_saldo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\historial_saldo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\realizar_llamada.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\realizar_llamada.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\validar_pin.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\validar_pin.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\cerrar_sesion.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\cerrar_sesion.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\layout_snackbar_include.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\layout\\layout_snackbar_include.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_historial_saldo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_historial_saldo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\activity_dial.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\activity_dial.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\row_popup_menu_chat.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\row_popup_menu_chat.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\row_popup_menu_actions.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\row_popup_menu_actions.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\enviar_correo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\enviar_correo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\dialogo_personalizado.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\dialogo_personalizado.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\custom_actionbar_chat.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\custom_actionbar_chat.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\datos_contacto.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\datos_contacto.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\splash.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\splash.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\agendar_sms.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\agendar_sms.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_pais.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_pais.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\activity_report.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\activity_report.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\cabecera_dialogo.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\cabecera_dialogo.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_contacto.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_contacto.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\reproducir_mensaje_voz.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\reproducir_mensaje_voz.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\contactos_italkyou.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\contactos_italkyou.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\vista_principal.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\vista_principal.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\registro_usuario.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\registro_usuario.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\activity_how_to_call.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\activity_how_to_call.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\recibir_llamada.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\recibir_llamada.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\pantalla_llamada.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\pantalla_llamada.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\listado_mensajes.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\listado_mensajes.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\fragmento_hora_sms.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\fragmento_hora_sms.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\perfil_usuario.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\perfil_usuario.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\inicio_sesion.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\inicio_sesion.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\cel_message_sender.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\cel_message_sender.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\fragmento_mensajeria.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\fragmento_mensajeria.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\contenedor_principal.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\contenedor_principal.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_contacto_italkyou.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_contacto_italkyou.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_menu_action.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\dialog_menu_action.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\activity_archive.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\activity_archive.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\listado_contacto.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\listado_contacto.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\cel_message_receiver.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\cel_message_receiver.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_menu_contact.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\dialog_menu_contact.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_simple_dropdown_hint.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_simple_dropdown_hint.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\favoritos.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\favoritos.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\row_contact_italkyou.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\row_contact_italkyou.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\layout_snackbar.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\design\\22.2.0\\res\\layout\\layout_snackbar.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\dialogo_listado.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\dialogo_listado.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\barra_acciones_chat.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\barra_acciones_chat.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\terminos_condiciones.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\terminos_condiciones.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\celda_llamada.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\celda_llamada.xml"
+    }
+]

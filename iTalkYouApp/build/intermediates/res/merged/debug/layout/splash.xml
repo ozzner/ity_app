@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/fondo_login">
+
+	<ImageView
+	    android:id="@+id/imglogo"
+	    android:layout_width="250dip"
+	    android:layout_height="250dp"
+		android:scaleType="centerCrop"
+	    android:layout_centerHorizontal="true"
+	    android:layout_centerVertical="true"
+	    android:src="@drawable/small_logo"/>
+   
+</RelativeLayout>
+

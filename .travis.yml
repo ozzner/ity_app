@@ -1,0 +1,13 @@
+language: android
+jdk: oraclejdk7
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-23.0.2
+    - android-23
+    - extra
+
+after_failure:
+    - cat app/build/outputs/lint-results.xml

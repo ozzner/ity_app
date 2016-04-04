@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_acc_profile"
+        android:title="@string/menu_acc_profile"
+        android:icon="@drawable/ic_info"
+        android:showAsAction="always|withText"
+        />
+
+    <item
+        android:id="@+id/ic_acc_edit"
+        android:title="@string/menu_acc_edit"
+        android:icon="@drawable/ic_edit"
+        android:showAsAction="always|withText"
+        />
+
+    <!--<item-->
+        <!--android:id="@+id/ic_acc_delete"-->
+        <!--android:title="@string/menu_acc_delete"-->
+        <!--android:icon="@drawable/ic_delete"-->
+        <!--android:showAsAction="always|withText"-->
+        <!--/>-->
+</menu>

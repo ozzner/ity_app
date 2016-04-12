@@ -8,6 +8,7 @@ public class Const {
 	public static final String NO_ITY = "0";
 	public static final String NEED_SYNCHRONIZE = "0";
 	public static final String SYNCHRONIZE_DONE = "1";
+	public static final String TYPE_DATA_NAME = "2";
 	/*Codigos de Errores*/
 	public static String COD_NO_RESPUESTA_SERVIDOR = "-1";
 	public static String COD_ERROR_CONEXION_WS = "-2";

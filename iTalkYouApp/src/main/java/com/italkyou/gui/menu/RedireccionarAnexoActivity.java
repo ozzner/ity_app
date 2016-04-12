@@ -30,14 +30,13 @@ import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.BeanUsuario;
 import com.italkyou.beans.entradas.EntradaRedireccionarAnexo;
 import com.italkyou.beans.salidas.SalidaResultado;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.LogicRedirect;
 import com.italkyou.controladores.LogicaPais;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.R;
-import com.italkyou.gui.chat.ChatMensajeActivity;
 import com.italkyou.gui.personalizado.AdaptadorLista;
 import com.italkyou.utils.AppUtil;
 import com.italkyou.utils.Const;
@@ -310,10 +309,10 @@ public class RedireccionarAnexoActivity extends BaseActivity
             pd.setCanceledOnTouchOutside(false);
             pd.setCancelable(false);
 
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     pd.dismiss();
                     if (respuesta.getError().equals(Const.cad_vacia)) {

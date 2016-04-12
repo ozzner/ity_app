@@ -22,17 +22,16 @@
             android:padding="@dimen/pad_15dp"
             android:text="@string/label_incoming_call"
             android:textColor="@color/White"
-            android:textSize="@dimen/txt_sp32" />
+            android:textSize="@dimen/txt_sp24" />
 
         <TextView
             android:id="@+id/NroAnexoEntrante"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
+            android:layout_height="50dp"
             android:gravity="center"
             android:text="@string/lbl_anexo"
             android:textColor="@color/WhiteSmoke"
-            android:textSize="@dimen/txt_sp24" />
+            android:textSize="@dimen/txt_sp20" />
 
         <TextView
             android:id="@+id/CelularAnexoEntrante"
@@ -41,9 +40,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textStyle="bold"
-            android:padding="@dimen/pad_8dp"
+            android:padding="@dimen/pad_4dp"
             android:text="51993297151"
             android:shadowDx="1"
+            android:visibility="visible"
             android:shadowDy="1"
             android:shadowColor="@color/White"
             android:shadowRadius="1"

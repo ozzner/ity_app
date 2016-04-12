@@ -19,8 +19,8 @@ import com.italkyou.beans.BeanMensajeVoz;
 import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.entradas.EntradaEliminarLlamadaMsj;
 import com.italkyou.beans.salidas.SalidaHistorialLlamadas;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.R;
@@ -29,7 +29,7 @@ import com.italkyou.gui.personalizado.DialogoLista;
 import com.italkyou.gui.personalizado.DialogoLista.onSeleccionarOpcionListener;
 import com.italkyou.gui.personalizado.DialogoReproducirMensaje;
 import com.italkyou.gui.personalizado.DialogoReproducirMensaje.onEstadoEscuchadoListener;
-import com.italkyou.sip.SIPManager;
+import com.italkyou.sip.SipManager;
 import com.italkyou.utils.Const;
 import com.italkyou.utils.AppUtil;
 
@@ -48,7 +48,7 @@ public class HistorialLlamadasActivity extends BaseActivity implements OnItemCli
     private ImageView btnEliminarMensajes;
     private AdaptadorListaCheckBox adaptadorLlamadas, adaptadorMensajes;
     private boolean activoEliminarLlamada, activoEliminarMensajes;
-    private SIPManager sipManager;
+    private SipManager sipManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,36 +170,27 @@ public class HistorialLlamadasActivity extends BaseActivity implements OnItemCli
                 if (texto.equals(Const.descripcion_llamar)) {
                     if (llamada.getTipo_Llamada().equals(Const.llamada_recibida)) {
 
-                        if (llamada.getNro_Origen().length() > 6) {
                             //Call Phone
-                            LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(llamada.getNombre_Origen()).toString(), HistorialLlamadasActivity.this, Const.tipo_llamada_internacional,
-                                    llamada.getNro_Origen(), null, "1", "");
-
-                            //Call Annex
-                        } else if (llamada.getNro_Origen().length() == 6) {
-                            LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(llamada.getNombre_Origen()).toString(), HistorialLlamadasActivity.this, Const.tipo_llamada_anexoVOIP,
-                                    llamada.getNro_Origen(), null, "1", "");
-                        }
+                            LogicaPantalla.makeAudioCallIntent(
+                                    HistorialLlamadasActivity.this,
+                                    llamada.getNro_Origen(),
+                                    llamada.getNombre_Origen());
 
                     } else {
-                        if (llamada.getNro_Destino().length() > 6) {
-                            LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(llamada.getNro_Destino()).toString(), HistorialLlamadasActivity.this, Const.tipo_llamada_internacional,
-                                    llamada.getNro_Destino(), null, "1", "");
-
-                        } else if (llamada.getNro_Destino().length() == 6) {
-                            LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(llamada.getNro_Destino()).asStringUriOnly().toString(), HistorialLlamadasActivity.this, Const.tipo_llamada_anexoVOIP,
-                                    llamada.getNro_Destino(), null, "1", "");
-
-                        }
+                            LogicaPantalla.makeAudioCallIntent(
+                                    HistorialLlamadasActivity.this,
+                                            llamada.getNro_Destino(),
+                                            llamada.getNombre_Destino()
+                                    );
                     }
+
                 } else if (texto.equals(Const.descripcion_eliminar)) {
 
-                    List<EntradaEliminarLlamadaMsj> lista = new ArrayList<EntradaEliminarLlamadaMsj>();
+                    List<EntradaEliminarLlamadaMsj> lista = new ArrayList();
                     EntradaEliminarLlamadaMsj entrada = new EntradaEliminarLlamadaMsj();
                     entrada.setIdMovimiento(llamada.getID_Movimiento());
                     lista.add(entrada);
                     borrarLlamadas(lista);
-
                 }
             }
         };
@@ -303,10 +294,10 @@ public class HistorialLlamadasActivity extends BaseActivity implements OnItemCli
 
                 public void run() {
 
-                    ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+                    ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
                         @Override
-                        public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                        public void onOperationDone(BeanRespuestaOperacion respuesta) {
                             @SuppressWarnings("unchecked")
                             final List<EntradaEliminarLlamadaMsj> listado = (List<EntradaEliminarLlamadaMsj>) respuesta.getObjeto();
                             runOnUiThread(new Runnable() {
@@ -394,9 +385,9 @@ public class HistorialLlamadasActivity extends BaseActivity implements OnItemCli
             new Thread(new Runnable() {
                 public void run() {
 
-                    ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+                    ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
                         @Override
-                        public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                        public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                             @SuppressWarnings("unchecked")
                             final List<EntradaEliminarLlamadaMsj> listado = (List<EntradaEliminarLlamadaMsj>) respuesta.getObjeto();

@@ -304,7 +304,7 @@ public class CustomAlertDialog extends DialogFragment implements DialogInterface
     }
 
 
-    public void setDialogListener(OnDialogListener listener) {
+    public void setDialogListener(OnDialogListener listener)     {
         this.mListener = listener;
     }
 

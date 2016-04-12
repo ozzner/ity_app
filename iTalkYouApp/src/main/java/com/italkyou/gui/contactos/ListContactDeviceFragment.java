@@ -39,17 +39,15 @@ import com.italkyou.beans.BeanFramesTelephones;
 import com.italkyou.beans.BeanTelefono;
 import com.italkyou.beans.popup.MenuActionsContact;
 import com.italkyou.beans.salidas.OutputContact;
-import com.italkyou.conexion.ExcecuteRequest;
+import com.italkyou.conexion.ExecuteRequest;
 import com.italkyou.controladores.LogicContact;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.gui.PrincipalFragment;
 import com.italkyou.gui.R;
-import com.italkyou.gui.VistaPrincipalActivity;
 import com.italkyou.gui.llamada.DialActivity;
 import com.italkyou.gui.personalizado.AdaptadorLista;
 import com.italkyou.gui.personalizado.CustomAlertDialog;
-import com.italkyou.sip.SIPManager;
 import com.italkyou.utils.Const;
 
 import java.util.ArrayList;
@@ -106,7 +104,7 @@ public class ListContactDeviceFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.listado_contacto, container, false);
         pantalla = getArguments().getString(Const.DATOS_TIPO);
-        VistaPrincipalActivity.setPantalla(Const.PANTALLA_LISTA_CONTACTO);
+//        VistaPrincipalActivity.setPantalla(Const.PANTALLA_LISTA_CONTACTO);
         AdaptadorLista.setOnMenuItemListener(this);
 
         ivDial = (ImageView) rootView.findViewById(R.id.iv_contact_dial);
@@ -483,6 +481,12 @@ public class ListContactDeviceFragment extends Fragment implements
             dBalance = Double.parseDouble(balance);
         }
 
+        //Init values
+        arrayPhones = new String[contactMenu.count()];
+        arrayAnnex = new String[contacto.getPhones().size()];
+
+        //Set values
+        arrayPhones = contactMenu.getNumbers();
 
         //Casos en los que puede ser SMS
         if ((isAnnex && index == 2) || (isAnnex == false && index == 1)) {
@@ -493,13 +497,11 @@ public class ListContactDeviceFragment extends Fragment implements
 
                 //Envía automaticamente en número para los mensajes.
                 if (contactMenu.count() == 1) {
+                    app.setAnyNumber(arrayPhones[0]);
                     sendToSMSFragment();
-                    app.setAnyNumber(contactMenu.getNumbers()[0]);
                 } else {
 
-                    arrayPhones = new String[contactMenu.count()];
                     arrayPhones = contactMenu.getNumbers();
-
                     //Show Alert with RadioButtons Options.
                     showCustomDialog(Const.INDEX_DIALOG_RADIOBUTTON, arrayPhones);
                 }
@@ -512,26 +514,22 @@ public class ListContactDeviceFragment extends Fragment implements
 
             //Casos en los que puede ser phone.
         } else if ((isAnnex && index == 1) || (isAnnex == false && index == 0)) {
+
             typeAction = IS_PHONE;
             isAnnex = false;
 
             if (dBalance > 0) {
+                app.setAnyNumber(arrayPhones[0]);
 
                 //Llama directamente si solo hay 1 anexo asociado al contacto.
                 if (contactMenu.count() == 1) {
 //                    sipManager.makeAudioCall(Const.CALL_PHONE_CODE + ((BeanTelefono) beans.get(0)).getNumero());
-                    LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress((contactMenu.getNumbers()[0])).asStringUriOnly(),
+                    LogicaPantalla.makeAudioCallIntent(
                             getActivity(),
-                            Const.tipo_llamada_internacional,
                             contactMenu.getNumbers()[0],
-                            contacto,
-                            "0",
-                            "");
+                            contacto.getNombre()
+                    );
                 } else {
-
-                    arrayPhones = new String[contactMenu.count()];
-                    arrayPhones = contactMenu.getNumbers();
-
                     //Show Alert with RadioButtons Options.
                     showCustomDialog(Const.INDEX_DIALOG_RADIOBUTTON, arrayPhones);
                 }
@@ -546,7 +544,6 @@ public class ListContactDeviceFragment extends Fragment implements
 
             typeAction = IS_ANNEX;
             isAnnex = true;
-            arrayAnnex = new String[contacto.getPhones().size()];
 
             for (int i = 0; i < contacto.getPhones().size(); i++) {
                 String anexo = ((BeanTelefono) contacto.getPhones().get(i)).getAnexo();
@@ -557,13 +554,10 @@ public class ListContactDeviceFragment extends Fragment implements
 
             //Llama directamente si solo hay 1 anexo asociado al contacto.
             if (arrayAnnex.length == 1) {
-                LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress((arrayAnnex[0])).asStringUriOnly(),
+                LogicaPantalla.makeAudioCallIntent(
                         getActivity(),
-                        Const.tipo_llamada_anexoVOIP,
-                        contacto.getAnexo(),
-                        contacto,
-                        "0",
-                        "");
+                        (arrayAnnex[0]),
+                        contacto.getNombre());
             } else {
 
                 //Show Alert with RadioButtons Options.
@@ -584,23 +578,21 @@ public class ListContactDeviceFragment extends Fragment implements
 
 //        int id = contactMenu.getContactID();
         app.setAnyNumber(arrayPhones[index]);
+
         if (isAnnex) {
 
             switch (typeAction) {
                 case IS_ANNEX:
-                    LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(arrayAnnex[index]).asStringUriOnly(),
+                    LogicaPantalla.makeAudioCallIntent(
                             getActivity(),
-                            Const.tipo_llamada_anexoVOIP,
                             arrayAnnex[index],
-                            contacto,
-                            "0",
-                            "");
+                            contacto.getNombre());
                     break;
                 case IS_PHONE:
-                    LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(arrayPhones[index]).asStringUriOnly(), getActivity()
-                            , Const.tipo_llamada_internacional
-                            , arrayPhones[index]
-                            , contacto, "2", "");
+                    LogicaPantalla.makeAudioCallIntent(
+                            getActivity(),
+                            arrayPhones[index],
+                            contacto.getNombre());
                     break;
                 case IS_SEND:
                     sendToSMSFragment();
@@ -613,7 +605,10 @@ public class ListContactDeviceFragment extends Fragment implements
         } else {
 
             if (typeAction == IS_PHONE) {
-                LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(arrayPhones[index]).asStringUriOnly(), getActivity(), Const.tipo_llamada_internacional, arrayPhones[index], contacto, "2", "");
+                LogicaPantalla.makeAudioCallIntent(
+                        getActivity(),
+                        arrayPhones[index],
+                        contacto.getNombre());
 
                 Toast.makeText(getActivity(), arrayPhones[index], Toast.LENGTH_SHORT).show();
 
@@ -678,9 +673,10 @@ public class ListContactDeviceFragment extends Fragment implements
                         reloadList();
                         Toast.makeText(getActivity(), getActivity().getString(R.string.synchronizing), Toast.LENGTH_SHORT).show();
                         syncContactEdited(beanContact);
-                    }else {
+                    } else {
                         Toast.makeText(getActivity(), getActivity().getString(R.string.error_unknow), Toast.LENGTH_SHORT).show();
                     }
+
                 }
 
                 break;
@@ -697,7 +693,7 @@ public class ListContactDeviceFragment extends Fragment implements
         new Thread(new Runnable() {
             @Override
             public void run() {
-                List<OutputContact> ityAnnex = ExcecuteRequest.obtenerContactosAnexosItalkYou(beanContact.getTelefono());
+                List<OutputContact> ityAnnex = ExecuteRequest.obtenerContactosAnexosItalkYou(beanContact.getTelefono());
 
                 if (ityAnnex.size() > 0) {
                     Log.e(TAG, "Yes, synchronized!");
@@ -758,7 +754,7 @@ public class ListContactDeviceFragment extends Fragment implements
                 for (int index = 0; index < framesList.size(); index++) {
                     String frame = framesList.get(index).getFrameTelephone();
                     Log.e(Const.DEBUG_CONTACTS, TAG + "Frame " + index + " : " + frame);
-                    List<OutputContact> ityAnnex = ExcecuteRequest.obtenerContactosAnexosItalkYou(frame);
+                    List<OutputContact> ityAnnex = ExecuteRequest.obtenerContactosAnexosItalkYou(frame);
 
                     if (ityAnnex.size() > 0) {
                         logic.actualizarContactosITalkYou(bcu, getActivity(), ityAnnex, false);

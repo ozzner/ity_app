@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\cloning\ity_app\iTalkYouApp\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="ed368b21ff2ef34003e94facbcfb7bcd5fe5b553">
+        <dex dex="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_06414a9a76f95ff44cc443558dc10c9bade7e7a5\classes.dex" />
+    </item>
+
+</items>

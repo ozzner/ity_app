@@ -24,8 +24,8 @@ import com.italkyou.beans.entradas.EntradaInisionSesion;
 import com.italkyou.beans.entradas.EntradaRegistarUsuario;
 import com.italkyou.beans.salidas.SalidaResultado;
 import com.italkyou.beans.salidas.SalidaUsuario;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.AsyncGuardarDAOTask;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.gui.BaseInicioActivity;
@@ -143,11 +143,11 @@ public class ValidarPin extends BaseInicioActivity implements OnClickListener {
 //            pd.setCancelable(false);
 
                 //Realiza la llamada al número indicado
-                ExcecuteRequest ejecutarValidarPin = new ExcecuteRequest(new ResultadoOperacionListener() {
+                ExecuteRequest ejecutarValidarPin = new ExecuteRequest(new ResultadoOperacionListener() {
 
                     @Override
-                    public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
-                        Log.e(Const.DEBUG, "onResultadoOperacion: ok" );
+                    public void onOperationDone(BeanRespuestaOperacion respuesta) {
+                        Log.e(Const.DEBUG, "onOperationDone: ok" );
                     }
                 });
                 ejecutarValidarPin.validarPin(entrada);
@@ -187,9 +187,9 @@ public class ValidarPin extends BaseInicioActivity implements OnClickListener {
                     }
                 });
 
-                ExcecuteRequest exc = new ExcecuteRequest(new ResultadoOperacionListener() {
+                ExecuteRequest exc = new ExecuteRequest(new ResultadoOperacionListener() {
                     @Override
-                    public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                    public void onOperationDone(BeanRespuestaOperacion respuesta) {
                         runOnUiThread(new TimerTask() {
                             @Override
                             public void run() {
@@ -241,9 +241,9 @@ public class ValidarPin extends BaseInicioActivity implements OnClickListener {
         countDown.start();
 
         //Request SMS
-        ExcecuteRequest oper = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest oper = new ExecuteRequest(new ResultadoOperacionListener() {
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
                 Log.e(Const.DEBUG, "SMS enviado ok");
 //                Toast.makeText(mActivity, "Sms enviado.", Toast.LENGTH_SHORT).show();
             }
@@ -346,7 +346,7 @@ public class ValidarPin extends BaseInicioActivity implements OnClickListener {
 
     private void verificarEstadoPin() {
 
-        ExcecuteRequest ejecutar = new ExcecuteRequest();
+        ExecuteRequest ejecutar = new ExecuteRequest();
         SalidaResultado salida = ejecutar.obtenerEstadoPin(entrada.getValorPin().getPin());
 
         if (salida.getResultado() != null && salida.getResultado().equals(Const.RESULTADO_OK)) {
@@ -372,10 +372,10 @@ public class ValidarPin extends BaseInicioActivity implements OnClickListener {
         });
 
 
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
                 Log.e(TAG, "registrar usuario respuesta " + respuesta.getError() + "-");
 
                 if (respuesta.getError().equals(Const.cad_vacia)) {
@@ -414,10 +414,10 @@ public class ValidarPin extends BaseInicioActivity implements OnClickListener {
 
         if (AppUtil.existeConexionInternet(mActivity)) {
 
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     if (respuesta.getError().equals(Const.cad_vacia)) {
                         BeanUsuario usuario = (BeanUsuario) respuesta.getObjeto();
@@ -526,10 +526,10 @@ public class ValidarPin extends BaseInicioActivity implements OnClickListener {
 
     private void procesObtenerSaldo(String anexo) {
 
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
 
 //                app.setLstContactosTlf(LogicContact.obtenerListadoContactos(getApplicationContext()));

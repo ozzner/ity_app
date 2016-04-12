@@ -22,8 +22,8 @@ import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.BeanTelefono;
 import com.italkyou.beans.entradas.EntradaEnviarSMS;
 import com.italkyou.beans.salidas.SalidaResultado;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.LogicTelephone;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
@@ -59,7 +59,6 @@ public class ContactoActivity extends BaseActivity implements OnItemClickListene
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         app = ((AppiTalkYou) getApplication());
-//        contacto = (BeanContact) this.getIntent().getSerializableExtra(Const.DATOS_CONTACTO);
         contacto = app.getCurrentContact();
         _context = getApplicationContext();
         app = (AppiTalkYou) getApplication();
@@ -145,12 +144,26 @@ public class ContactoActivity extends BaseActivity implements OnItemClickListene
             public void setSeleccionarOpcionListener(String texto) {
 
                 if (texto.equals(Const.descripcion_llamada_gratis)) {
-                    LogicaPantalla.personalizarIntentRealizarLlamada("", ContactoActivity.this, Const.tipo_llamada_anexoVOIP, telefono.getAnexo(), contacto, "0", "");
+                    LogicaPantalla.makeAudioCallIntent(
+                            ContactoActivity.this,
+                            Const.tipo_llamada_anexoVOIP,
+                            telefono.getAnexo(),
+                            contacto,
+                            contacto.getNombre(),
+                            "0",
+                            "");
 
                 } else if (texto.equals(Const.descripcion_llamada_pago)) {
 
                     if (dBalance > 0)
-                        LogicaPantalla.personalizarIntentRealizarLlamada("", ContactoActivity.this, Const.tipo_llamada_internacional, telefono.getNumero(), contacto, "2", "");
+                        LogicaPantalla.makeAudioCallIntent(
+                                ContactoActivity.this,
+                                Const.tipo_llamada_internacional,
+                                telefono.getNumero(),
+                                contacto,
+                                contacto.getNombre(),
+                                "2",
+                                "");
                     else {
                         String message = getString(R.string.message_alert_balance_none);
                         CustomAlertDialog.showSingleAlert(ContactoActivity.this, message);
@@ -211,10 +224,10 @@ public class ContactoActivity extends BaseActivity implements OnItemClickListene
 
             new Thread(new Runnable() {
                 public void run() {
-                    ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+                    ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
                         @Override
-                        public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                        public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                             if (respuesta.getError().equals(Const.cad_vacia)) {
                                 SalidaResultado resultado = (SalidaResultado) respuesta.getObjeto();

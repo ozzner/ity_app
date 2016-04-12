@@ -1110,7 +1110,6 @@ int id btnEnviarClave 0x7f0e00aa
 int id btnEnviarCorreo 0x7f0e00ff
 int id btnEnviarPin 0x7f0e01ad
 int id btnEnviarSMS 0x7f0e0102
-int id btnFinalizar 0x7f0e014d
 int id btnFinalizarLlamada 0x7f0e0174
 int id btnHistorialLlamadas 0x7f0e007c
 int id btnIgnorarLlamada 0x7f0e0171
@@ -1120,11 +1119,13 @@ int id btnPayPal 0x7f0e00d9
 int id btnRedireccionar 0x7f0e0186
 int id btnRegistrarse 0x7f0e0191
 int id btnRegistro 0x7f0e012d
-int id btnSpeaker 0x7f0e014e
+int id btn_end_call 0x7f0e014d
 int id btn_realizar_llamada 0x7f0e007d
+int id btn_speaker_turn 0x7f0e014e
 int id butSendReport 0x7f0e0081
 int id buttonPanel 0x7f0e0051
 int id cabeceraDialogo 0x7f0e00a2
+int id call_status 0x7f0e014a
 int id cancel_action 0x7f0e013c
 int id cbxPaises 0x7f0e0187
 int id cbxPaisesRedireccionar 0x7f0e017b
@@ -1157,6 +1158,7 @@ int id descripcionMovimiento 0x7f0e0120
 int id dialog 0x7f0e0032
 int id dialoglist 0x7f0e00fa
 int id disableHome 0x7f0e000d
+int id displayName 0x7f0e0148
 int id dpFechaSMS 0x7f0e0108
 int id dropdown 0x7f0e0033
 int id dtpFechaEnvio 0x7f0e0094
@@ -1181,7 +1183,6 @@ int id etMensajeSMS 0x7f0e0101
 int id etMontoSaldo 0x7f0e00d8
 int id etNombreGrupo 0x7f0e00eb
 int id etNombreUsuario 0x7f0e0154
-int id etNumeroMarcar 0x7f0e0149
 int id etPinUsuario 0x7f0e0155
 int id etRegClave 0x7f0e018c
 int id etRegTelefono 0x7f0e018a
@@ -1337,6 +1338,7 @@ int id num_7 0x7f0e0076
 int id num_8 0x7f0e0077
 int id num_9 0x7f0e0078
 int id num_ast 0x7f0e0079
+int id number_to_call 0x7f0e0149
 int id pager 0x7f0e01ae
 int id parallax 0x7f0e0018
 int id parentPanel 0x7f0e0048
@@ -1435,7 +1437,6 @@ int id tvFechaLlamada 0x7f0e00cb
 int id tvFechaMovimiento 0x7f0e00c2
 int id tvHoraEnvio 0x7f0e0096
 int id tvIdiomaUsuario 0x7f0e0159
-int id tvLlamadaNombreContacto 0x7f0e0148
 int id tvMensajeCerrarSesion 0x7f0e00d3
 int id tvMontoMovimiento 0x7f0e00c3
 int id tvNombre 0x7f0e00b2
@@ -1469,7 +1470,6 @@ int id tvTexto03 0x7f0e00a8
 int id tvTextoAlerta 0x7f0e00fd
 int id tvTextoCelda 0x7f0e00c6
 int id tvTextoCompra 0x7f0e00d7
-int id tvTextoMarcando 0x7f0e014a
 int id tvTextoPin 0x7f0e01a9
 int id tvTextoSMS 0x7f0e008e
 int id tvTimerPin 0x7f0e01ac

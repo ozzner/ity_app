@@ -25,8 +25,8 @@ import com.italkyou.beans.entradas.EntradaBuscarContactos;
 import com.italkyou.beans.entradas.EntradaEnviarSMS;
 import com.italkyou.beans.salidas.OutputContact;
 import com.italkyou.beans.salidas.SalidaResultado;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.gui.BaseActivity;
@@ -38,7 +38,7 @@ import com.italkyou.gui.personalizado.DialogoLista;
 import com.italkyou.gui.personalizado.DialogoLista.onSeleccionarOpcionListener;
 import com.italkyou.gui.personalizado.DialogoMensajeSMS;
 import com.italkyou.gui.personalizado.DialogoMensajeSMS.onMensajeSMSListener;
-import com.italkyou.sip.SIPManager;
+import com.italkyou.sip.SipManager;
 import com.italkyou.utils.AppUtil;
 import com.italkyou.utils.Const;
 import com.italkyou.utils.StringUtil;
@@ -61,7 +61,7 @@ public class ContactoItalkYouActivity extends BaseActivity implements OnItemClic
     private EntradaBuscarContactos entrada;
     private BeanUsuario usuario;
     private AppiTalkYou app;
-    private SIPManager sipManager;
+    private SipManager sipManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,10 +139,10 @@ public class ContactoItalkYouActivity extends BaseActivity implements OnItemClic
 
     private void buscarContactos() {
 
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                 pd.dismiss();
 
@@ -192,10 +192,17 @@ public class ContactoItalkYouActivity extends BaseActivity implements OnItemClic
 
                 //Call annex
                 if (texto.equals(Const.descripcion_llamada_gratis)) {
-                    LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(contacto.getAnexo()).asStringUriOnly(), ContactoItalkYouActivity.this, Const.tipo_llamada_anexoVOIP, contacto.getAnexo(), null, "0", "");
+                    LogicaPantalla.makeAudioCallIntent(
+                            ContactoItalkYouActivity.this,
+                            contacto.getAnexo(),
+                            contacto.getNombre()
+                    );
                 } else if (texto.equals(Const.descripcion_llamada_pago)) {
                     if (dBalance > 0) {
-                        LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(contacto.getCelular()).asStringUriOnly(), ContactoItalkYouActivity.this, Const.tipo_llamada_internacional, contacto.getCelular(), null, "0", "");
+                        LogicaPantalla.makeAudioCallIntent(
+                                ContactoItalkYouActivity.this,
+                                contacto.getCelular(),
+                                contacto.getNombre());
                     } else {
                         String message = getString(R.string.message_alert_balance_none);
                         CustomAlertDialog.showSingleAlert(ContactoItalkYouActivity.this, message);
@@ -251,10 +258,10 @@ public class ContactoItalkYouActivity extends BaseActivity implements OnItemClic
         entrada.setMinuto(AppUtil.obtenerMinutos());
 
         if (AppUtil.existeConexionInternet(ContactoItalkYouActivity.this)) {
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     if (respuesta.getError().equals(Const.cad_vacia)) {
                         SalidaResultado resultado = (SalidaResultado) respuesta.getObjeto();
@@ -304,10 +311,10 @@ public class ContactoItalkYouActivity extends BaseActivity implements OnItemClic
 
 
         final String finalAnnex = annex;
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ExcecuteRequest.ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                 if (respuesta.getError().equals(Const.cad_vacia)) {
                     final BeanSaldo saldo = (BeanSaldo) respuesta.getObjeto();
@@ -326,7 +333,7 @@ public class ContactoItalkYouActivity extends BaseActivity implements OnItemClic
         ejecutar.obtenerSaldo(finalAnnex);
     }
 
-    private void printBalance() {
+    public void printBalance() {
 
         this.runOnUiThread(new Runnable() {
             @Override

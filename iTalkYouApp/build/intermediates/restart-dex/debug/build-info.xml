@@ -3,8 +3,8 @@
     abi="armeabi-v7a,armeabi"
     api-level="23"
     density="xxhdpi"
-    format="6"
-    timestamp="2912474477532" >
+    format="7"
+    timestamp="6678857436486" >
 
     <task
         name="javac"
@@ -23,22 +23,10 @@
         location="D:\cloning\ity_app\iTalkYouApp\build\outputs\apk\iTalkYouApp-iTalkYou-debug.apk"
         type="MAIN" />
 
-    <build timestamp="97818049649925" >
+    <build timestamp="303599021600122" >
         <artifact
-            location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2_71133f93c28f49fcdeb10077fb25f4ffee65ad72\classes.dex"
-            type="DEX" />
-        <artifact
-            location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1_f7110a0e4788fa01b741e80065d2c5d6256a5860\classes.dex"
-            type="DEX" />
-        <artifact
-            location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7_3f42941f0bd90f0001a078c5f3c8c5ebeea643d5\classes.dex"
-            type="DEX" />
-        <artifact
-            location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8_f81495fc51b2fed29bf6c01a65609743728c6cfc\classes.dex"
-            type="DEX" />
-        <artifact
-            location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4_e519f6cda94e9f94eb3ff427abb8368486f33c50\classes.dex"
-            type="DEX" />
+            location="D:\cloning\ity_app\iTalkYouApp\build\outputs\apk\iTalkYouApp-iTalkYou-debug.apk"
+            type="MAIN" />
     </build>
 
 </instant-run>

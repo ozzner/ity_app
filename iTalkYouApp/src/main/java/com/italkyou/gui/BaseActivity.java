@@ -20,9 +20,9 @@ import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.BeanSaldo;
 import com.italkyou.beans.BeanUsuario;
 import com.italkyou.beans.salidas.SalidaHistorialSaldo;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
-import com.italkyou.configuraciones.SIPConfig;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
+import com.italkyou.configuraciones.SipConfig;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.controladores.interfaces.OnEventosLlamadasPBX;
@@ -61,14 +61,13 @@ public class BaseActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initErrorReporting();
-        tvEstadoAnexo = (TextView) findViewById(R.id.tvEstadoAnexo);
+//        tvEstadoAnexo = (TextView) findViewById(R.id.tvEstadoAnexo);
         mActivity = this;
         app = (AppiTalkYou) getApplication();
 
         inicializarPantalla();
         getBalanceIty();
         updatedChatStatus(true);
-        startSipRegistration();
     }
 
     private void initErrorReporting() {
@@ -206,10 +205,10 @@ public class BaseActivity extends ActionBarActivity {
             pd.setCancelable(false);
             app = (AppiTalkYou) getApplication();
 
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
                 @SuppressWarnings({"unchecked"})
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     pd.dismiss();
                     SalidaHistorialSaldo saldo = new SalidaHistorialSaldo();
@@ -218,7 +217,7 @@ public class BaseActivity extends ActionBarActivity {
                         List<Object> listaMovimiento = (List<Object>) respuesta.getObjeto();
                         saldo.setListaMovimientos(listaMovimiento);
                     } else {
-                        saldo.setSaldoActual(SIPConfig.SALDO_DEFECTO);
+                        saldo.setSaldoActual(SipConfig.SALDO_DEFECTO);
                     }
 
                     LogicaPantalla.personalizarIntentMovimientos(BaseActivity.this, saldo);
@@ -248,7 +247,7 @@ public class BaseActivity extends ActionBarActivity {
      * @param anexo es el numero de extension en el servidor de comunicaciones.
      */
 
-    private void mostrarBarraAcciones(String anexo) {
+    public void mostrarBarraAcciones(String anexo) {
 
         ActionBar mActionBar = getSupportActionBar();
         mActionBar.setDisplayShowHomeEnabled(true);
@@ -263,40 +262,9 @@ public class BaseActivity extends ActionBarActivity {
         tvEstadoAnexo = (TextView) vBarraAcciones.findViewById(R.id.tvEstadoAnexo);
         mActionBar.setCustomView(vBarraAcciones);
         mActionBar.setDisplayShowCustomEnabled(true);
-//        mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0000ff")));
         mActionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.italkyou_primary_blue)));
 
-//        actualizarEstadoAnexoBarraAcciones(flagConexionAnexo);
     }
-
-//
-//    protected void configurarIdioma(String idioma, boolean activo){
-//
-//        if (idioma.equals(Const.IDIOMA_ES))
-//            idioma = "es";
-//        else
-//            idioma = "en";
-//
-//        String valLanguage = Locale.getDefault().getLanguage();
-//
-//        if (!idioma.equals(valLanguage)){
-//
-//            Locale locale = new Locale(idioma);
-//            Locale.setDefault(locale);
-//            Configuration config = new Configuration();
-//            config.locale = locale;
-//            getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
-//
-//        }
-//
-//
-//        if (activo){
-//
-//            Intent intent = getIntent();
-//            finish();
-//            startActivity(intent);
-//        }
-//    }
 
 
     @Override
@@ -308,17 +276,7 @@ public class BaseActivity extends ActionBarActivity {
     protected void onResume() {
         super.onResume();
         updatedChatStatus(true);
-    }
-
-    private void startSipRegistration() {
-
-//        if (!app.isSipEnabled()){
-//            BeanAnexoSip anexoSip = new BeanAnexoSip();
-//            anexoSip.setNroAnexo(usuarioITY.getAnexo());
-//            anexoSip.setClaveAnexo(usuarioITY.getPin_Sip());
-//            //Enabled and check if call is supported using SIP protocol
-//            app.setIsSipEnabled(app.realizarRegistroAnexo(anexoSip, this));
-//        }
+        getBalanceIty();
     }
 
 
@@ -334,37 +292,40 @@ public class BaseActivity extends ActionBarActivity {
         }
 
         final String finalAnnex = annex;
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ExcecuteRequest.ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                 if (respuesta.getError().equals(Const.cad_vacia)) {
                     final BeanSaldo saldo = (BeanSaldo) respuesta.getObjeto();
 
                     if (saldo.getResultado().equals(Const.RESULTADO_OK)) {
+                        Log.e(TAG,"balance, Result_OK true");
+
                         app.setSaldo(saldo.getBalance());
                         LogicaUsuario.actualizarSaldo(mActivity, finalAnnex, saldo.getBalance());
 
                         //Show in actionbar
                         printBalance();
+                    }else{
+                        Log.e(TAG,"Error balance, Result_OK false");
                     }
+                }else
+                {
+                    Log.e(TAG,"Error balance");
                 }
             }
         });
         ejecutar.obtenerSaldo(finalAnnex);
     }
 
-    private void printBalance() {
+    public void printBalance() {
+        String sBalance = StringUtil.format(Double.parseDouble(app.getSaldo()));
+        tvEstadoAnexo.setText(sBalance + Const.TAG_CURRENCY);
+        tvEstadoAnexo.invalidate();
+        Log.e(Const.DEBUG_BALANCE, TAG + " Saldo--> " + sBalance);
 
-        this.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                String sBalance = StringUtil.format(Double.parseDouble(app.getSaldo()));
-                tvEstadoAnexo.setText(sBalance + Const.TAG_CURRENCY);
-                Log.e(Const.DEBUG_BALANCE, TAG + "Saldo--> " + sBalance);
-            }
-        });
     }
 
 }

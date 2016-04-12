@@ -18,8 +18,8 @@ import com.italkyou.beans.AppiTalkYou;
 import com.italkyou.beans.BeanMensajeVoz;
 import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.salidas.SalidaResultado;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.gui.R;
 import com.italkyou.utils.AppUtil;
 import com.italkyou.utils.Const;
@@ -126,10 +126,10 @@ public class DialogoReproducirMensaje extends DialogFragment implements OnClickL
 			pd.setCanceledOnTouchOutside(false);
 			pd.setCancelable(false);
 			AppiTalkYou app = (AppiTalkYou)getActivity().getApplication();
-			ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+			ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 				
 				@Override
-				public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+				public void onOperationDone(BeanRespuestaOperacion respuesta) {
 					// TODO Auto-generated method stub
 					pd.dismiss();
 					if (respuesta.getError().equals(Const.cad_vacia)){

@@ -46,7 +46,6 @@ import com.italkyou.gui.R;
 import com.italkyou.gui.personalizado.AdaptadorMensajeChat;
 import com.italkyou.gui.personalizado.CustomAlertDialog;
 import com.italkyou.gui.personalizado.CustomListAdapter;
-import com.italkyou.sip.SIPManager;
 import com.italkyou.utils.AppUtil;
 import com.italkyou.utils.ChatITY;
 import com.italkyou.utils.Const;
@@ -1013,8 +1012,7 @@ public class ChatMensajeActivity extends ActionBarActivity implements
                 if (!member.getObjectId().equals(usuarioChat.getObjectId())) {
                     callFromChat(
                             member.getString(ChatITY.USER_ANNEX),
-                            member.getString(ChatITY.USER_USER),
-                            SIPManager.newInstance().buildAddress(member.getString(ChatITY.USER_ANNEX)).asStringUriOnly());
+                            member.getString(ChatITY.USER_USER));
                     break;
                 }
             }
@@ -1039,13 +1037,12 @@ public class ChatMensajeActivity extends ActionBarActivity implements
 
     }
 
-    private void callFromChat(String annex, String name, String sessionID) {
+    private void callFromChat(String annex, String name) {
         LogicaPantalla.intentBasicCall(
                 this,
                 Const.tipo_llamada_anexoVOIP,
                 annex,
-                name,
-                sessionID);
+                name);
 
     }
 
@@ -1152,7 +1149,7 @@ public class ChatMensajeActivity extends ActionBarActivity implements
      */
     @Override
     public void onCallItemList(String annex, String name) {
-        callFromChat(annex, name, SIPManager.newInstance().buildAddress(annex).asStringUriOnly());
+        callFromChat(annex, name);
     }
 
     /**

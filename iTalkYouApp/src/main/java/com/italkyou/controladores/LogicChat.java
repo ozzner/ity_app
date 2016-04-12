@@ -126,6 +126,10 @@ public class LogicChat {
         return new ChatDAO(c).listAllChats();
     }
 
+    public static void dropAll(Context c) {
+        new ChatDAO(c).drop(true);
+    }
+
 
     /**
      * Inteface para los callbacks de parse.

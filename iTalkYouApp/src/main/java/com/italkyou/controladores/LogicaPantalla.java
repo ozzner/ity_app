@@ -6,20 +6,23 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
+import com.italkyou.beans.AppiTalkYou;
 import com.italkyou.beans.BeanContact;
 import com.italkyou.beans.entradas.EntradaRegistarUsuario;
 import com.italkyou.beans.salidas.SalidaHistorialLlamadas;
 import com.italkyou.beans.salidas.SalidaHistorialSaldo;
-import com.italkyou.configuraciones.SIPConfig;
 import com.italkyou.gui.VistaPrincipalActivity;
 import com.italkyou.gui.chat.ChatMensajeActivity;
 import com.italkyou.gui.chat.VisualizarImagenActivity;
 import com.italkyou.gui.contactos.ContactoActivity;
+import com.italkyou.gui.inicio.InicioSesion;
+import com.italkyou.gui.inicio.Presentacion;
 import com.italkyou.gui.inicio.ValidarPin;
 import com.italkyou.gui.llamada.CallActivity;
 import com.italkyou.gui.llamada.HistorialLlamadasActivity;
 import com.italkyou.gui.llamada.IncomingCallActivity;
 import com.italkyou.gui.menu.SaldoActivity;
+import com.italkyou.sip.SipManager;
 import com.italkyou.utils.Const;
 import com.italkyou.utils.ItyPreferences;
 
@@ -87,9 +90,8 @@ public class LogicaPantalla {
         Intent intent = new Intent(activity, ContactoActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         Bundle bundle = new Bundle();
-//        bundle.putSerializable(Const.DATOS_CONTACTO,contacto);
-//        intent.(Const.DATOS_CONTACTO, contacto);
         intent.putExtras(bundle);
+        ((AppiTalkYou) activity.getApplication()).setCurrentContact(contacto);
         activity.startActivity(intent);
     }
 
@@ -109,33 +111,31 @@ public class LogicaPantalla {
     }
 
     //Make audio call
-    public static void personalizarIntentRealizarLlamada(String sessionID, Activity activity, String tipo, String numero, BeanContact contacto, String flagHistorial, String prefijo) {
+    public static void makeAudioCallIntent(Activity activity, String tipo, String numberToCall, BeanContact contacto, String name, String flagHistorial, String prefijo) {
 
         Intent intent = new Intent(activity, CallActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         intent.putExtra("PREFIJO", prefijo);
-        intent.putExtra("NUMERO", numero);
+        intent.putExtra("NUMERO", numberToCall);
         intent.putExtra("BASIC", false);
         intent.putExtra("TIPO", tipo);
-        intent.putExtra("CONTACTO", contacto);
-        intent.putExtra(SIPConfig.SIP_SESSION_ID, sessionID);
-        intent.putExtra("HISTORIAL", flagHistorial);//1 Si es historial 2 si es contactos, el resto si viene del marcador.
-        ItyPreferences p = new ItyPreferences(activity);
-        p.putString(sessionID);
+        intent.putExtra(SipManager.SIP_NUMBER_TO_CALL, numberToCall);
+        intent.putExtra("HISTORIAL", flagHistorial);//1 Si es historial 2 si es contactos, el resto si viene del marcador.7
+//       Update contact
+//        ((AppiTalkYou) activity.getApplication()).setCurrentContact(contacto);
         activity.startActivity(intent);
 
     }
 
-    public static void intentBasicCall(Activity activity, String tipo, String annex, String nombre, String sessionID) {
+    public static void intentBasicCall(Activity activity, String tipo, String numberToCall, String nombre) {
         Intent intent = new Intent(activity, CallActivity.class);
-        intent.putExtra("NUMERO", annex);
+        intent.putExtra("NUMERO", numberToCall);
         intent.putExtra("BASIC", true);
         intent.putExtra("TIPO", tipo);
         intent.putExtra("NAME", nombre);
-        intent.putExtra(SIPConfig.SIP_SESSION_ID, sessionID);
+        intent.putExtra(SipManager.SIP_NUMBER_TO_CALL, numberToCall);
+        intent.putExtra(SipManager.SIP_DISPLAY_NAME, nombre);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        ItyPreferences p = new ItyPreferences(activity);
-        p.putString(sessionID);
         activity.startActivity(intent);
 
     }
@@ -157,7 +157,13 @@ public class LogicaPantalla {
         intent.putExtra(Const.DATOS_TIPO, pantalla);
         intent.putExtra(Const.FROM_ACTIVITY, simpleName);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         activity.startActivity(intent);
+
+        if (simpleName.equals(Presentacion.class.getSimpleName())
+                || simpleName.endsWith(IncomingCallActivity.class.getSimpleName())
+                || simpleName.equals(InicioSesion.class.getSimpleName()))
+            activity.finish();
     }
 
     public static void personalizarIntentVisualizarImagen(Activity activity, Bitmap archivo, String messageChatId) {
@@ -181,6 +187,16 @@ public class LogicaPantalla {
         ItyPreferences p = new ItyPreferences(c);
         p.putString(id + "");
         c.startActivity(i);
+    }
+
+
+
+    public static void makeAudioCallIntent(Activity activity, String numberToCall, String displayName) {
+        Intent call = new Intent(activity, CallActivity.class);
+        call.putExtra(SipManager.SIP_NUMBER_TO_CALL, numberToCall);
+        call.putExtra(SipManager.SIP_DISPLAY_NAME, displayName);
+        call.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        activity.startActivity(call);
     }
 
 

@@ -1,6 +1,2 @@
-CHANGED,D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\italkyou\gui\contactos\ListContactDeviceFragment$2$override.class
-CHANGED,D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\italkyou\gui\contactos\ListContactDeviceFragment$SyncContactsToServerTask$override.class
-CHANGED,D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\italkyou\gui\contactos\ListContactDeviceFragment$AsyncFetchContacts$override.class
+CHANGED,D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\italkyou\gui\BuildConfig$override.class
 CHANGED,D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\italkyou\gui\contactos\ListContactDeviceFragment$2$1$override.class
-CHANGED,D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\italkyou\gui\contactos\ListContactDeviceFragment$override.class

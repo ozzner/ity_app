@@ -19,8 +19,8 @@ import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.BeanUsuario;
 import com.italkyou.beans.entradas.EntradaEnviarSMS;
 import com.italkyou.beans.salidas.SalidaResultado;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.R;
 import com.italkyou.utils.AppUtil;
@@ -113,10 +113,10 @@ public class AgendarSMSActivity extends BaseActivity implements OnClickListener,
 			pd = ProgressDialog.show(this, Const.TITULO_APP, getString(R.string.msj_enviando_sms), true, true);
 			pd.setCanceledOnTouchOutside(false);
 			pd.setCancelable(false);
-			ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+			ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
 				@Override
-				public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+				public void onOperationDone(BeanRespuestaOperacion respuesta) {
 					// TODO Auto-generated method stub
 					if (respuesta.getError().equals(Const.cad_vacia)){
 						SalidaResultado resultado = (SalidaResultado)respuesta.getObjeto();

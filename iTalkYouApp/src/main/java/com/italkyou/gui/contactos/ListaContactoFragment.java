@@ -31,7 +31,6 @@ import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.PrincipalFragment;
 import com.italkyou.gui.R;
-import com.italkyou.gui.VistaPrincipalActivity;
 import com.italkyou.gui.personalizado.AdaptadorLista;
 import com.italkyou.gui.personalizado.AdaptadorListaCheckBox;
 import com.italkyou.utils.Const;
@@ -69,7 +68,7 @@ public class ListaContactoFragment extends Fragment implements OnItemClickListen
 
         Log.e(TAG, "[LISTACONTACTOFRAGMENT] createview");
         pantalla = (String) getArguments().getString(Const.DATOS_TIPO);
-        VistaPrincipalActivity.setPantalla(Const.PANTALLA_LISTA_CONTACTO);
+//        VistaPrincipalActivity.setPantalla(Const.PANTALLA_LISTA_CONTACTO);
         mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh_layout);
         pbLoader = (ProgressBar) rootView.findViewById(R.id.pbLoader);
         mListView = (ListView) rootView.findViewById(R.id.listcontactos);

@@ -32,7 +32,6 @@ import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.PrincipalFragment;
 import com.italkyou.gui.R;
-import com.italkyou.gui.VistaPrincipalActivity;
 import com.italkyou.gui.personalizado.AdaptadorLista;
 import com.italkyou.gui.personalizado.DialogoLista;
 import com.italkyou.gui.personalizado.DialogoLista.onSeleccionarOpcionListener;
@@ -80,7 +79,7 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.crear_chat_grupal, container, false);
-        VistaPrincipalActivity.setPantalla(Const.PANTALLA_CHAT_GRUPAL);
+//        VistaPrincipalActivity.setPantalla(Const.PANTALLA_CHAT_GRUPAL);
         return rootView;
 
     }

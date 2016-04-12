@@ -105,7 +105,7 @@ public class ConversacionFragment extends Fragment
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);//Enable menu
         inicializarComponentes();
-        obtenerListaChat();
+        getChats();
     }
 
     @Override
@@ -158,7 +158,7 @@ public class ConversacionFragment extends Fragment
         }
     }
 
-    public void obtenerListaChat() {
+    public void getChats() {
 
         if (AppUtil.existeConexionInternet(getActivity())) {
 
@@ -167,7 +167,6 @@ public class ConversacionFragment extends Fragment
             else {
                 fetchChats();
             }
-
 
         } else {
             Crouton.showText(getActivity(), getString(R.string.msj_error_conexion_internet), Style.ALERT);
@@ -190,8 +189,9 @@ public class ConversacionFragment extends Fragment
                     chatsList.addAll(currentChatList);
                     adaptador.notifyDataSetChanged();
                     mSwipeRefreshLayout.setRefreshing(false);
-                } else
+                } else {
                     AppUtil.mostrarAvisoInformativo(getActivity(), getActivity().getString(R.string.message_chat_no_found));
+                }
 
             }
         });
@@ -204,7 +204,6 @@ public class ConversacionFragment extends Fragment
 
 
     private List<ParseObject> loadChatsFromServer() {
-
         List<ParseObject> ChatList = new ArrayList<>();
 
         try {
@@ -227,14 +226,11 @@ public class ConversacionFragment extends Fragment
                 ParseObject.pinAllInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED, ChatList);
             }
 
-
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         return ChatList;
-
-
     }
 
     public static ConversacionFragment nuevaInstancia() {
@@ -451,7 +447,6 @@ public class ConversacionFragment extends Fragment
             chatsList.clear();
             chatsList.addAll(results);
             adaptador.notifyDataSetChanged();
-
             if (results.size() > 0)
                 Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.message_list_updated), Toast.LENGTH_SHORT).show();
 

@@ -31,15 +31,14 @@ import com.italkyou.beans.BeanUsuario;
 import com.italkyou.beans.entradas.EntradaCambiarClave;
 import com.italkyou.beans.entradas.EntradaPerfilUsuario;
 import com.italkyou.beans.salidas.SalidaResultado;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.LogicaPais;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.dao.TablasBD;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.R;
-import com.italkyou.gui.chat.ChatMensajeActivity;
 import com.italkyou.gui.personalizado.AdaptadorLista;
 import com.italkyou.gui.personalizado.DialogoCambiarClave;
 import com.italkyou.gui.personalizado.DialogoCambiarClave.onCambiarClave;
@@ -360,10 +359,10 @@ public class PerfilUsuarioActivity extends BaseActivity implements OnClickListen
     }
 
     private void actualizarPerfil() {
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                 if (respuesta.getError().equals(Const.cad_vacia)) {
                     SalidaResultado resultado = (SalidaResultado) respuesta.getObjeto();
@@ -493,10 +492,10 @@ public class PerfilUsuarioActivity extends BaseActivity implements OnClickListen
             pd = ProgressDialog.show(this, Const.TITULO_APP,
                     getString(R.string.msjcp_enviando_cambio_clave), true, true);
             pd.setCanceledOnTouchOutside(false);
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
                     pd.dismiss();
                     if (respuesta.getError().equals(Const.cad_vacia)) {
                         SalidaResultado salida = (SalidaResultado) respuesta.getObjeto();

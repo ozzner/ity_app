@@ -1,14 +1,12 @@
 package com.italkyou.dao;
 
-import android.os.Environment;
-
 public class TablasBD {
 
     //Base de Datos
-    //public static String BD_NOMBRE_ITY  = "ity_database.db";    /*ruta interna */
+    public static String BD_NOMBRE_ITY  = "ity_database.db";    /*ruta interna */
 
-    public static int BD_VERSION_ITY = 3;
-        public static String BD_NOMBRE_ITY = Environment.getExternalStorageDirectory().getPath() + "/ity_database_v" + BD_VERSION_ITY + ".db";
+    public static int BD_VERSION_ITY = 1;
+//        public static String BD_NOMBRE_ITY = Environment.getExternalStorageDirectory().getPath() + "/ity_database_v" + BD_VERSION_ITY + ".db";
 
     //campos de la base de datos
     public static String COLUMNA_CLAVE = "CLAVE";

@@ -30,8 +30,8 @@ import com.italkyou.beans.BeanPais;
 import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.entradas.EntradaRegistarUsuario;
 import com.italkyou.beans.salidas.SalidaPin;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.LogicaPais;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.gui.BaseInicioActivity;
@@ -243,9 +243,9 @@ public class RegistroActivity extends BaseInicioActivity implements OnClickListe
         pdDialogoEspera.setCanceledOnTouchOutside(false);
         pdDialogoEspera.setCancelable(false);
 
-        new ExcecuteRequest(new ResultadoOperacionListener() {
+        new ExecuteRequest(new ResultadoOperacionListener() {
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
                 pdDialogoEspera.dismiss();
                 Toast.makeText(getApplicationContext(), R.string.message_send_success, Toast.LENGTH_LONG).show();
             }
@@ -350,9 +350,9 @@ public class RegistroActivity extends BaseInicioActivity implements OnClickListe
             pdDialogoEspera.setCanceledOnTouchOutside(false);
             pdDialogoEspera.setCancelable(false);
 
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     //Si no hay error
                     if (respuesta.getError().equals(Const.CARACTER_VACIO)) {

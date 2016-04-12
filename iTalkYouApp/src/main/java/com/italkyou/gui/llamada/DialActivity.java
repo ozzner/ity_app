@@ -17,13 +17,12 @@ import android.widget.Toast;
 import com.italkyou.beans.AppiTalkYou;
 import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.salidas.SalidaHistorialLlamadas;
-import com.italkyou.conexion.ExcecuteRequest;
+import com.italkyou.conexion.ExecuteRequest;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.R;
 import com.italkyou.gui.personalizado.CustomAlertDialog;
-import com.italkyou.sip.SIPManager;
 import com.italkyou.utils.AppUtil;
 import com.italkyou.utils.Const;
 import com.italkyou.utils.MenuColorizer;
@@ -65,7 +64,6 @@ public class DialActivity extends BaseActivity implements View.OnClickListener, 
     private ActionBar actionbar;
     private AppiTalkYou app;
     private Context _context;
-
 
 
     @Override
@@ -299,11 +297,11 @@ public class DialActivity extends BaseActivity implements View.OnClickListener, 
         AppiTalkYou app = (AppiTalkYou) getApplicationContext().getApplicationContext();
 
         if (AppUtil.existeConexionInternet(getApplicationContext())) {
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ExcecuteRequest.ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
 
                 @SuppressWarnings("unchecked")
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     List<Object> lista = new ArrayList<>();
                     if (respuesta.getError().equals(Const.cad_vacia)) {
@@ -326,11 +324,11 @@ public class DialActivity extends BaseActivity implements View.OnClickListener, 
 
         AppiTalkYou app = (AppiTalkYou) getApplicationContext();
         if (AppUtil.existeConexionInternet(getApplicationContext())) {
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ExcecuteRequest.ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
 
                 @SuppressWarnings("unchecked")
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     List<Object> listaVoz = new ArrayList<>();
 
@@ -360,17 +358,15 @@ public class DialActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void realizarLlamada() {
-
         numero = tvNumero.getText().toString().trim();
         numero = numero.replace(" ", "");
         numero = numero.replace("+", "");
 
-        if (numero.length() == 6) {
-            LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(numero).asStringUriOnly(), this, Const.tipo_llamada_anexoVOIP, numero, null, "0", Const.cad_vacia);
-
-        } else if (numero.length() > 6) {
-            LogicaPantalla.personalizarIntentRealizarLlamada(SIPManager.newInstance().buildAddress(numero).asStringUriOnly(), this, Const.tipo_llamada_internacional, numero, null, "0", Const.cad_vacia);
-
+        if (numero.length() == 6 || numero.length() > 6) {
+            LogicaPantalla.makeAudioCallIntent(
+                    this,
+                    numero,
+                    Const.cad_vacia);
         } else {
             Toast.makeText(getApplicationContext(), R.string.incorrect_number, Toast.LENGTH_SHORT).show();
         }
@@ -383,7 +379,6 @@ public class DialActivity extends BaseActivity implements View.OnClickListener, 
         numero = Const.cad_vacia;
         return true;
     }
-
 
 
     @Override

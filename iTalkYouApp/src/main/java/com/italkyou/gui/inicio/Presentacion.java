@@ -14,8 +14,8 @@ import com.italkyou.beans.BeanPais;
 import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.BeanSaldo;
 import com.italkyou.beans.BeanUsuario;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.AsyncGuardarDAOTask;
 import com.italkyou.controladores.LogicChat;
 import com.italkyou.controladores.LogicaPais;
@@ -23,7 +23,6 @@ import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.gui.R;
 import com.italkyou.gui.Testing.ReportActivity;
-import com.italkyou.gui.chat.ChatMensajeActivity;
 import com.italkyou.utils.AppUtil;
 import com.italkyou.utils.ChatITY;
 import com.italkyou.utils.Const;
@@ -84,7 +83,7 @@ public class Presentacion extends Activity {
 //
 //        try {
 //
-//            intent = new IntentFilter(SIPConfig.FILTRO_LLAMADAS_SIP);
+//            intent = new IntentFilter(SipConfig.FILTRO_LLAMADAS_SIP);
 //            receptorLlamadas = new CallStatusReceiver();
 //            this.registerReceiver(receptorLlamadas, intent);//tem`poralmente borrado para probar notificaciones parse
 //        } catch (Exception e) {
@@ -149,10 +148,10 @@ public class Presentacion extends Activity {
 
     private void obtenerSaldo(String anexo) {
 
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                 AppiTalkYou app = (AppiTalkYou) getApplication();
 
@@ -163,11 +162,11 @@ public class Presentacion extends Activity {
                     if (saldo.getResultado().equals(Const.RESULTADO_OK)) {
                         app.setSaldo(saldo.getBalance());
                     } else {
-                        //app.setSaldo(SIPConfig.SALDO_DEFECTO);
+                        //app.setSaldo(SipConfig.SALDO_DEFECTO);
                     }
 
                 } else {
-                    //app.setSaldo(SIPConfig.SALDO_DEFECTO);
+                    //app.setSaldo(SipConfig.SALDO_DEFECTO);
                 }
 //                pdEspera.dismiss();
                 LogicaPantalla.personalizarIntentVistaPrincipal(Presentacion.this, Const.PANTALLA_PRINCIPAL, Presentacion.class.getSimpleName());
@@ -189,10 +188,10 @@ public class Presentacion extends Activity {
         });
 
 
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                    runOnUiThread(new Runnable() {
                     @Override

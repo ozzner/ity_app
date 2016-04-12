@@ -23,8 +23,8 @@ import com.italkyou.beans.BeanBase;
 import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.BeanUsuario;
 import com.italkyou.beans.entradas.EntradaInisionSesion;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.AsyncGuardarDAOTask;
 import com.italkyou.controladores.LogicChat;
 import com.italkyou.controladores.LogicaPantalla;
@@ -196,10 +196,10 @@ public class InicioSesion extends BaseInicioActivity implements OnClickListener 
         //se valida si hay conexion a internet
         if (AppUtil.existeConexionInternet(InicioSesion.this)) {
 
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     if (respuesta.getError().equals(Const.CARACTER_VACIO)) {
                         BeanUsuario usuario = (BeanUsuario) respuesta.getObjeto();
@@ -271,10 +271,10 @@ public class InicioSesion extends BaseInicioActivity implements OnClickListener 
         pdDialogoEspera = ProgressDialog.show(this, Const.TITULO_APP, getString(R.string.msjis_enviando_mail), true, true);
         pdDialogoEspera.setCanceledOnTouchOutside(false);
 
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                 if (respuesta.getError().equals(Const.cad_vacia)) {
 
@@ -318,7 +318,7 @@ public class InicioSesion extends BaseInicioActivity implements OnClickListener 
         dialogo.show(fm, Const.CARACTER_VACIO);
     }
 
-    private void registrarUsuarioChat(final BeanUsuario user) {
+    private void registerUser(final BeanUsuario user) {
 
         //Make user again
         final ParseObject usuario = new ParseObject(ChatITY.TABLE_USER);
@@ -386,12 +386,12 @@ public class InicioSesion extends BaseInicioActivity implements OnClickListener 
 
                 if (e == null) {
                     app.setUsuarioChat(user);
-                    obtenerListaChat();
+//                    getChats();
                     pdDialogoEspera.dismiss();
                     LogicaPantalla.personalizarIntentVistaPrincipal(InicioSesion.this, Const.PANTALLA_PRINCIPAL, InicioSesion.class.getSimpleName());
                 } else {
                     //User no exist
-                    registrarUsuarioChat(app.getUsuario());
+                    registerUser(app.getUsuario());
                 }
             }
         });

@@ -31,7 +31,6 @@ import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.PrincipalFragment;
 import com.italkyou.gui.R;
-import com.italkyou.gui.VistaPrincipalActivity;
 import com.italkyou.gui.personalizado.AdaptadorLista;
 import com.italkyou.gui.personalizado.AdaptadorListaCheckBox;
 import com.italkyou.utils.AppUtil;
@@ -100,7 +99,7 @@ public class ListaContactoAnexoFragment extends Fragment
             seleccionados = (SalidaDatosChatGrupal) getArguments().getSerializable(Const.DATOS_GRUPO_CHAT);
         }
 
-        VistaPrincipalActivity.setPantalla(Const.PANTALLA_LISTA_CONTACTO_ANEXO);
+//        VistaPrincipalActivity.setPantalla(Const.PANTALLA_LISTA_CONTACTO_ANEXO);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh_layout);
         mSwipeRefreshLayout.setOnRefreshListener(this);

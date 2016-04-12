@@ -25,10 +25,11 @@ import com.italkyou.beans.AppiTalkYou;
 import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.entradas.EntradaBuscarContactos;
 import com.italkyou.beans.salidas.OutputContact;
-import com.italkyou.conexion.ExcecuteRequest;
-import com.italkyou.conexion.ExcecuteRequest.ResultadoOperacionListener;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.conexion.ExecuteRequest.ResultadoOperacionListener;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.gui.R;
+import com.italkyou.sip.SipManager;
 import com.italkyou.sip.SIPServiceCommunicator;
 import com.italkyou.utils.AppUtil;
 import com.italkyou.utils.Const;
@@ -44,15 +45,14 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
     private ImageView btnIgnorar;
     private ImageView ivSpeaker;
     private ImageButton btnFinalizar;
-    private TextView txt_Anexo_Entrante;
-    private TextView txt_Celular_Anexo_Entrante;
+    private TextView tvDisplayName;
+    private TextView tvUsername;
     private TextView tvCallStatus;
 
 
     private LinearLayout controls;
     private LinearLayout layEndCall;
-    private EntradaBuscarContactos entrada;
-    private String anexo_entrante = "";
+    private EntradaBuscarContactos input;
 
     private AppiTalkYou appiTalkYou;
     private MediaPlayer mPlayer;
@@ -76,6 +76,9 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
 
     private AudioManager audioManager;
     private SIPServiceCommunicator communicator = new CommunicatorIncomingCall();
+    private String displayName = "";
+    private String username = "";
+    private String message = "";
 
 
     public final class CommunicatorIncomingCall extends SIPServiceCommunicator {
@@ -140,10 +143,15 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         inicializarPantallaRecibirLlamadas();
-        buscarContactos();
+//        fetchContact();
         inicializarComponentes();
         setUpSensor();
+        getExtraSipData();
 
+    }
+
+    private void getExtraSipData() {
+        printSIPInfo();
     }
 
     @Override
@@ -151,6 +159,34 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
         super.onResume();
         mSensorManager.registerListener(this, mSensorProximity, SensorManager.SENSOR_DELAY_FASTEST);
         communicator.doBindService(this);
+    }
+
+    private void printSIPInfo() {
+        Bundle sipData = getIntent().getExtras();
+
+        if (sipData != null) {
+            displayName = sipData.getString(SipManager.SIP_DISPLAY_NAME);
+            username = sipData.getString(SipManager.SIP_NUMBER_TO_CALL);
+            message = sipData.getString(SipManager.SIP_REASON_MESSAGE);
+
+            if (displayName== null || displayName.isEmpty())
+                fetchContact();
+
+            tvDisplayName.setText(displayName);
+            tvCallStatus.setText(message);
+            tvUsername.setText(AppUtil.formatAnnex(username));
+
+
+            //Remove
+            removeExtras();
+        }
+    }
+
+    private void removeExtras() {
+        //Clear memory
+        getIntent().getExtras().remove(SipManager.SIP_DISPLAY_NAME);
+        getIntent().getExtras().remove(SipManager.SIP_NUMBER_TO_CALL);
+        getIntent().getExtras().remove(SipManager.SIP_REASON_MESSAGE);
     }
 
     @Override
@@ -170,9 +206,9 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
 
         audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
 
-        if (audioManager.isBluetoothScoAvailableOffCall()){
+        if (audioManager.isBluetoothScoAvailableOffCall()) {
 
-            if (on){
+            if (on) {
 
                 audioManager.setMode(0);
                 audioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
@@ -183,7 +219,7 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
                 Log.e(Const.DEBUG_CALLS, TAG + "BLUETOOTH : " + on);
 
 
-            }else{
+            } else {
 
                 audioManager.setBluetoothScoOn(false);
                 audioManager.stopBluetoothSco();
@@ -194,9 +230,9 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
         }
 
 
-        Log.e(Const.DEBUG_CALLS, TAG + "isBluetoothA2dpOn: " + audioManager.isBluetoothA2dpOn());
-        Log.e(Const.DEBUG_CALLS, TAG + "isBluetoothScoAvailableOffCall: " + audioManager.isBluetoothScoAvailableOffCall());
-        Log.e(Const.DEBUG_CALLS, TAG + "isBluetoothScoOn: " + audioManager.isBluetoothScoOn());
+//        Log.e(Const.DEBUG_CALLS, TAG + "isBluetoothA2dpOn: " + audioManager.isBluetoothA2dpOn());
+//        Log.e(Const.DEBUG_CALLS, TAG + "isBluetoothScoAvailableOffCall: " + audioManager.isBluetoothScoAvailableOffCall());
+//        Log.e(Const.DEBUG_CALLS, TAG + "isBluetoothScoOn: " + audioManager.isBluetoothScoOn());
 
 
     }
@@ -225,15 +261,6 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
                 WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        anexo_entrante = getIntent().getStringExtra("anexo_entrante");
-        entrada = new EntradaBuscarContactos();
-        entrada.setDato(anexo_entrante);
-
-        if (appiTalkYou.getUsuario() != null && appiTalkYou.getUsuario().getAnexo() != null)
-            entrada.setAnexo(appiTalkYou.getUsuario().getAnexo());
-
-        entrada.setTipo("2");
-
         vibrador = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
         mPlayer = MediaPlayer.create(IncomingCallActivity.this, R.raw.italkyou);
 
@@ -259,12 +286,14 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
     }
 
     private void stopRinging() {
+        communicator.getService().speakerInitCall();
 
         if (vibrador != null)
             vibrador.cancel();
 
         if (mPlayer != null)
             mPlayer.stop();
+
 
     }
 
@@ -273,7 +302,8 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
     }
 
     private void inicializarComponentes() {
-
+        tvDisplayName = (TextView) findViewById(R.id.NroAnexoEntrante);
+        tvUsername = (TextView) findViewById(R.id.CelularAnexoEntrante);
         btnAceptar = (ImageView) findViewById(R.id.btnAceptarLlamada);
         btnIgnorar = (ImageView) findViewById(R.id.btnIgnorarLlamada);
         btnFinalizar = (ImageButton) findViewById(R.id.btnFinalizarLlamada);
@@ -329,15 +359,15 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
 
     }
 
-   void speakerRinging(){
-       communicator.getService().speakerRinging();
-   }
+    void speakerRinging() {
+        communicator.getService().speakerRinging();
+    }
 
     private void acceptCall() {
+        stopRinging();
         communicator.getService().acceptCall();
         controls.setVisibility(View.GONE);
         layEndCall.setVisibility(View.VISIBLE);
-        stopRinging();
     }
 
     private void endCall() {
@@ -354,15 +384,18 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
         LogicaPantalla.personalizarIntentVistaPrincipal(IncomingCallActivity.this, Const.PANTALLA_CONTACTO, IncomingCallActivity.class.getSimpleName());
     }
 
-    private void buscarContactos() {
+    private void fetchContact() {
 
-        txt_Anexo_Entrante = (TextView) findViewById(R.id.NroAnexoEntrante);
-        txt_Celular_Anexo_Entrante = (TextView) findViewById(R.id.CelularAnexoEntrante);
+        //Data to send
+        input = new EntradaBuscarContactos();
+        input.setTipo(Const.TYPE_DATA_NAME);
+        input.setDato(username);
+        input.setAnexo(appiTalkYou.getUsuario().getAnexo());
 
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ResultadoOperacionListener() {
+        ExecuteRequest exe = new ExecuteRequest(new ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
 
                 if (respuesta.getError().equals(Const.CARACTER_VACIO)) {
@@ -370,20 +403,14 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
                     List<Object> listado = (List<Object>) respuesta.getObjeto();
                     if (listado.size() > 0) {
                         OutputContact contacto = (OutputContact) listado.get(0);
-                        txt_Anexo_Entrante.setText(contacto.getNombre() + "\n" + AppUtil.formatAnnex(contacto.getAnexo()));
-
-                        if (contacto.getCelular().length() == 6)
-                            txt_Celular_Anexo_Entrante.setText(AppUtil.formatAnnex(contacto.getCelular()));
-                        else
-                            txt_Celular_Anexo_Entrante.setText((contacto.getCelular()));
-
+                        tvDisplayName.setText(contacto.getNombre());
                     }
                 } else {
 
                 }
             }
         });
-        ejecutar.busquedaContactos(entrada);
+        exe.busquedaContactos(input);
     }
 
 

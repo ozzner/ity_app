@@ -2890,7 +2890,6 @@ containing a value of this type.
         public static final int btnEnviarCorreo=0x7f0e00ff;
         public static final int btnEnviarPin=0x7f0e01ad;
         public static final int btnEnviarSMS=0x7f0e0102;
-        public static final int btnFinalizar=0x7f0e014d;
         public static final int btnFinalizarLlamada=0x7f0e0174;
         public static final int btnHistorialLlamadas=0x7f0e007c;
         public static final int btnIgnorarLlamada=0x7f0e0171;
@@ -2900,11 +2899,13 @@ containing a value of this type.
         public static final int btnRedireccionar=0x7f0e0186;
         public static final int btnRegistrarse=0x7f0e0191;
         public static final int btnRegistro=0x7f0e012d;
-        public static final int btnSpeaker=0x7f0e014e;
+        public static final int btn_end_call=0x7f0e014d;
         public static final int btn_realizar_llamada=0x7f0e007d;
+        public static final int btn_speaker_turn=0x7f0e014e;
         public static final int butSendReport=0x7f0e0081;
         public static final int buttonPanel=0x7f0e0051;
         public static final int cabeceraDialogo=0x7f0e00a2;
+        public static final int call_status=0x7f0e014a;
         public static final int cancel_action=0x7f0e013c;
         public static final int cbxPaises=0x7f0e0187;
         public static final int cbxPaisesRedireccionar=0x7f0e017b;
@@ -2937,6 +2938,7 @@ containing a value of this type.
         public static final int dialog=0x7f0e0032;
         public static final int dialoglist=0x7f0e00fa;
         public static final int disableHome=0x7f0e000d;
+        public static final int displayName=0x7f0e0148;
         public static final int dpFechaSMS=0x7f0e0108;
         public static final int dropdown=0x7f0e0033;
         public static final int dtpFechaEnvio=0x7f0e0094;
@@ -2961,7 +2963,6 @@ containing a value of this type.
         public static final int etMontoSaldo=0x7f0e00d8;
         public static final int etNombreGrupo=0x7f0e00eb;
         public static final int etNombreUsuario=0x7f0e0154;
-        public static final int etNumeroMarcar=0x7f0e0149;
         public static final int etPinUsuario=0x7f0e0155;
         public static final int etRegClave=0x7f0e018c;
         public static final int etRegTelefono=0x7f0e018a;
@@ -3117,6 +3118,7 @@ containing a value of this type.
         public static final int num_8=0x7f0e0077;
         public static final int num_9=0x7f0e0078;
         public static final int num_ast=0x7f0e0079;
+        public static final int number_to_call=0x7f0e0149;
         public static final int pager=0x7f0e01ae;
         public static final int parallax=0x7f0e0018;
         public static final int parentPanel=0x7f0e0048;
@@ -3215,7 +3217,6 @@ containing a value of this type.
         public static final int tvFechaMovimiento=0x7f0e00c2;
         public static final int tvHoraEnvio=0x7f0e0096;
         public static final int tvIdiomaUsuario=0x7f0e0159;
-        public static final int tvLlamadaNombreContacto=0x7f0e0148;
         public static final int tvMensajeCerrarSesion=0x7f0e00d3;
         public static final int tvMontoMovimiento=0x7f0e00c3;
         public static final int tvNombre=0x7f0e00b2;
@@ -3249,7 +3250,6 @@ containing a value of this type.
         public static final int tvTextoAlerta=0x7f0e00fd;
         public static final int tvTextoCelda=0x7f0e00c6;
         public static final int tvTextoCompra=0x7f0e00d7;
-        public static final int tvTextoMarcando=0x7f0e014a;
         public static final int tvTextoPin=0x7f0e01a9;
         public static final int tvTextoSMS=0x7f0e008e;
         public static final int tvTimerPin=0x7f0e01ac;

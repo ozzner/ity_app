@@ -22,14 +22,13 @@ import com.italkyou.beans.BeanUsuario;
 import com.italkyou.beans.salidas.SalidaHistorialSaldo;
 import com.italkyou.beans.salidas.SalidaMovimiento;
 import com.italkyou.beans.salidas.SalidaResultado;
-import com.italkyou.conexion.ExcecuteRequest;
+import com.italkyou.conexion.ExecuteRequest;
 import com.italkyou.configuraciones.PayPal;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.dao.UsuarioDAO;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.R;
-import com.italkyou.gui.chat.ChatMensajeActivity;
 import com.italkyou.gui.personalizado.AdaptadorLista;
 import com.italkyou.gui.personalizado.DialogoComprarSaldo;
 import com.italkyou.gui.personalizado.DialogoComprarSaldo.onPayPalListener;
@@ -50,7 +49,7 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class SaldoActivity extends BaseActivity
         implements OnClickListener
-        , ExcecuteRequest.ResultadoOperacionListener
+        , ExecuteRequest.ResultadoOperacionListener
         , SwipeRefreshLayout.OnRefreshListener {
 
     private static final String TAG = SaldoActivity.class.getSimpleName();
@@ -183,10 +182,10 @@ public class SaldoActivity extends BaseActivity
         }
 
         final String finalAnnex = annex;
-        ExcecuteRequest ejecutar = new ExcecuteRequest(new ExcecuteRequest.ResultadoOperacionListener() {
+        ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
 
             @Override
-            public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                 if (respuesta.getError().equals(Const.cad_vacia)) {
                     final BeanSaldo saldo = (BeanSaldo) respuesta.getObjeto();
@@ -241,7 +240,7 @@ public class SaldoActivity extends BaseActivity
 
                 try {
 
-                    ExcecuteRequest op = new ExcecuteRequest(this);
+                    ExecuteRequest op = new ExecuteRequest(this);
                     BeanUsuario user = app.getUsuario();
 
                     String paymentId = confirm.getProofOfPayment().getPaymentId();
@@ -339,7 +338,7 @@ public class SaldoActivity extends BaseActivity
     }
 
     @Override
-    public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+    public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
         if (respuesta != null) {
             SalidaResultado result = (SalidaResultado) respuesta.getObjeto();
@@ -364,10 +363,10 @@ public class SaldoActivity extends BaseActivity
             mSwipeRefreshLayout.setRefreshing(true);
             final AppiTalkYou app = (AppiTalkYou) getApplication();
 
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ExcecuteRequest.ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
                 @SuppressWarnings({"unchecked"})
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     if (respuesta.getError().equals(Const.cad_vacia)) {
                         List<Object> listaMovimiento = (List<Object>) respuesta.getObjeto();
@@ -389,7 +388,7 @@ public class SaldoActivity extends BaseActivity
     }
 
 
-    private void printBalance() {
+    public void printBalance() {
 
         this.runOnUiThread(new Runnable() {
             @Override

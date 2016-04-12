@@ -27,7 +27,7 @@ public class SIPServiceCommunicator {
     private Context _context;
     private Class<? extends Activity> _activity;
 
-    public void startITYService(Context context, Class<? extends Activity> activity, String sipUriToCall, boolean flagRegister) {
+    public void startITYService(Context context, Class<? extends Activity> activity, String sipAddress, String displayName, boolean flagRegister) {
         this._activity = activity;
         this._context = context;
 
@@ -35,7 +35,8 @@ public class SIPServiceCommunicator {
         Intent intent = new Intent(context, ItalkYouService.class);
 
         if (flagRegister) {
-            intent.putExtra(ItalkYouService.EXTRA_SIP_ADDRESS, sipUriToCall);
+            intent.putExtra(SipManager.SIP_NUMBER_TO_CALL, sipAddress);
+            intent.putExtra(SipManager.SIP_DISPLAY_NAME, displayName);
             ItalkYouService.startService(context, intent);
         }
 
@@ -78,7 +79,7 @@ public class SIPServiceCommunicator {
     }
 
     public void registerSIP(BeanUsuario user, Context context) {
-        SIPManager.newInstance().connectSIP(user, context);
+        SipManager.newInstance().connectSIP(user, context);
     }
 
     /*

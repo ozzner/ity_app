@@ -28,7 +28,7 @@ public class PrincipalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vistaRaiz = inflater.inflate(R.layout.vista_principal, container, false);
         app = ((AppiTalkYou) getActivity().getApplication());
-        VistaPrincipalActivity.setPantalla(Const.PANTALLA_PRINCIPAL);
+//        VistaPrincipalActivity.setPantalla(Const.PANTALLA_PRINCIPAL);
         return vistaRaiz;
 
     }

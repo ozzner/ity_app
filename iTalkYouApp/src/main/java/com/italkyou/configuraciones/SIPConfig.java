@@ -3,7 +3,7 @@ package com.italkyou.configuraciones;
 /**
  * Created by Moises on 03/02/2015.
  */
-public class SIPConfig {
+public class SipConfig {
 
     /* Configuracion Desarrollo */
 //    public static final String SIP_DOMAIN = "sip.italkyou.com"; /* Servidor de Produccion */

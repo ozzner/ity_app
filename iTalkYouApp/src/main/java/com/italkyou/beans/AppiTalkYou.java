@@ -167,9 +167,9 @@ public class AppiTalkYou extends Application {
 //    private void cargarDatosServidor() {
 //
 //        setServidorPBX(new BeanConfiguracionPBX());
-//        getServidorPBX().setPuerto(SIPConfig.SIP_PORT);
-//        getServidorPBX().setProtocolo(SIPConfig.SIP_PROTOCOL);
-//        getServidorPBX().setIpSvrComunicacion(SIPConfig.SIP_DOMAIN);
+//        getServidorPBX().setPuerto(SipConfig.SIP_PORT);
+//        getServidorPBX().setProtocolo(SipConfig.SIP_PROTOCOL);
+//        getServidorPBX().setIpSvrComunicacion(SipConfig.SIP_DOMAIN);
 //
 //        if (controladorPBX == null)
 //            controladorPBX = new ControladorPBX(getApplicationContext(), getServidorPBX());

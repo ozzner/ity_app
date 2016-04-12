@@ -35,19 +35,25 @@ import java.nio.ByteBuffer;
 /**
  * Created by rsantillanc on 18/11/2015.
  */
-public class SIPManager implements LinphoneCoreListener {
+public class SipManager implements LinphoneCoreListener {
 
-    static SIPManager mSIPManager;
+    public static final String SIP_DISPLAY_NAME = "address.displayName";
+    public static final String SIP_NUMBER_TO_CALL = "address.userName";
+    public static final String SIP_REASON_MESSAGE = "reason.message";
+
+    static SipManager mSIPManager;
     LinphoneCore core;
     LinphoneProxyConfig proxyConfig;
     LinphoneCall call = null;
     SIPListener sipListener;
     private Context _context = null;
+    private BeanUsuario currentUser;
+    private LinphoneAddress linphoneAddress = null;
 
 
-    public static SIPManager newInstance() {
+    public static SipManager newInstance() {
         if (mSIPManager == null)
-            mSIPManager = new SIPManager();
+            mSIPManager = new SipManager();
 
         return mSIPManager;
     }
@@ -57,7 +63,7 @@ public class SIPManager implements LinphoneCoreListener {
 
         if (!((AppiTalkYou) c.getApplicationContext()).isSipEnabled()) {
             try {
-
+                this.currentUser = user;
                 this._context = c;
 
 //                final String linphoneInitialConfigFile = FileHelper.getLinphoneInitialConfigFile();
@@ -90,9 +96,10 @@ public class SIPManager implements LinphoneCoreListener {
 
 
                 //Core & address
-                core = LinphoneCoreFactory.instance().createLinphoneCore(SIPManager.this, c);
+                core = LinphoneCoreFactory.instance().createLinphoneCore(SipManager.this, c);
                 LinphoneAddress address = LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + user.getAnexo() + "@sip.italkyou.com");
                 address.setDisplayName(user.getNombres());
+
 
                 // Use TLS for registration with random port
                 final LinphoneCore.Transports transports = new LinphoneCore.Transports();
@@ -107,6 +114,8 @@ public class SIPManager implements LinphoneCoreListener {
                 proxyConfig.setProxy(address.getDomain());
                 proxyConfig.enableRegister(true);
                 proxyConfig.setRealm(address.getDomain());
+                proxyConfig.setContactParameters(user.getNombres());
+//                proxyConfig.setRoute(user.getNombres());
 
                 //Adding
                 core.addAuthInfo(LinphoneCoreFactory.instance().createAuthInfo(address.getUserName(), user.getPin_Sip(), null, null));
@@ -180,9 +189,13 @@ public class SIPManager implements LinphoneCoreListener {
     }
 
 
-    public void call(String uri) {
+    public void call(String numberToCall, String sipDisplayName) {
         try {
-            call = core.invite(uri);
+            LinphoneAddress linphoneAddress = buildAddress(numberToCall, sipDisplayName);
+            String uri =  linphoneAddress.asStringUriOnly();
+            String as =  linphoneAddress.asString();
+            LinphoneCall call = core.invite(as);
+            LinphoneAddress remoteAddress = call.getRemoteAddress();
         } catch (LinphoneCoreException e) {
             e.printStackTrace();
         }
@@ -219,21 +232,25 @@ public class SIPManager implements LinphoneCoreListener {
             core.enableSpeaker(true);
         }
     }
+
     public void speakerInitCall() {
         if (core.isSpeakerEnabled()) {
             core.enableSpeaker(false);
         }
     }
-    public LinphoneAddress buildAddress(String numberToCall) {
-        numberToCall = numberToCall.replace(Const.CADENA_PREFIJO,Const.CARACTER_VACIO);
-        numberToCall = numberToCall.replace(Const.ESPACIO_BLANCO,Const.CARACTER_VACIO);
+
+    public LinphoneAddress buildAddress(String numberToCall, String displayName) {
+        numberToCall = numberToCall.replace(Const.CADENA_PREFIJO, Const.CARACTER_VACIO);
+        numberToCall = numberToCall.replace(Const.ESPACIO_BLANCO, Const.CARACTER_VACIO);
 
         try {
-            if (numberToCall.length() > 6)
-                return LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + Const.CALL_PHONE_CODE + numberToCall + "@sip.italkyou.com");
-            else
-                return LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + Const.CALL_ANNEX_CODE + numberToCall + "@sip.italkyou.com");
+            if (numberToCall.length() > 6) linphoneAddress = LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + Const.CALL_PHONE_CODE + numberToCall + "@sip.italkyou.com");
+             else linphoneAddress = LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + Const.CALL_ANNEX_CODE + numberToCall + "@sip.italkyou.com");
+
+                linphoneAddress.setDisplayName(displayName);
+                return linphoneAddress;
         } catch (LinphoneCoreException e) {
+            e.getStackTrace();
             return null;
         }
     }
@@ -380,9 +397,11 @@ public class SIPManager implements LinphoneCoreListener {
         if (LinphoneCall.State.IncomingReceived.equals(state)) {
             Log.e(Const.DEBUG, "callState IncomingReceived -> " + state);
             Bundle bundle = new Bundle();
-            bundle.putString("address.displayName", linphoneCall.getRemoteAddress().getDisplayName());
-            bundle.putString("address.userName", linphoneCall.getRemoteAddress().getUserName());
-            bundle.putString("reason.message", s);
+            String displayName = linphoneCall.getRemoteAddress().getDisplayName();
+            String userName = linphoneCall.getRemoteAddress().getUserName();
+            bundle.putString(SIP_DISPLAY_NAME, displayName);
+            bundle.putString(SIP_NUMBER_TO_CALL,userName);
+            bundle.putString(SIP_REASON_MESSAGE, s);
 
             this._context.startActivity(new Intent(_context, IncomingCallActivity.class)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -427,5 +446,11 @@ public class SIPManager implements LinphoneCoreListener {
     }
 
 
+    public BeanUsuario getCurrentUser() {
+        return currentUser;
+    }
 
+    public void setCurrentUser(BeanUsuario currentUser) {
+        this.currentUser = currentUser;
+    }
 }

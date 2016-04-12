@@ -10,7 +10,11 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.italkyou.beans.AppiTalkYou;
+import com.italkyou.beans.BeanRespuestaOperacion;
+import com.italkyou.beans.BeanSaldo;
 import com.italkyou.beans.BeanUsuario;
+import com.italkyou.conexion.ExecuteRequest;
+import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.gui.chat.ChatMensajeActivity;
 import com.italkyou.sip.SIPServiceCommunicator;
 import com.italkyou.utils.ChatITY;
@@ -115,6 +119,7 @@ public class VistaPrincipalActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
         //Sip
         registerSIP();
         communicator.doBindService(this);
@@ -123,6 +128,40 @@ public class VistaPrincipalActivity extends BaseActivity {
         if (activity != null)
             if (activity.equals(ChatMensajeActivity.class.getSimpleName()))
                 cargarFragmentoPrincipal();
+
+        mostrarBarraAcciones(app.getUsuario().getAnexo());
+        reloadBalance();
+    }
+
+    private void reloadBalance() {
+
+        final String finalAnnex = app.getUsuario().getAnexo();
+        ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
+
+            @Override
+            public void onOperationDone(BeanRespuestaOperacion respuesta) {
+
+                if (respuesta.getError().equals(Const.cad_vacia)) {
+                    final BeanSaldo saldo = (BeanSaldo) respuesta.getObjeto();
+
+                    if (saldo.getResultado().equals(Const.RESULTADO_OK)) {
+                        Log.e(TAG,"balance, Result_OK true");
+
+                        app.setSaldo(saldo.getBalance());
+                        LogicaUsuario.actualizarSaldo(mActivity, finalAnnex, saldo.getBalance());
+
+                        //Show in actionbar
+                        printBalance();
+                    }else{
+                        Log.e(TAG,"Error balance, Result_OK false");
+                    }
+                }else
+                {
+                    Log.e(TAG,"Error balance");
+                }
+            }
+        });
+        ejecutar.obtenerSaldo(finalAnnex);
     }
 
 
@@ -158,10 +197,10 @@ public class VistaPrincipalActivity extends BaseActivity {
 
     }
 
+//
+//    public static void setPantalla(String nombre) {
+//    }
 
-    public static void setPantalla(String nombre) {
-//        pantalla = nombre;
-    }
 
 
     @Override

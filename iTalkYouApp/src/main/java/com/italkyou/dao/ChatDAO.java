@@ -169,4 +169,9 @@ public class ChatDAO extends BaseDAO {
         }
         return Arrays.asList(array);
     }
+
+    public void drop(boolean isAll) {
+        if (isAll)
+            db.delete(CHAT_USER_TABLE, null, null);
+    }
 }

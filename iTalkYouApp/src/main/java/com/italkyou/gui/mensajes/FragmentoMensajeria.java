@@ -32,7 +32,7 @@ import com.italkyou.beans.BeanRespuestaOperacion;
 import com.italkyou.beans.BeanUsuario;
 import com.italkyou.beans.entradas.EntradaEnviarSMS;
 import com.italkyou.beans.salidas.SalidaResultado;
-import com.italkyou.conexion.ExcecuteRequest;
+import com.italkyou.conexion.ExecuteRequest;
 import com.italkyou.gui.BaseActivity;
 import com.italkyou.gui.R;
 import com.italkyou.gui.contactos.ListaContactoFragment;
@@ -135,7 +135,6 @@ public class FragmentoMensajeria extends Fragment implements View.OnClickListene
                 cargarFragmentoContactos();
                 break;
         }
-//        if (v == btnEnviar)
 
 
     }
@@ -153,17 +152,6 @@ public class FragmentoMensajeria extends Fragment implements View.OnClickListene
         thFechaHora = (FragmentTabHost) view.findViewById(R.id.tabHost);
         thFechaHora.setup(getActivity(), getChildFragmentManager(), android.R.id.tabcontent);
         tvTitle = (TextView) view.findViewById(R.id.tv_sms_title);
-//        spLisPais = (Spinner)view.findViewById(R.id.spListaPaisSMS);
-//        ibAddNumber = (ImageButton)view.findViewById(R.id.ib_add_number);
-//        ibAddNumber.setOnClickListener(this);
-//        listaPaises = LogicaPais.obtenerListadoPaises(getCtx());
-
-//        AdaptadorLista adpList = new AdaptadorLista(getCtx(),R.layout.celda_pais,listaPaises,BeanPais.class.getSimpleName(),AppUtil.obtenerIdiomaLocal());
-//        adpList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spLisPais.setAdapter(adpList);
-//        spLisPais.setPrompt(getResources().getString(R.string.lbl_pais));
-//        spLisPais.setOnItemSelectedListener(FragmentoMensajeria.this);
-//        spLisPais.setSelection(2);
 
         tvTitle.setText(getString(R.string.title_sms));
         String tituloTabFecha = recursosApp.getString(R.string.lbl_fecha_sms);
@@ -301,10 +289,10 @@ public class FragmentoMensajeria extends Fragment implements View.OnClickListene
             pd.setCanceledOnTouchOutside(false);
             pd.setCancelable(false);
 
-            ExcecuteRequest ejecutar = new ExcecuteRequest(new ExcecuteRequest.ResultadoOperacionListener() {
+            ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
 
                 @Override
-                public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                     if (respuesta.getError().equals(Const.cad_vacia)) {
                         SalidaResultado resultado = (SalidaResultado) respuesta.getObjeto();
@@ -378,10 +366,10 @@ public class FragmentoMensajeria extends Fragment implements View.OnClickListene
                 pd.setCanceledOnTouchOutside(false);
                 pd.setCancelable(false);
 
-                ExcecuteRequest ejecutar = new ExcecuteRequest(new ExcecuteRequest.ResultadoOperacionListener() {
+                ExecuteRequest ejecutar = new ExecuteRequest(new ExecuteRequest.ResultadoOperacionListener() {
 
                     @Override
-                    public void onResultadoOperacion(BeanRespuestaOperacion respuesta) {
+                    public void onOperationDone(BeanRespuestaOperacion respuesta) {
 
                         if (respuesta.getError().equals(Const.cad_vacia)) {
 

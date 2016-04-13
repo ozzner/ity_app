@@ -483,8 +483,6 @@ public class ListContactDeviceFragment extends Fragment implements
 
         //Init values
         arrayPhones = new String[contactMenu.count()];
-        arrayAnnex = new String[contacto.getPhones().size()];
-
         //Set values
         arrayPhones = contactMenu.getNumbers();
 
@@ -544,22 +542,27 @@ public class ListContactDeviceFragment extends Fragment implements
 
             typeAction = IS_ANNEX;
             isAnnex = true;
+            arrayAnnex = new String[contacto.getPhones().size()];
 
+            int c = 0;
             for (int i = 0; i < contacto.getPhones().size(); i++) {
-                String anexo = ((BeanTelefono) contacto.getPhones().get(i)).getAnexo();
-                if (anexo != null)
-                    if (anexo.length() > 0)
-                        arrayAnnex[i] = anexo;
+                String annex = ((BeanTelefono) contacto.getPhones().get(i)).getAnexo();
+                if (annex != null)
+                    if (annex.length() > 0) {
+                        arrayAnnex[c] = annex;
+                        c++;
+                    }
+
+
             }
 
             //Llama directamente si solo hay 1 anexo asociado al contacto.
-            if (arrayAnnex.length == 1) {
+            if (c == 1) {
                 LogicaPantalla.makeAudioCallIntent(
                         getActivity(),
                         (arrayAnnex[0]),
                         contacto.getNombre());
             } else {
-
                 //Show Alert with RadioButtons Options.
                 showCustomDialog(Const.INDEX_DIALOG_RADIOBUTTON, arrayAnnex);
             }

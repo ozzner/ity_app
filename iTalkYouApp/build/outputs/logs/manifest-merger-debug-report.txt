@@ -1,10 +1,6 @@
 -- Merging decision tree log ---
 manifest
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:2:1-321:12
-	xmlns:tools
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:3:5-51
-	xmlns:android
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:2:11-69
 	package
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:4:5-31
 		INJECTED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml
@@ -13,10 +9,14 @@ ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:2:1-321:1
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:6:5-32
 		INJECTED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml
 		INJECTED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:5:5-28
 		INJECTED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml
 		INJECTED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:multidex:1.0.1] D:\cloning\ity_app\iTalkYouApp\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
@@ -284,20 +284,20 @@ ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:126:17-77
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:126:27-74
 activity#com.italkyou.gui.inicio.InicioSesion
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:129:9-133:57
-	android:windowSoftInputMode
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:133:13-54
 	android:screenOrientation
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:132:13-49
+	android:windowSoftInputMode
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:133:13-54
 	android:configChanges
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:131:13-59
 	android:name
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:130:13-48
 activity#com.italkyou.gui.inicio.RegistroActivity
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:134:9-138:57
-	android:windowSoftInputMode
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:138:13-54
 	android:screenOrientation
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:137:13-49
+	android:windowSoftInputMode
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:138:13-54
 	android:configChanges
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:136:13-59
 	android:name
@@ -312,10 +312,10 @@ ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:139:9-142
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:140:13-46
 activity#com.italkyou.gui.menu.PerfilUsuarioActivity
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:143:9-147:57
-	android:windowSoftInputMode
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:147:13-54
 	android:screenOrientation
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:146:13-49
+	android:windowSoftInputMode
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:147:13-54
 	android:configChanges
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:145:13-59
 	android:name
@@ -330,10 +330,10 @@ ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:148:9-151
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:149:13-55
 activity#com.italkyou.gui.contactos.ContactoItalkYouActivity
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:152:9-156:57
-	android:windowSoftInputMode
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:156:13-54
 	android:screenOrientation
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:155:13-49
+	android:windowSoftInputMode
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:156:13-54
 	android:configChanges
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:154:13-59
 	android:name
@@ -456,10 +456,10 @@ ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:208:9-216
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:209:13-49
 meta-data#android.support.PARENT_ACTIVITY
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:213:13-215:71
-	android:name
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:214:17-63
 	android:value
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:215:17-68
+	android:name
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:214:17-63
 activity#com.italkyou.gui.chat.ArchiveActivity
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:217:9-219:62
 	android:label
@@ -478,12 +478,12 @@ ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:230:9-57
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:230:18-54
 service#com.italkyou.services.ItalkYouService
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:231:9-235:43
+	android:enabled
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:233:13-35
 	android:exported
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:234:13-37
 	android:stopWithTask
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:235:13-41
-	android:enabled
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:233:13-35
 	android:name
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:232:13-65
 receiver#com.italkyou.receivers.CustomPushReceiver
@@ -577,7 +577,7 @@ ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:311:9-313
 meta-data#com.google.android.gms.version
 ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:316:9-318:69
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\cloning\ity_app\iTalkYouApp\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-	android:name
-		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:317:13-58
 	android:value
 		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:318:13-66
+	android:name
+		ADDED from D:\cloning\ity_app\iTalkYouApp\src\main\AndroidManifest.xml:317:13-58

@@ -3,7 +3,10 @@ package com.italkyou.controladores;
 import android.content.Context;
 
 import com.italkyou.dao.ChatDAO;
+import com.italkyou.gui.chat.ConversacionFragment;
+import com.italkyou.utils.ChatITY;
 import com.italkyou.utils.Const;
+import com.italkyou.utils.ItyPreferences;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -11,6 +14,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,7 +32,7 @@ public class LogicChat {
     public static final String COLUMN_UPDATED_AT = "updatedAt";
     public static final String COLUMN_CREATED_AT = "createdAt";
     public static final String TAG_CHAT_ARCHIVED = "chat_archived";
-    public static final String TAG_CHAT_NO_ARCHIVED = "chat_no_archived";
+    public static final String CHAT_ACTIVE = "chat_no_archived";
     public static final String COLUMN_LAST_DATE_MESSAGE = "lastDateMessage";
     public static final String COLUMN_MIEMBROS_ID = "MiembrosId";
     public static final String TAG_CHAT_USER = "ChatUser";
@@ -59,9 +63,9 @@ public class LogicChat {
     }
 
 
-
     /**
      * Obtiene el n�mero de registros
+     *
      * @param c Contexto de la aplicaci�n.
      * @return un entero que indica la cantidad de registros
      */
@@ -116,9 +120,9 @@ public class LogicChat {
     }
 
 
-
     /**
      * Este metodo lista los chat registrados.
+     *
      * @param c Contexto de la aplicacion
      * @return Lista de objectos Parse.
      */
@@ -130,12 +134,46 @@ public class LogicChat {
         new ChatDAO(c).drop(true);
     }
 
+    public static void updateChatUser(final Context c, String chatId, final String message, final boolean reload) {
+        ParseQuery<ParseObject> query = new ParseQuery(LogicChat.TAG_CHAT_USER);
+        query.whereEqualTo(LogicChat.CHATUSER_COLUMN_CHATID, ParseObject.createWithoutData(ChatITY.tabla_chats, chatId));
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> list, ParseException e) {
+                if (e == null) {
+                    ItyPreferences p = new ItyPreferences(c);
+                    for (final ParseObject chatUser : list) {
+                        if (p.getAnnex().equals(chatUser.getString(LogicChat.CHATUSER_COLUMN_ANNEX))) {
+                            chatUser.put(LogicChat.CHATUSER_COLUMN_LASTMESSAGE, message);
+                            chatUser.put(LogicChat.CHATUSER_COLUMN_LASTDATEMESSAGE, new Date());
+                            chatUser.saveInBackground(new SaveCallback() {
+                                @Override
+                                public void done(ParseException e) {
+                                    if (e == null) {
+                                        chatUser.pinInBackground(LogicChat.CHAT_ACTIVE, new SaveCallback() {
+                                            @Override
+                                            public void done(ParseException e) {
+                                                if (reload)
+                                                    ConversacionFragment.reloadListFromOut();
+                                            }
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+        });
+    }
+
 
     /**
      * Inteface para los callbacks de parse.
      */
     public interface OnParseListener {
         void onDone(ParseObject chatObject, List<ParseObject> parseObjects);
+
         void onError(ParseException ex);
     }
 

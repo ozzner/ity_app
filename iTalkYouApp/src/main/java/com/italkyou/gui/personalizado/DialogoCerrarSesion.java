@@ -210,7 +210,7 @@ public class DialogoCerrarSesion extends DialogFragment implements OnClickListen
 
     private void removeFromLocalStore() {
         ParseObject.unpinAllInBackground(LogicChat.TAG_CHAT_ARCHIVED);
-        ParseObject.unpinAllInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
+        ParseObject.unpinAllInBackground(LogicChat.CHAT_ACTIVE);
         ParseObject.unpinAllInBackground(Const.TAG_CHAT_MESSAGE_LOCAL_STORE);
     }
 

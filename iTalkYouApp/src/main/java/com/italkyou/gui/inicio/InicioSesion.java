@@ -363,7 +363,7 @@ public class InicioSesion extends BaseInicioActivity implements OnClickListener 
                         if (!chatList.isEmpty())
                             LogicChat.insertChats(_context, chatList);
 
-                        ParseObject.pinAllInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED, chatList);
+                        ParseObject.pinAllInBackground(LogicChat.CHAT_ACTIVE, chatList);
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }

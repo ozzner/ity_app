@@ -64,7 +64,7 @@ public class ConversacionFragment extends Fragment
     private static final int[] ICONS_CHAT = {R.drawable.ic_archive, R.drawable.ic_delete_white};
     private List<Object> listMenuActions;
     private BeanUsuario usuario;
-    private static AppiTalkYou app;
+    private AppiTalkYou app;
     private CustomAlertDialog customDialog;
     private ParseObject chatItem;
     private int currentPosition;
@@ -158,6 +158,12 @@ public class ConversacionFragment extends Fragment
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        getChats();
+    }
+
     public void getChats() {
 
         if (AppUtil.existeConexionInternet(getActivity())) {
@@ -177,7 +183,7 @@ public class ConversacionFragment extends Fragment
     private void loadChatsFromLocalStore() {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery(LogicChat.TAG_CHAT_USER);
-        query.fromPin(LogicChat.TAG_CHAT_NO_ARCHIVED);
+        query.fromPin(LogicChat.CHAT_ACTIVE);
         query.orderByDescending(LogicChat.CHATUSER_COLUMN_UPDATEDAT);
         query.findInBackground(new FindCallback<ParseObject>() {
 
@@ -219,11 +225,11 @@ public class ConversacionFragment extends Fragment
 
             //Save in the LocalStore all objects, Excellent!!!!.
             try {
-                ParseObject.unpinAll(LogicChat.TAG_CHAT_NO_ARCHIVED);
-                ParseObject.pinAllInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED, ChatList);
+                ParseObject.unpinAll(LogicChat.CHAT_ACTIVE);
+                ParseObject.pinAllInBackground(LogicChat.CHAT_ACTIVE, ChatList);
             } catch (ParseException e1) {
                 e1.printStackTrace();
-                ParseObject.pinAllInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED, ChatList);
+                ParseObject.pinAllInBackground(LogicChat.CHAT_ACTIVE, ChatList);
             }
 
         } catch (ParseException e) {
@@ -263,7 +269,6 @@ public class ConversacionFragment extends Fragment
     }
 
 
-
     /*Borrar este metodod despues de realizar pruebas*/
     private void updateAlFlags() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Chats");
@@ -296,7 +301,7 @@ public class ConversacionFragment extends Fragment
      */
     public static void reloadListFromOut() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery(LogicChat.TAG_CHAT_USER);
-        query.fromPin(LogicChat.TAG_CHAT_NO_ARCHIVED);
+        query.fromPin(LogicChat.CHAT_ACTIVE);
         query.orderByDescending(LogicChat.CHATUSER_COLUMN_UPDATEDAT);
         query.findInBackground(new FindCallback<ParseObject>() {
 
@@ -370,7 +375,7 @@ public class ConversacionFragment extends Fragment
                     reloadList();
                     chatObject.put(LogicChat.CHATUSER_COLUMN_STATUS, Const.CHATUSER_STATUS_ARCHIVED);
                     chatObject.saveInBackground();
-                    chatObject.unpinInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
+                    chatObject.unpinInBackground(LogicChat.CHAT_ACTIVE);
                 }
 
                 @Override
@@ -389,7 +394,7 @@ public class ConversacionFragment extends Fragment
                     reloadList();
                     chatItem.put(LogicChat.CHATUSER_COLUMN_STATUS, Const.CHATUSER_STATUS_DELETED);
                     chatItem.unpinInBackground(LogicChat.TAG_CHAT_ARCHIVED);
-                    chatItem.unpinInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
+                    chatItem.unpinInBackground(LogicChat.CHAT_ACTIVE);
                 }
 
                 @Override
@@ -416,11 +421,9 @@ public class ConversacionFragment extends Fragment
         fetchChats();
     }
 
-    private void fetchChats() {
+    public void fetchChats() {
         AsyncFetchChats async = new AsyncFetchChats();
         async.execute();
-
-
     }
 
 

@@ -161,8 +161,10 @@ public class LogicaPantalla {
         activity.startActivity(intent);
 
         if (simpleName.equals(Presentacion.class.getSimpleName())
-                || simpleName.endsWith(IncomingCallActivity.class.getSimpleName())
+                || simpleName.equals(IncomingCallActivity.class.getSimpleName())
+                || simpleName.equals(ChatMensajeActivity.class.getSimpleName())
                 || simpleName.equals(InicioSesion.class.getSimpleName()))
+
             activity.finish();
     }
 

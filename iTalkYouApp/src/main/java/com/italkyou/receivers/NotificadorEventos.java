@@ -13,6 +13,7 @@ import android.os.Vibrator;
 import android.util.Log;
 
 import com.italkyou.beans.BeanUsuario;
+import com.italkyou.controladores.LogicChat;
 import com.italkyou.controladores.LogicaUsuario;
 import com.italkyou.gui.R;
 import com.italkyou.gui.chat.ChatMensajeActivity;
@@ -42,18 +43,19 @@ public class NotificadorEventos extends BroadcastReceiver {
                 Log.e(Const.DEBUG_PUSH, TAG + json);
 
 
-                String identificador = json.getString("chatId");
-                if (ChatMensajeActivity.isActivo && ChatMensajeActivity.currentChatId.equals(identificador)) {
-                    ChatMensajeActivity.actualizarListaMensajes(identificador);
+                String chatId = json.getString("chatId");
+                if (ChatMensajeActivity.isActivo && ChatMensajeActivity.currentChatId.equals(chatId)) {
+                    ChatMensajeActivity.actualizarListaMensajes(chatId, true);
+                    LogicChat.updateChatUser(context, chatId, json.getString("mensaje"), false);
                 } else {
-
-                    ChatMensajeActivity.saveOnLocalStore(identificador);
+                    LogicChat.updateChatUser(context, chatId, json.getString("mensaje"), true);
+                    ChatMensajeActivity.saveOnLocalStore(chatId);
                     String type = json.getString("type");
 
                     //Notificacion chat
                     Intent notifyIntent = new Intent(context, ChatMensajeActivity.class);
                     notifyIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    notifyIntent.putExtra(Const.identificador_chat, identificador);
+                    notifyIntent.putExtra(Const.identificador_chat, chatId);
                     notifyIntent.putExtra(Const.TAG_TYPE_CHAT, type);
                     notifyIntent.putExtra(Const.TAG_IS_PUSH, true);
                     PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notifyIntent, PendingIntent.FLAG_CANCEL_CURRENT);

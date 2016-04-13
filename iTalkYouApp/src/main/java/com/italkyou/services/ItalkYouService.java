@@ -48,6 +48,10 @@ public class ItalkYouService extends Service implements SIPListener {
         mNotificationActivity = activity;
     }
 
+    public void setVolume(int i) {
+        SipManager.newInstance().volume(i);
+    }
+
 //    public void buildNotification(Class<? extends Activity> _activity, int resourceIdByState) {
 //        mNotificationActivity = _activity;
 //        final NotificationManager cm = ((NotificationManager) getSystemService(NOTIFICATION_SERVICE));

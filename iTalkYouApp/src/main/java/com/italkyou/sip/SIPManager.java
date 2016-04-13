@@ -201,6 +201,9 @@ public class SipManager implements LinphoneCoreListener {
         }
     }
 
+    public void volume(int vol){
+        core.adjustSoftwareVolume(vol);
+    }
 
     private LinphoneCall getCurrentCall() {
         return core.getCalls()[0];

@@ -4,12 +4,12 @@
         "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\row_contact_device.xml",
-        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\row_contact_device.xml"
-    },
-    {
         "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
         "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\row_contact_device.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\layout\\row_contact_device.xml"
     },
     {
         "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\layout\\enviar_sms.xml",

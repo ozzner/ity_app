@@ -50,6 +50,7 @@ public class AppiTalkYou extends Application {
     private String anyAnnex;
     private boolean isSipEnabled = false;
     private BeanContact currentContact;
+    public boolean needRefresh = false;
 
 
     /**

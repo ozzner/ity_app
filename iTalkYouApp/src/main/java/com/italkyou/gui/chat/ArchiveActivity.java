@@ -201,7 +201,7 @@ public class ArchiveActivity extends BaseActivity implements
                     parseObject.put(LogicChat.CHATUSER_COLUMN_STATUS, Const.CHATUSER_STATUS_ACTIVE);
                     parseObject.saveInBackground();
                     //local
-                    parseObject.pinInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
+                    parseObject.pinInBackground(LogicChat.CHAT_ACTIVE);
                     parseObject.unpinInBackground(LogicChat.TAG_CHAT_ARCHIVED);
 
                 }
@@ -216,7 +216,7 @@ public class ArchiveActivity extends BaseActivity implements
         chatObject.saveInBackground();
         //local
         chatObject.unpinInBackground(LogicChat.TAG_CHAT_ARCHIVED);
-        chatObject.unpinInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
+        chatObject.unpinInBackground(LogicChat.CHAT_ACTIVE);
     }
 
     private void reloadList() {

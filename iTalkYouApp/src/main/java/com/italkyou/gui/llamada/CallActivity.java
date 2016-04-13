@@ -277,6 +277,7 @@ public class CallActivity extends Activity implements
             if (mWakeLock.isHeld()) {
                 mWakeLock.release();
 //                Log.e(Const.DEBUG_CALLS, TAG + "turnOffScreen release: " + true);
+                communicator.getService().setVolume(audioManager.getStreamVolume(AudioManager.USE_DEFAULT_STREAM_TYPE));
             }
         }
 

@@ -286,8 +286,8 @@ public class Presentacion extends Activity {
 
                         if (e == null) {
                             app.setIsChatEnable(true);
-                            ParseObject.unpinAllInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
-                            ParseObject.pinAllInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED, chatList);
+                            ParseObject.unpinAllInBackground(LogicChat.CHAT_ACTIVE);
+                            ParseObject.pinAllInBackground(LogicChat.CHAT_ACTIVE, chatList);
                             LogicChat.insertChats(getApplicationContext(), chatList);
                         }
                     }

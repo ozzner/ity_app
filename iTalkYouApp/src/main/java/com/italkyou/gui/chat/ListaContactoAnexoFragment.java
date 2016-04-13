@@ -471,7 +471,7 @@ public class ListaContactoAnexoFragment extends Fragment
                                                 public void done(ParseException e) {
                                                     if (e == null)
                                                         //Save local
-                                                        chat_user1.pinInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
+                                                        chat_user1.pinInBackground(LogicChat.CHAT_ACTIVE);
 
                                                 }
                                             });

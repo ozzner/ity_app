@@ -320,11 +320,11 @@
         "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_dial_circle_2.xml",
-        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_dial_circle_2.xml"
-    },
-    {
         "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_speaker_call_unactive.xml",
         "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_speaker_call_unactive.xml"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable\\button_dial_circle_2.xml",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable\\button_dial_circle_2.xml"
     }
 ]

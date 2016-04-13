@@ -398,7 +398,7 @@ public class ChatMensajeActivity extends ActionBarActivity implements
         listaMensajes.clear();
 
         List<ParseObject> lstMensajes;
-        if (isPush || isFromPush) {
+        if (isPush) {
             lstMensajes = getFromServer(chatID);
         } else {
             lstMensajes = getFromLocalStore(chatID);
@@ -675,7 +675,7 @@ public class ChatMensajeActivity extends ActionBarActivity implements
                                         if (e == null
                                                 && chatUser.getString(LogicChat.CHATUSER_COLUMN_ANNEX)
                                                 .equals(app.getUsuario().getAnexo())) {
-                                            chatUser.pinInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
+                                            chatUser.pinInBackground(LogicChat.CHAT_ACTIVE);
                                         }
                                     }
                                 });
@@ -810,7 +810,7 @@ public class ChatMensajeActivity extends ActionBarActivity implements
                                         if (e == null
                                                 && chatUser.getString(LogicChat.CHATUSER_COLUMN_ANNEX)
                                                 .equals(app.getUsuario().getAnexo())) {
-                                            chatUser.pinInBackground(LogicChat.TAG_CHAT_NO_ARCHIVED);
+                                            chatUser.pinInBackground(LogicChat.CHAT_ACTIVE);
                                         }
                                     }
                                 });
@@ -967,13 +967,14 @@ public class ChatMensajeActivity extends ActionBarActivity implements
 //            mActionBar.setSubtitle(Html.fromHtml("<small>" + membersSize +
 //            " miembros <small/>"));
 
-    public static void actualizarListaMensajes(final String chatID) {
+    public static void actualizarListaMensajes(final String chatID, final boolean isFromPush) {
 
         new Thread(new Runnable() {
 
             @Override
             public void run() {
-                obtenerListaMensajes(chatID, true);
+
+                obtenerListaMensajes(chatID, isFromPush);
             }
         }).start();
     }
@@ -1016,8 +1017,8 @@ public class ChatMensajeActivity extends ActionBarActivity implements
                     break;
                 }
             }
-        }catch (NullPointerException ex){
-            Toast.makeText(getApplicationContext(),R.string.error_unknow,Toast.LENGTH_LONG).show();
+        } catch (NullPointerException ex) {
+            Toast.makeText(getApplicationContext(), R.string.error_unknow, Toast.LENGTH_LONG).show();
         }
 
     }
@@ -1088,7 +1089,7 @@ public class ChatMensajeActivity extends ActionBarActivity implements
     }
 
     public void onBackPressed() {
-        LogicaPantalla.personalizarIntentVistaPrincipal(ChatMensajeActivity.this, Const.PANTALLA_PRINCIPAL,ChatMensajeActivity.class.getSimpleName());
+        LogicaPantalla.personalizarIntentVistaPrincipal(ChatMensajeActivity.this, Const.PANTALLA_PRINCIPAL, ChatMensajeActivity.class.getSimpleName());
     }
 
     private void getStatusChat() {

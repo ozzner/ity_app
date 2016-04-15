@@ -81,7 +81,7 @@ public class NotificadorEventos extends BroadcastReceiver {
 
                     Notification notification = builder.getNotification();
                     notification.flags = notification.flags | Notification.FLAG_SHOW_LIGHTS | Notification.FLAG_AUTO_CANCEL;
-                    notificationManager.notify(1, notification);
+                    notificationManager.notify(0x1, notification);
 
                     if (usuario.getNotificacion().equals(Const.VIBRATOR)) {
                         Vibrator vibrador = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);

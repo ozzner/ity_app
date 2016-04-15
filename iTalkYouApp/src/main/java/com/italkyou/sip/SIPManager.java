@@ -49,6 +49,8 @@ public class SipManager implements LinphoneCoreListener {
     private Context _context = null;
     private BeanUsuario currentUser;
     private LinphoneAddress linphoneAddress = null;
+//    Volume mVolume;
+//    private SoundEffectManager mSoundEffectManager;
 
 
     public static SipManager newInstance() {
@@ -191,17 +193,13 @@ public class SipManager implements LinphoneCoreListener {
 
     public void call(String numberToCall, String sipDisplayName) {
         try {
-            LinphoneAddress linphoneAddress = buildAddress(numberToCall, sipDisplayName);
-            String uri =  linphoneAddress.asStringUriOnly();
-            String as =  linphoneAddress.asString();
-            LinphoneCall call = core.invite(as);
-            LinphoneAddress remoteAddress = call.getRemoteAddress();
+            core.invite(buildAddress(numberToCall, sipDisplayName));
         } catch (LinphoneCoreException e) {
             e.printStackTrace();
         }
     }
 
-    public void volume(int vol){
+    public void volume(int vol) {
         core.adjustSoftwareVolume(vol);
     }
 
@@ -242,16 +240,36 @@ public class SipManager implements LinphoneCoreListener {
         }
     }
 
+//    public Volume getVolume() {
+//        return mVolume;
+//    }
+//
+//    public void setVolume(Volume mVolume) {
+//        if (core == null){
+//            return;
+//        }
+//
+//        this.mVolume = mVolume;
+//
+//        core.setPlaybackGain(mVolume.getPlayGain());
+//        core.setMicrophoneGain(mVolume.getMicrophoneGain());
+//        core.enableSpeaker(mVolume.getExternalSpeaker());
+//        core.muteMic(mVolume.getMicrophoneMuted());
+//
+//    }
+
     public LinphoneAddress buildAddress(String numberToCall, String displayName) {
         numberToCall = numberToCall.replace(Const.CADENA_PREFIJO, Const.CARACTER_VACIO);
         numberToCall = numberToCall.replace(Const.ESPACIO_BLANCO, Const.CARACTER_VACIO);
 
         try {
-            if (numberToCall.length() > 6) linphoneAddress = LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + Const.CALL_PHONE_CODE + numberToCall + "@sip.italkyou.com");
-             else linphoneAddress = LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + Const.CALL_ANNEX_CODE + numberToCall + "@sip.italkyou.com");
+            if (numberToCall.length() > 6)
+                linphoneAddress = LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + Const.CALL_PHONE_CODE + numberToCall + "@sip.italkyou.com");
+            else
+                linphoneAddress = LinphoneCoreFactory.instance().createLinphoneAddress("sip:" + Const.CALL_ANNEX_CODE + numberToCall + "@sip.italkyou.com");
 
-                linphoneAddress.setDisplayName(displayName);
-                return linphoneAddress;
+            linphoneAddress.setDisplayName(displayName);
+            return linphoneAddress;
         } catch (LinphoneCoreException e) {
             e.getStackTrace();
             return null;
@@ -403,7 +421,7 @@ public class SipManager implements LinphoneCoreListener {
             String displayName = linphoneCall.getRemoteAddress().getDisplayName();
             String userName = linphoneCall.getRemoteAddress().getUserName();
             bundle.putString(SIP_DISPLAY_NAME, displayName);
-            bundle.putString(SIP_NUMBER_TO_CALL,userName);
+            bundle.putString(SIP_NUMBER_TO_CALL, userName);
             bundle.putString(SIP_REASON_MESSAGE, s);
 
             this._context.startActivity(new Intent(_context, IncomingCallActivity.class)

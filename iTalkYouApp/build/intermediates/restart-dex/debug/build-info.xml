@@ -4,42 +4,41 @@
     api-level="21"
     density="xxhdpi"
     format="7"
-    timestamp="36391483105759"
-    verifier="METHOD_DELETED" >
+    timestamp="14171123565815"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="1913" />
+        duration="2547" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="565" />
     <task
         name="instant-run-transform"
-        duration="39" />
+        duration="35" />
     <task
         name="verifier"
-        duration="10" />
+        duration="4" />
 
     <artifact
-        location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
-        type="DEX" />
-    <artifact
-        location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
-        type="DEX" />
+        location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
-    <build timestamp="35658675632243" >
+    <build timestamp="13649920591618" >
         <artifact
             location="D:\cloning\ity_app\iTalkYouApp\build\outputs\apk\iTalkYouApp-iTalkYou-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="36391483105759"
-        verifier="METHOD_DELETED" >
+        timestamp="14058246705314"
+        verifier="FIELD_REMOVED" >
         <artifact
             location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
             type="DEX" />
+    </build>
+    <build timestamp="15833494557123" >
         <artifact
-            location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+            location="D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
             type="DEX" />
     </build>
 

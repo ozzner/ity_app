@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.italkyou.gui"
     android:versionCode="1"
-    android:versionName="2.7.4">
+    android:versionName="2.7.5">
 
     <uses-sdk
         android:minSdkVersion="11"

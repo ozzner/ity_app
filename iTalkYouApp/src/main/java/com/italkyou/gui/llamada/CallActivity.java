@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -57,6 +58,7 @@ public class CallActivity extends Activity implements
     private TextView tvDisplayName;
     private TextView tvNumberToCall;
     private TextView tvCallStatus;
+    private boolean isMakingCall = false;
 
 
     public final class CommunicatorCallActivity extends SIPServiceCommunicator {
@@ -86,8 +88,11 @@ public class CallActivity extends Activity implements
                 @Override
                 public void run() {
                     finish();
+                    isMakingCall = false;
                 }
             }, 3000);
+        }else {
+            isMakingCall = true;
         }
     }
 
@@ -98,6 +103,7 @@ public class CallActivity extends Activity implements
         initScreen();
         getExtraData();
         mPowerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
     }
 
@@ -122,7 +128,6 @@ public class CallActivity extends Activity implements
 
     @Override
     public void onBackPressed() {
-
         unregisterSensor();
         endCAll();
         Toast.makeText(getApplicationContext(), R.string.end_call, Toast.LENGTH_LONG).show();
@@ -181,11 +186,30 @@ public class CallActivity extends Activity implements
     @Override
     protected void onResume() {
         super.onResume();
-        communicator.startITYService(getApplicationContext(), CallActivity.class, numberToCall, displayName, numberToCall != null ? true : false);
-        mSensorManager.registerListener(this, mSensorProximity, SensorManager.SENSOR_DELAY_FASTEST);
 
-        //Clear data and free memory
-        removeExtras();
+        if (!isMakingCall) {
+            communicator.startITYService(getApplicationContext(), CallActivity.class, numberToCall, displayName, numberToCall != null ? true : false);
+            mSensorManager.registerListener(this, mSensorProximity, SensorManager.SENSOR_DELAY_FASTEST);
+
+            //Clear data and free memory
+            removeExtras();
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
+                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                return true;
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                        AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+                return true;
+            default:
+                return false;
+        }
     }
 
     private void removeExtras() {
@@ -209,6 +233,8 @@ public class CallActivity extends Activity implements
         communicator.getService().cancelCall();
         if (mWakeLock.isHeld())
             mWakeLock.release();
+
+        isMakingCall = false;
         finish();
     }
 
@@ -229,8 +255,6 @@ public class CallActivity extends Activity implements
     }
 
     private void turnBluetooth(boolean on) {
-
-        audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
 
         if (audioManager.isBluetoothScoAvailableOffCall()) {
 
@@ -277,7 +301,6 @@ public class CallActivity extends Activity implements
             if (mWakeLock.isHeld()) {
                 mWakeLock.release();
 //                Log.e(Const.DEBUG_CALLS, TAG + "turnOffScreen release: " + true);
-                communicator.getService().setVolume(audioManager.getStreamVolume(AudioManager.USE_DEFAULT_STREAM_TYPE));
             }
         }
 

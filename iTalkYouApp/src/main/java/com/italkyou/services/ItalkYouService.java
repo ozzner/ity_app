@@ -49,7 +49,7 @@ public class ItalkYouService extends Service implements SIPListener {
     }
 
     public void setVolume(int i) {
-        SipManager.newInstance().volume(i);
+//        SipManager.newInstance().setVolume(new Volume());
     }
 
 //    public void buildNotification(Class<? extends Activity> _activity, int resourceIdByState) {

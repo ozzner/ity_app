@@ -376,12 +376,12 @@
         "source": "D:\\cloning\\ity_app\\iTalkYouApp\\src\\main\\res\\drawable-mdpi\\mensaje_recibido.png"
     },
     {
-        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\vec_visibility_on.png",
-        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\vec_visibility_on.png"
-    },
-    {
         "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
         "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable-mdpi\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\vec_visibility_on.png",
+        "source": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\vec_visibility_on.png"
     },
     {
         "merged": "D:\\cloning\\ity_app\\iTalkYouApp\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",

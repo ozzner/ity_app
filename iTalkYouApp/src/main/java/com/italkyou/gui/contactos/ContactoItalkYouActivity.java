@@ -289,7 +289,7 @@ public class ContactoItalkYouActivity extends BaseActivity implements OnItemClic
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                LogicaPantalla.personalizarIntentVistaPrincipal(ContactoItalkYouActivity.this, Const.PANTALLA_CONTACTO, ChatMensajeActivity.class.getSimpleName());
+                LogicaPantalla.personalizarIntentVistaPrincipal(ContactoItalkYouActivity.this, Const.PANTALLA_CONTACTO, ChatMensajeActivity.class.getSimpleName(),false);
                 break;
 
             default:
@@ -348,6 +348,6 @@ public class ContactoItalkYouActivity extends BaseActivity implements OnItemClic
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        LogicaPantalla.personalizarIntentVistaPrincipal(ContactoItalkYouActivity.this, Const.PANTALLA_CONTACTO, ChatMensajeActivity.class.getSimpleName());
+        LogicaPantalla.personalizarIntentVistaPrincipal(ContactoItalkYouActivity.this, Const.PANTALLA_CONTACTO, ChatMensajeActivity.class.getSimpleName(),false);
     }
 }

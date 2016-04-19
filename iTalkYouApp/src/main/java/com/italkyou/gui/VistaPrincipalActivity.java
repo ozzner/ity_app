@@ -1,6 +1,7 @@
 package com.italkyou.gui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,7 @@ import com.italkyou.gui.chat.ChatMensajeActivity;
 import com.italkyou.sip.SIPServiceCommunicator;
 import com.italkyou.utils.ChatITY;
 import com.italkyou.utils.Const;
+import com.italkyou.utils.ItyPreferences;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -124,13 +126,26 @@ public class VistaPrincipalActivity extends BaseActivity {
         registerSIP();
         communicator.doBindService(this);
         String activity = getIntent().getExtras().getString(Const.FROM_ACTIVITY);
-
         if (activity != null)
-            if (activity.equals(ChatMensajeActivity.class.getSimpleName()))
+            if (activity.equals(ChatMensajeActivity.class.getSimpleName())) {
                 cargarFragmentoPrincipal();
+            }
 
         mostrarBarraAcciones(app.getUsuario().getAnexo());
         reloadBalance();
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+
+        ItyPreferences p = new ItyPreferences(getApplicationContext());
+
+        if (p.getBoolean(Const.TAG_FROM_MAKE_CHAT)){
+            cargarFragmentoPrincipal();
+        }
+
+        super.onNewIntent(intent);
     }
 
     private void reloadBalance() {
@@ -145,19 +160,18 @@ public class VistaPrincipalActivity extends BaseActivity {
                     final BeanSaldo saldo = (BeanSaldo) respuesta.getObjeto();
 
                     if (saldo.getResultado().equals(Const.RESULTADO_OK)) {
-                        Log.e(TAG,"balance, Result_OK true");
+                        Log.e(TAG, "balance, Result_OK true");
 
                         app.setSaldo(saldo.getBalance());
                         LogicaUsuario.actualizarSaldo(mActivity, finalAnnex, saldo.getBalance());
 
                         //Show in actionbar
                         printBalance();
-                    }else{
-                        Log.e(TAG,"Error balance, Result_OK false");
+                    } else {
+                        Log.e(TAG, "Error balance, Result_OK false");
                     }
-                }else
-                {
-                    Log.e(TAG,"Error balance");
+                } else {
+                    Log.e(TAG, "Error balance");
                 }
             }
         });
@@ -193,14 +207,13 @@ public class VistaPrincipalActivity extends BaseActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.contenedor_fragmentos, fragmento);
-        fragmentTransaction.commit();
+        fragmentTransaction.commitAllowingStateLoss();
 
     }
 
 //
 //    public static void setPantalla(String nombre) {
 //    }
-
 
 
     @Override

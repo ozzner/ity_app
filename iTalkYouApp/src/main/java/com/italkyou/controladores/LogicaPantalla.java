@@ -141,30 +141,34 @@ public class LogicaPantalla {
     }
 
     //click
-    public static void personalizarIntentListaMensajes(Activity activity, String idChat, boolean isArchived, String typeChat) {
+    public static void personalizarIntentListaMensajes(Activity activity, String idChat, boolean isArchived, String typeChat, boolean isFromMakeChat) {
         Intent pantalla = new Intent(activity, ChatMensajeActivity.class);
         pantalla.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         pantalla.putExtra(Const.identificador_chat, idChat);
         pantalla.putExtra(Const.TAG_IS_PUSH, false);
+        pantalla.putExtra(Const.TAG_FROM_MAKE_CHAT, isFromMakeChat);
         pantalla.putExtra(Const.TAG_FLAG_ARCHIVED, isArchived);
         pantalla.putExtra(Const.TAG_TYPE_CHAT, typeChat);
+        pantalla.putExtra(Const.TAG_TYPE_CHAT, typeChat);
         activity.startActivity(pantalla);
+
     }
 
     //back
-    public static void personalizarIntentVistaPrincipal(Activity activity, String pantalla, String simpleName) {
+    public static void personalizarIntentVistaPrincipal(Activity activity, String pantalla, String simpleName, boolean isFromMakeChat) {
         Intent intent = new Intent(activity, VistaPrincipalActivity.class);
         intent.putExtra(Const.DATOS_TIPO, pantalla);
         intent.putExtra(Const.FROM_ACTIVITY, simpleName);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        activity.startActivity(intent);
+        ItyPreferences p = new ItyPreferences(activity);
+        p.putBoolean(Const.TAG_FROM_MAKE_CHAT, isFromMakeChat);
 
+        activity.startActivity(intent);
         if (simpleName.equals(Presentacion.class.getSimpleName())
                 || simpleName.equals(IncomingCallActivity.class.getSimpleName())
                 || simpleName.equals(ChatMensajeActivity.class.getSimpleName())
                 || simpleName.equals(InicioSesion.class.getSimpleName()))
-
             activity.finish();
     }
 
@@ -190,7 +194,6 @@ public class LogicaPantalla {
         p.putString(id + "");
         c.startActivity(i);
     }
-
 
 
     public static void makeAudioCallIntent(Activity activity, String numberToCall, String displayName) {

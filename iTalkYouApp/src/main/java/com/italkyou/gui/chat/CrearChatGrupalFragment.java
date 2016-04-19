@@ -73,7 +73,7 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         datosGrupo = (SalidaDatosChatGrupal) getArguments().getSerializable(Const.DATOS_GRUPO_CHAT);
-        getArguments().putSerializable(Const.DATOS_GRUPO_CHAT, null);
+        getArguments().remove(Const.DATOS_GRUPO_CHAT);
     }
 
     @Override
@@ -122,7 +122,6 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
 
     private void inicializarComponentes() {
 
-        imgGrupo = null;
         etNombreGrupo = (EditText) getActivity().findViewById(R.id.etNombreGrupo);
         imagenGrupo = (ImageButton) getActivity().findViewById(R.id.btnImagenGrupo);
         imagenGrupo.setOnClickListener(this);
@@ -164,6 +163,7 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
 
         } else
             lstParticipantes = datosGrupo.getListaContactos();
+
         ListView lista = (ListView) getActivity().findViewById(R.id.listParticipantes);
 
         if (!datosGrupo.getIdChat().equals(Const.CARACTER_VACIO)) {
@@ -192,7 +192,6 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.contenedor_fragmentos, fragmento);
         fragmentTransaction.commit();
-
     }
 
     @SuppressLint("NewApi")
@@ -324,22 +323,17 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
         app = (AppiTalkYou) getActivity().getApplication();
         final ParseObject usuParse = app.getUsuarioChat();
 
-        if (datosGrupo.getIdChat().equals(Const.CARACTER_VACIO)) {
+//        if (datosGrupo.getIdChat().equals(Const.CARACTER_VACIO)) {
             String nombreParticipantes = "";
 
-            final String lst_id[] = new String[listado.size() + 1];
-            final ParseObject lst_miembros[] = new ParseObject[listado.size() + 1];
+            final String lst_id[] = new String[listado.size()];
 
-            lst_id[0] = usuParse.getString(ChatITY.USER_ANNEX);
-            lst_miembros[0] = usuParse;
+//            lst_id[0] = usuParse.getString(ChatITY.USER_ANNEX);
 
             /*Entiendo que este metodo permite sacar los nombres, usuarios y obtener los anexos :S */
-            for (int i = 1; i <= listado.size(); i++) {
-
-                ParseObject usuario = listado.get(i - 1);
-                lst_id[i] = usuario.getString(ChatITY.USER_ANNEX);
-                lst_miembros[i] = usuario;
-                nombreParticipantes += usuario.getString(ChatITY.USER_USER) + ", ";
+            for (int i = 0; i < listado.size(); i++) {
+                lst_id[i] = listado.get(i).getString(ChatITY.USER_ANNEX);;
+                nombreParticipantes += listado.get(i).getString(ChatITY.USER_USER) + ", ";
             }
 
 
@@ -350,13 +344,12 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
             final ParseObject chatObjects = new ParseObject(ChatITY.tabla_chats);
             chatObjects.put(ChatITY.identificador_admin, usuParse.getString(ChatITY.USER_ANNEX));
             chatObjects.put(ChatITY.identificador_miembros_id, Arrays.asList(lst_id));
-            chatObjects.put(ChatITY.identificador_miembros, Arrays.asList(lst_miembros));
+//            chatObjects.put(ChatITY.identificador_miembros, Arrays.asList(lst_miembros));
             chatObjects.put(ChatITY.identificador_miembros_nombre, nombreParticipantes);
             chatObjects.put(ChatITY.identificador_nombre_chat, nombre);
             chatObjects.put(ChatITY.identificador_tipo, ChatITY.tipo_grupal);
             chatObjects.put(ChatITY.identificador_ultimo_mensaje, Const.cad_vacia);
 //            chatObjects.put(LogicChat.COLUMN_FLAG_ARCHIVED, false);
-
 
             if (imgGrupo != null) {
                 chatObjects.put(ChatITY.USER_FLAG_IMAGE, true);
@@ -365,7 +358,6 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
                 byte[] data = stream.toByteArray();
                 imageGroupFile = new ParseFile(nombre + ".png", data);
                 chatObjects.put(ChatITY.identificador_imagen_chat, imageGroupFile);
-
             } else
                 chatObjects.put(ChatITY.USER_FLAG_IMAGE, false);
 
@@ -387,7 +379,7 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
                                     singleChat.put(LogicChat.CHATUSER_COLUMN_USERID, ParseObject.createWithoutData(ChatITY.TABLE_USER, app.getUsuarioChat().getObjectId()));
                                     singleChat.put(LogicChat.CHATUSER_COLUMN_ADMINISTRATOR, usuParse.getString(ChatITY.USER_ANNEX));
                                     singleChat.put(LogicChat.CHATUSER_COLUMN_MEMBERSID, Arrays.asList(lst_id));
-                                    singleChat.put(LogicChat.CHATUSER_COLUMN_MEMBERS, Arrays.asList(lst_miembros));
+//                                    singleChat.put(LogicChat.CHATUSER_COLUMN_MEMBERS, Arrays.asList(lst_miembros));
                                     singleChat.put(LogicChat.CHATUSER_COLUMN_NAME, nombre);
                                     singleChat.put(LogicChat.CHATUSER_COLUMN_TYPE, ChatITY.tipo_grupal);
                                     singleChat.put(LogicChat.CHATUSER_COLUMN_LASTMESSAGE, Const.cad_vacia);
@@ -420,7 +412,7 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
                                         singleChat.put(LogicChat.CHATUSER_COLUMN_USERID, ParseObject.createWithoutData(ChatITY.TABLE_USER, userMember.getObjectId()));
                                         singleChat.put(LogicChat.CHATUSER_COLUMN_ADMINISTRATOR, usuParse.getString(ChatITY.USER_ANNEX));
                                         singleChat.put(LogicChat.CHATUSER_COLUMN_MEMBERSID, Arrays.asList(lst_id));
-                                        singleChat.put(LogicChat.CHATUSER_COLUMN_MEMBERS, Arrays.asList(lst_miembros));
+//                                        singleChat.put(LogicChat.CHATUSER_COLUMN_MEMBERS, Arrays.asList(lst_miembros));
                                         singleChat.put(LogicChat.CHATUSER_COLUMN_NAME, nombre);
                                         singleChat.put(LogicChat.CHATUSER_COLUMN_TYPE, ChatITY.tipo_grupal);
                                         singleChat.put(LogicChat.CHATUSER_COLUMN_LASTMESSAGE, Const.cad_vacia);
@@ -446,7 +438,7 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
                                     }//End for
 
                                     //Opening chat group
-                                    LogicaPantalla.personalizarIntentListaMensajes(getActivity(), chatGroup.getObjectId(), false, ChatITY.tipo_grupal);
+                                    LogicaPantalla.personalizarIntentListaMensajes(getActivity(), chatGroup.getObjectId(), false, ChatITY.tipo_grupal, true);
 
                                 }
                             }
@@ -454,48 +446,48 @@ public class CrearChatGrupalFragment extends Fragment implements OnClickListener
                     }
                 }
             });
+//        }
 
-
-        } else {
-
-            //El chat grupal existe
-            Log.e("Intico", "modificar chat");
-
-            String lst_id[] = new String[listado.size()];
-            ParseObject lst_miembros[] = new ParseObject[listado.size()];
-            String nombreParticipantes = "";
-
-            for (int i = 0; i < listado.size(); i++) {
-                ParseObject usuario = listado.get(i);
-                lst_id[i] = usuario.getString(ChatITY.USER_ANNEX);
-                lst_miembros[i] = usuario;
-
-                if (!usuario.getString(ChatITY.USER_ANNEX).equals(usuParse.getString(ChatITY.USER_ANNEX))) {
-                    nombreParticipantes += usuario.getString(ChatITY.USER_USER) + ", ";
-                }
-            }
-            nombreParticipantes += app.getUsuarioChat().getString(ChatITY.USER_USER);
-            //nombreParticipantes += getString(R.string.texto_tu);
-            ParseObject updateChat = ParseObject.createWithoutData(ChatITY.tabla_chats, datosGrupo.getIdChat());
-            updateChat.put(ChatITY.identificador_miembros_id, Arrays.asList(lst_id));
-            updateChat.put(ChatITY.identificador_miembros, Arrays.asList(lst_miembros));
-            updateChat.put(ChatITY.identificador_miembros_nombre, nombreParticipantes);
-            updateChat.put(ChatITY.identificador_nombre_chat, nombre);
-
-            if (imgGrupo != null) {
-                updateChat.put(ChatITY.USER_FLAG_IMAGE, true);
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                imgGrupo.compress(Bitmap.CompressFormat.PNG, 100, stream);
-
-                byte[] data = stream.toByteArray();
-                ParseFile file = new ParseFile(nombre + ".png", data);
-                updateChat.put(ChatITY.identificador_imagen_chat, file);
-            } else
-                updateChat.put(ChatITY.USER_FLAG_IMAGE, false);
-
-            updateChat.saveInBackground();
-            LogicaPantalla.personalizarIntentListaMensajes(getActivity(), datosGrupo.getIdChat(), false, ChatITY.tipo_grupal);
-        }
+//        else {
+//
+//            //El chat grupal existe
+//            Log.e("Intico", "modificar chat");
+//
+//            String lst_id[] = new String[listado.size()];
+//            ParseObject lst_miembros[] = new ParseObject[listado.size()];
+//            String nombreParticipantes = "";
+//
+//            for (int i = 0; i < listado.size(); i++) {
+//                ParseObject usuario = listado.get(i);
+//                lst_id[i] = usuario.getString(ChatITY.USER_ANNEX);
+//                lst_miembros[i] = usuario;
+//
+//                if (!usuario.getString(ChatITY.USER_ANNEX).equals(usuParse.getString(ChatITY.USER_ANNEX))) {
+//                    nombreParticipantes += usuario.getString(ChatITY.USER_USER) + ", ";
+//                }
+//            }
+//            nombreParticipantes += app.getUsuarioChat().getString(ChatITY.USER_USER);
+//            //nombreParticipantes += getString(R.string.texto_tu);
+//            ParseObject updateChat = ParseObject.createWithoutData(ChatITY.tabla_chats, datosGrupo.getIdChat());
+//            updateChat.put(ChatITY.identificador_miembros_id, Arrays.asList(lst_id));
+//            updateChat.put(ChatITY.identificador_miembros, Arrays.asList(lst_miembros));
+//            updateChat.put(ChatITY.identificador_miembros_nombre, nombreParticipantes);
+//            updateChat.put(ChatITY.identificador_nombre_chat, nombre);
+//
+//            if (imgGrupo != null) {
+//                updateChat.put(ChatITY.USER_FLAG_IMAGE, true);
+//                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//                imgGrupo.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//
+//                byte[] data = stream.toByteArray();
+//                ParseFile file = new ParseFile(nombre + ".png", data);
+//                updateChat.put(ChatITY.identificador_imagen_chat, file);
+//            } else
+//                updateChat.put(ChatITY.USER_FLAG_IMAGE, false);
+//
+//            updateChat.saveInBackground();
+//            LogicaPantalla.personalizarIntentListaMensajes(getActivity(), datosGrupo.getIdChat(), false, ChatITY.tipo_grupal);
+//        }
     }
 
     private String[] obtenerAnexosParticipantes() {

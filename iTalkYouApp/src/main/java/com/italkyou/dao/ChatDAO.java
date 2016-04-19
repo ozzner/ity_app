@@ -96,7 +96,7 @@ public class ChatDAO extends BaseDAO {
                 values.put(LAST_DATE_MESSAGE, chat.getDate(LogicChat.CHATUSER_COLUMN_LASTDATEMESSAGE).toString());
 
             values.put(LAST_MESSAGE, chat.getString(LogicChat.CHATUSER_COLUMN_LASTMESSAGE));
-            values.put(MEMBERS, chat.getJSONArray(LogicChat.CHATUSER_COLUMN_MEMBERS).toString());
+//            values.put(MEMBERS, chat.getJSONArray(LogicChat.CHATUSER_COLUMN_MEMBERS).toString());
             values.put(MEMBERS_ID, chat.getJSONArray(LogicChat.CHATUSER_COLUMN_MEMBERSID).toString());
             values.put(NAME, chat.getString(LogicChat.CHATUSER_COLUMN_NAME));
             values.put(STATUS, chat.getInt(LogicChat.CHATUSER_COLUMN_STATUS));

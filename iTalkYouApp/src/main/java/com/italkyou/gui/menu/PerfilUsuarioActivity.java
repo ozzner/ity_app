@@ -537,7 +537,7 @@ public class PerfilUsuarioActivity extends BaseActivity implements OnClickListen
         //LogicaPantalla.personalizarIntent(PerfilUsuarioActivity.this, VistaPrincipalActivity.class);
     /*	else
             super.onBackPressed();*/
-        LogicaPantalla.personalizarIntentVistaPrincipal(PerfilUsuarioActivity.this, Const.PANTALLA_PRINCIPAL, PerfilUsuarioActivity.class.getSimpleName());
+        LogicaPantalla.personalizarIntentVistaPrincipal(PerfilUsuarioActivity.this, Const.PANTALLA_PRINCIPAL, PerfilUsuarioActivity.class.getSimpleName(),false);
     }
 
     public void onBackPressed() {

@@ -186,7 +186,7 @@ public class ArchiveActivity extends BaseActivity implements
         currentPosition = position;
         chatUserItem = (ParseObject) parent.getItemAtPosition(position);
         chatItem = chatUserItem.getParseObject(LogicChat.CHATUSER_COLUMN_CHATID);
-        LogicaPantalla.personalizarIntentListaMensajes(this, chatItem.getObjectId(), true,chatUserItem.getString(LogicChat.CHATUSER_COLUMN_TYPE));
+        LogicaPantalla.personalizarIntentListaMensajes(this, chatItem.getObjectId(), true,chatUserItem.getString(LogicChat.CHATUSER_COLUMN_TYPE), false);
 
     }
 

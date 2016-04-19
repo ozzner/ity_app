@@ -324,7 +324,7 @@ public class SaldoActivity extends BaseActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        LogicaPantalla.personalizarIntentVistaPrincipal(SaldoActivity.this, Const.PANTALLA_PRINCIPAL, SaldoActivity.class.getSimpleName());
+        LogicaPantalla.personalizarIntentVistaPrincipal(SaldoActivity.this, Const.PANTALLA_PRINCIPAL, SaldoActivity.class.getSimpleName(),false);
     }
 
     /* setter and getter*/

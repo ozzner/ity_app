@@ -67,7 +67,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/lnlyCabeceraChatGrupal"
-        android:divider="#57157D"
+        android:divider="@color/gray_color_2"
         android:dividerHeight="2dip"
         android:padding="5dip" />
 	

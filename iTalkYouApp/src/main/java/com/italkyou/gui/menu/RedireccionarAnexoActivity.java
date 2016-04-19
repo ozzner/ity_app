@@ -526,6 +526,6 @@ public class RedireccionarAnexoActivity extends BaseActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        LogicaPantalla.personalizarIntentVistaPrincipal(RedireccionarAnexoActivity.this, Const.PANTALLA_PRINCIPAL, RedireccionarAnexoActivity.class.getSimpleName());
+        LogicaPantalla.personalizarIntentVistaPrincipal(RedireccionarAnexoActivity.this, Const.PANTALLA_PRINCIPAL, RedireccionarAnexoActivity.class.getSimpleName(),false);
     }
 }

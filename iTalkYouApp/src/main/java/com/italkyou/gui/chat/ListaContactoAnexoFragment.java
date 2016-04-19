@@ -36,6 +36,7 @@ import com.italkyou.gui.personalizado.AdaptadorListaCheckBox;
 import com.italkyou.utils.AppUtil;
 import com.italkyou.utils.ChatITY;
 import com.italkyou.utils.Const;
+import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
@@ -99,8 +100,6 @@ public class ListaContactoAnexoFragment extends Fragment
             seleccionados = (SalidaDatosChatGrupal) getArguments().getSerializable(Const.DATOS_GRUPO_CHAT);
         }
 
-//        VistaPrincipalActivity.setPantalla(Const.PANTALLA_LISTA_CONTACTO_ANEXO);
-
         mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_refresh_layout);
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeResources(ICONS);
@@ -146,97 +145,76 @@ public class ListaContactoAnexoFragment extends Fragment
         mSwipeRefreshLayout.setRefreshing(true);
         listaContactos = new ArrayList<>();
 
-        new Thread(
+        ParseQuery<ParseObject> query;
+        if (pantalla.equals(Const.PANTALLA_CHAT_GRUPAL)
+                && !seleccionados.getIdChat().equals(Const.cad_vacia)) {
 
-                new Runnable() {
-                    @SuppressWarnings("unchecked")
-                    public void run() {
+            Object[] lst = seleccionados.getLstMiembros().toArray();
+            query = new ParseQuery<>(ChatITY.TABLE_USER);
+            query.whereNotContainedIn(ChatITY.USER_ANNEX, Arrays.asList(lst));
+            query.orderByAscending(ChatITY.USER_USER);
 
-                        ParseQuery<ParseObject> query;
+        } else {
 
-                        if (pantalla.equals(Const.PANTALLA_CHAT_GRUPAL)
-                                && !seleccionados.getIdChat().equals(Const.cad_vacia)) {
+            query = ParseQuery.getQuery(ChatITY.TABLE_USER);
+            query.setLimit(LIMIT_USERS);
+            query.orderByAscending(ChatITY.USER_USER);
 
-                            Object[] lst = seleccionados.getLstMiembros().toArray();
-                            query = new ParseQuery<>(ChatITY.TABLE_USER);
-                            query.whereNotContainedIn(ChatITY.USER_ANNEX, Arrays.asList(lst));
-                            query.orderByAscending(ChatITY.USER_USER);
-
-                        } else {
-
-				         	/*status conectado clausule*/
-                            query = ParseQuery.getQuery(ChatITY.TABLE_USER);
-                            query.setLimit(LIMIT_USERS);
-                            query.orderByAscending(ChatITY.USER_USER);
-
-//                            query.whereEqualTo(ChatITY.USER_STATUS, Const.status_connected);
-                        }
+        }
 
 
-                        try {
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> users, ParseException e) {
 
-                            List<ParseObject> listaUsuarios = query.find();
+                if (e == null) {
+                    if (pantalla.equals(Const.PANTALLA_CHAT_GRUPAL)
+                            && !seleccionados.getIdChat().equals(Const.cad_vacia)) {
 
-                            if (pantalla.equals(Const.PANTALLA_CHAT_GRUPAL)
-                                    && !seleccionados.getIdChat().equals(Const.cad_vacia)) {
+                        List<ParseObject> lista = new ArrayList();
 
-                                List<ParseObject> lista = new ArrayList<>();
-
-                                for (int i = 0; i < listaUsuarios.size(); i++) {
-                                    ParseObject usuarioITY = listaUsuarios.get(i);
+                        for (int i = 0; i < users.size(); i++) {
+                            ParseObject usuarioITY = users.get(i);
                             /* add only where status is connect*/
 //							if (usuarioITY.getString(ChatITY.USER_STATUS).equals(Const.status_connected))
-                                    lista.add(usuarioITY);
-                                }
-                                listaUsuarios.clear();
-                                listaUsuarios.addAll(lista);
-
-                            } else {
-
-                                int posEliminar = 0;
-
-                                for (int i = 0; i < listaUsuarios.size(); i++) {
-                                    ParseObject usuarioITY = listaUsuarios.get(i);
-
-                                    if (usuarioITY.getString(ChatITY.USER_ANNEX).equals(usuario.getAnexo())) {
-                                        posEliminar = i;
-                                        break;
-                                    }
-                                }
-                                listaUsuarios.remove(posEliminar);
-                            }
-
-
-                            listaContactos = new ArrayList<>();
-                            listaContactos.addAll(listaUsuarios);
-
-
-                            //Update list MainThread
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    try {
-
-                                        listItyContacts.setVisibility(View.VISIBLE);
-                                        pbLoader.setVisibility(View.GONE);
-                                        mSwipeRefreshLayout.setRefreshing(false);
-                                        Toast.makeText(getActivity(), R.string.message_list_updated, Toast.LENGTH_SHORT).show();
-                                        inicializarComponentes();
-
-                                    } catch (Exception x) {
-                                        Log.e(TAG, "Error al detener refresh");
-                                    }
-                                }
-                            });
-
-                        } catch (ParseException e) {
-                            mSwipeRefreshLayout.setRefreshing(false);
-                            e.printStackTrace();
+                            lista.add(usuarioITY);
                         }
+
+                        users.clear();
+                        users.addAll(lista);
+
+                    } else {
+
+                        int posEliminar = 0;
+
+                        for (int i = 0; i < users.size(); i++) {
+                            ParseObject usuarioITY = users.get(i);
+
+                            if (usuarioITY.getString(ChatITY.USER_ANNEX).equals(usuario.getAnexo())) {
+                                posEliminar = i;
+                                break;
+                            }
+                        }
+                        users.remove(posEliminar);
                     }
 
+
+                    listaContactos = new ArrayList<>();
+                    listaContactos.addAll(users);
+                    mSwipeRefreshLayout.setRefreshing(false);
+                    Toast.makeText(getActivity(), R.string.message_list_updated, Toast.LENGTH_SHORT).show();
                 }
-        ).start();
+
+
+                listItyContacts.setVisibility(View.VISIBLE);
+                pbLoader.setVisibility(View.GONE);
+                mSwipeRefreshLayout.setRefreshing(false);
+                inicializarComponentes();
+
+            }
+        });
+
+
     }
 
     private void inicializarComponentes() {
@@ -415,79 +393,77 @@ public class ListaContactoAnexoFragment extends Fragment
 
                         if (e == null) {
                             //Existe el chat
-                                LogicaPantalla.personalizarIntentListaMensajes(getActivity(), chat.getObjectId(), false, chat.getString(LogicChat.COLUMN_TIPO));
-                            } else {
+                            LogicaPantalla.personalizarIntentListaMensajes(getActivity(), chat.getObjectId(), false, chat.getString(LogicChat.COLUMN_TIPO), true);
+                        } else {
 
-                                //creamos el chat
-                                final ParseObject currentChat = new ParseObject(ChatITY.tabla_chats);
-                                currentChat.put(ChatITY.identificador_admin, app.getUsuario().getAnexo());
-                                currentChat.put(ChatITY.identificador_miembros_id, Arrays.asList(app.getUsuario().getAnexo(), userSelected.getString(ChatITY.USER_ANNEX)));
-                                currentChat.put(ChatITY.identificador_miembros, Arrays.asList(app.getUsuarioChat(), userSelected));
-                                currentChat.put(ChatITY.identificador_nombre_chat, ChatITY.tipo_privado);
-                                currentChat.put(ChatITY.identificador_tipo, ChatITY.tipo_privado);
-                                currentChat.put(ChatITY.identificador_ultimo_mensaje, Const.cad_vacia);
-                                currentChat.put(ChatITY.USER_FLAG_IMAGE, false);
+                            //creamos el chat
+                            final ParseObject currentChat = new ParseObject(ChatITY.tabla_chats);
+                            currentChat.put(ChatITY.identificador_admin, app.getUsuario().getAnexo());
+                            currentChat.put(ChatITY.identificador_miembros_id, Arrays.asList(app.getUsuario().getAnexo(), userSelected.getString(ChatITY.USER_ANNEX)));
+                            currentChat.put(ChatITY.identificador_miembros, Arrays.asList(app.getUsuarioChat(), userSelected));
+                            currentChat.put(ChatITY.identificador_nombre_chat, ChatITY.tipo_privado);
+                            currentChat.put(ChatITY.identificador_tipo, ChatITY.tipo_privado);
+                            currentChat.put(ChatITY.identificador_ultimo_mensaje, Const.cad_vacia);
+                            currentChat.put(ChatITY.USER_FLAG_IMAGE, false);
 //                            chatObject.put(ChatITY.identificador_miembros_nombre, Const.cad_vacia);
 //                            chatObject.put(LogicChat.COLUMN_FLAG_ARCHIVED, false);
 
-                                currentChat.saveInBackground(new SaveCallback() {
+                            currentChat.saveInBackground(new SaveCallback() {
 
-                                    @Override
-                                    public void done(ParseException e) {
+                                @Override
+                                public void done(ParseException e) {
 
-                                        if (e == null) {
+                                    if (e == null) {
+                                        makePushNotification(currentChat);
+                                        LogicaPantalla.personalizarIntentListaMensajes(getActivity(), currentChat.getObjectId(), false, currentChat.getString(LogicChat.COLUMN_TIPO), true);
+                                        //Me
+                                        final ParseObject chat_user1 = new ParseObject(LogicChat.TAG_CHAT_USER);
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_ADMINISTRATOR, app.getUsuario().getAnexo());
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_CHATID, ParseObject.createWithoutData(LogicChat.TAG_CHAT, currentChat.getObjectId()));
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_USERID, ParseObject.createWithoutData("Usuarios", app.getUsuarioChat().getObjectId()));
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_ANNEX, app.getUsuario().getAnexo());
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_STATUS, Const.CHATUSER_STATUS_ACTIVE);
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_FLAGIMAGE, false);
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_TYPE, "PRIVADO");
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_MEMBERSID, Arrays.asList(app.getUsuario().getAnexo(), userSelected.getString(ChatITY.USER_ANNEX)));
+                                        chat_user1.put(LogicChat.CHATUSER_COLUMN_MEMBERS, Arrays.asList(app.getUsuarioChat(), userSelected));
 
-
-                                            makePushNotification(currentChat);
-                                            LogicaPantalla.personalizarIntentListaMensajes(getActivity(), currentChat.getObjectId(), false, currentChat.getString(LogicChat.COLUMN_TIPO));
-                                            //Me
-                                            final ParseObject chat_user1 = new ParseObject(LogicChat.TAG_CHAT_USER);
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_ADMINISTRATOR, app.getUsuario().getAnexo());
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_CHATID, ParseObject.createWithoutData(LogicChat.TAG_CHAT, currentChat.getObjectId()));
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_USERID, ParseObject.createWithoutData("Usuarios", app.getUsuarioChat().getObjectId()));
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_ANNEX, app.getUsuario().getAnexo());
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_STATUS, Const.CHATUSER_STATUS_ACTIVE);
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_FLAGIMAGE, false);
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_TYPE, "PRIVADO");
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_MEMBERSID, Arrays.asList(app.getUsuario().getAnexo(), userSelected.getString(ChatITY.USER_ANNEX)));
-                                            chat_user1.put(LogicChat.CHATUSER_COLUMN_MEMBERS, Arrays.asList(app.getUsuarioChat(), userSelected));
-
-                                            //You
-                                            ParseObject chat_user2 = new ParseObject(LogicChat.TAG_CHAT_USER);
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_ADMINISTRATOR, app.getUsuario().getAnexo());
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_CHATID, ParseObject.createWithoutData(LogicChat.TAG_CHAT, currentChat.getObjectId()));
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_USERID, ParseObject.createWithoutData("Usuarios", userSelected.getObjectId()));
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_ANNEX, userSelected.getString("Anexo"));
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_STATUS, Const.CHATUSER_STATUS_ACTIVE);
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_FLAGIMAGE, false);
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_TYPE, "PRIVADO");
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_MEMBERSID, Arrays.asList(app.getUsuario().getAnexo(), userSelected.getString(ChatITY.USER_ANNEX)));
-                                            chat_user2.put(LogicChat.CHATUSER_COLUMN_MEMBERS, Arrays.asList(app.getUsuarioChat(), userSelected));
+                                        //You
+                                        ParseObject chat_user2 = new ParseObject(LogicChat.TAG_CHAT_USER);
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_ADMINISTRATOR, app.getUsuario().getAnexo());
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_CHATID, ParseObject.createWithoutData(LogicChat.TAG_CHAT, currentChat.getObjectId()));
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_USERID, ParseObject.createWithoutData("Usuarios", userSelected.getObjectId()));
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_ANNEX, userSelected.getString("Anexo"));
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_STATUS, Const.CHATUSER_STATUS_ACTIVE);
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_FLAGIMAGE, false);
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_TYPE, "PRIVADO");
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_MEMBERSID, Arrays.asList(app.getUsuario().getAnexo(), userSelected.getString(ChatITY.USER_ANNEX)));
+                                        chat_user2.put(LogicChat.CHATUSER_COLUMN_MEMBERS, Arrays.asList(app.getUsuarioChat(), userSelected));
 
 
-                                            //Save
-                                            chat_user1.saveInBackground(new SaveCallback() {
-                                                @Override
-                                                public void done(ParseException e) {
-                                                    if (e == null)
-                                                        //Save local
-                                                        chat_user1.pinInBackground(LogicChat.CHAT_ACTIVE);
+                                        //Save
+                                        chat_user1.saveInBackground(new SaveCallback() {
+                                            @Override
+                                            public void done(ParseException e) {
+                                                if (e == null)
+                                                    //Save local
+                                                    chat_user1.pinInBackground(LogicChat.CHAT_ACTIVE);
 
-                                                }
-                                            });
-                                            chat_user2.saveInBackground(new SaveCallback() {
-                                                @Override
-                                                public void done(ParseException e) {
-                                                    if (e == null)
-                                                        Log.e("Erro chat_user", "chat");
-                                                }
-                                            });
+                                            }
+                                        });
+                                        chat_user2.saveInBackground(new SaveCallback() {
+                                            @Override
+                                            public void done(ParseException e) {
+                                                if (e == null)
+                                                    Log.e("Erro chat_user", "chat");
+                                            }
+                                        });
 
-                                        }
+                                    }
 
-                                        }
-                                });
-                            }
+                                }
+                            });
+                        }
                     }
                 }
             });
@@ -542,12 +518,12 @@ public class ListaContactoAnexoFragment extends Fragment
     private void agregarParticipantes() {
 
         boolean[] valores = adaptadorchk.getValores();
-        List<Object> lista;
-        if (seleccionados.getLstMiembros().size() > 0) {
-            lista = seleccionados.getListaContactos().subList(0, seleccionados.getLstMiembros().size());
-        } else {
-            lista = seleccionados.getListaContactos();
-        }
+        List<Object> lista = new ArrayList<>();
+//        if (seleccionados.getLstMiembros().size() > 0) {
+//            lista.addAll(seleccionados.getListaContactos().subList(0, seleccionados.getLstMiembros().size()));
+//        } else {
+//            lista.addAll(seleccionados.getListaContactos());
+//        }
 
         for (int i = 0; i < valores.length; i++) {
             if (valores[i]) {
@@ -592,7 +568,6 @@ public class ListaContactoAnexoFragment extends Fragment
             boolean on = b.getBoolean(Const.DATOS_IS_SMS);
 
             if (on) {
-
                 Bundle arg = new Bundle();
                 arg.putString(Const.KEY_PHONENUMBER, phoneNumber);
                 fragmento = PrincipalFragment.nuevaInstancia(Const.indice_3, arg);

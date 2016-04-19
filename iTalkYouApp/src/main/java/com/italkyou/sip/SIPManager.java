@@ -125,8 +125,9 @@ public class SipManager implements LinphoneCoreListener {
                 core.setDefaultProxyConfig(proxyConfig);
 
 
-//                // set audio port range
-//                core.setAudioPortRange(6000, 8000);
+                // set audio port range
+                core.setAudioPortRange(6000, 8000);
+                core.enableEchoLimiter(false);
 //
 //                //Root CA File
 //                core.setRootCA(rootCaFile);

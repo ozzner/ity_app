@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -91,7 +90,7 @@ public class CallActivity extends Activity implements
                     isMakingCall = false;
                 }
             }, 3000);
-        }else {
+        } else {
             isMakingCall = true;
         }
     }
@@ -196,21 +195,21 @@ public class CallActivity extends Activity implements
         }
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_VOLUME_UP:
-                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
-                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
-                return true;
-            case KeyEvent.KEYCODE_VOLUME_DOWN:
-                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
-                        AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
-                return true;
-            default:
-                return false;
-        }
-    }
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        switch (keyCode) {
+//            case KeyEvent.KEYCODE_VOLUME_UP:
+//                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+//                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+//                return true;
+//            case KeyEvent.KEYCODE_VOLUME_DOWN:
+//                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+//                        AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+//                return true;
+//            default:
+//                return false;
+//        }
+//    }
 
     private void removeExtras() {
         getIntent().removeExtra(SipManager.SIP_NUMBER_TO_CALL);

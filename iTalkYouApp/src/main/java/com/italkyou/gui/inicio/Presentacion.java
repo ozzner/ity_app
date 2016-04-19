@@ -125,7 +125,7 @@ public class Presentacion extends Activity {
 
                         //Init value userChat
                         getUserChat(usuario.getAnexo());
-                        LogicaPantalla.personalizarIntentVistaPrincipal(Presentacion.this, Const.PANTALLA_PRINCIPAL, Presentacion.class.getSimpleName());
+                        LogicaPantalla.personalizarIntentVistaPrincipal(Presentacion.this, Const.PANTALLA_PRINCIPAL, Presentacion.class.getSimpleName(),false);
 
                     } else {
                         cambiarPantallaPresentacion();
@@ -169,7 +169,7 @@ public class Presentacion extends Activity {
                     //app.setSaldo(SipConfig.SALDO_DEFECTO);
                 }
 //                pdEspera.dismiss();
-                LogicaPantalla.personalizarIntentVistaPrincipal(Presentacion.this, Const.PANTALLA_PRINCIPAL, Presentacion.class.getSimpleName());
+                LogicaPantalla.personalizarIntentVistaPrincipal(Presentacion.this, Const.PANTALLA_PRINCIPAL, Presentacion.class.getSimpleName(),false);
             }
         });
         ejecutar.obtenerSaldo(anexo);

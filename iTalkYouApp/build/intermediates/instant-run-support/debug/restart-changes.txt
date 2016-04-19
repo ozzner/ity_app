@@ -1,1 +1,0 @@
-CHANGED,D:\cloning\ity_app\iTalkYouApp\build\intermediates\transforms\instantRun\debug\folders\1\5\main\com\italkyou\gui\llamada\CallActivity.class

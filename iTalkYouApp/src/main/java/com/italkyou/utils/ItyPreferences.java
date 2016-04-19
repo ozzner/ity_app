@@ -111,4 +111,14 @@ public class ItyPreferences {
     public String getString(String key){
         return mPreferences.getString(key,"");
     }
+
+    public void putBoolean(String tagFromMakeChat, boolean isFromMakeChat) {
+        mEditor.putBoolean(tagFromMakeChat,isFromMakeChat);
+        mEditor.commit();
+        mEditor.apply();
+    }
+
+    public boolean getBoolean(String key){
+        return mPreferences.getBoolean(key,false);
+    }
 }

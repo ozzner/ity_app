@@ -16,8 +16,11 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
@@ -42,6 +45,7 @@ import com.italkyou.beans.popup.MenuActionsChat;
 import com.italkyou.controladores.LogicChat;
 import com.italkyou.controladores.LogicaPantalla;
 import com.italkyou.controladores.LogicaUsuario;
+import com.italkyou.gui.PrincipalFragment;
 import com.italkyou.gui.R;
 import com.italkyou.gui.personalizado.AdaptadorMensajeChat;
 import com.italkyou.gui.personalizado.CustomAlertDialog;
@@ -80,7 +84,7 @@ import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
 @SuppressLint("SimpleDateFormat")
-public class ChatMensajeActivity extends ActionBarActivity implements
+public class ChatMensajeActivity extends AppCompatActivity implements
         OnClickListener, CustomListAdapter.OnClickAlertListItem, AdapterView.OnItemLongClickListener {
 
     private static final String TAG = ChatMensajeActivity.class.getSimpleName() + Const.ESPACIO_BLANCO;
@@ -112,6 +116,7 @@ public class ChatMensajeActivity extends ActionBarActivity implements
     private List<String> miembrosIdList;
     private static boolean isFromPush = false;
     private CustomAlertDialog customDialog;
+    private boolean isFromMakeChat = false;
 
     //Updated status Online/Offline
     private Timer mTimer;
@@ -134,6 +139,7 @@ public class ChatMensajeActivity extends ActionBarActivity implements
         //get data
         Bundle bundle = getIntent().getExtras();
         idChat = bundle.getString(Const.identificador_chat);
+        isFromMakeChat = bundle.getBoolean(Const.TAG_FROM_MAKE_CHAT);
         isFromPush = bundle.getBoolean(Const.TAG_IS_PUSH);
         currentChatId = idChat;
 //        estado = bundle.getString(Const.identificador_notificador);
@@ -1089,7 +1095,15 @@ public class ChatMensajeActivity extends ActionBarActivity implements
     }
 
     public void onBackPressed() {
-        LogicaPantalla.personalizarIntentVistaPrincipal(ChatMensajeActivity.this, Const.PANTALLA_PRINCIPAL, ChatMensajeActivity.class.getSimpleName());
+        LogicaPantalla.personalizarIntentVistaPrincipal(ChatMensajeActivity.this, Const.PANTALLA_PRINCIPAL, ChatMensajeActivity.class.getSimpleName(), isFromMakeChat);
+    }
+
+    private void cargarFragmento() {
+        Fragment fragmento = PrincipalFragment.nuevaInstancia(Const.indice_0);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.contenedor_fragmentos, fragmento);
+        fragmentTransaction.commit();
     }
 
     private void getStatusChat() {

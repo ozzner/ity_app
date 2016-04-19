@@ -116,7 +116,7 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
 
             @Override
             public void run() {
-                LogicaPantalla.personalizarIntentVistaPrincipal(IncomingCallActivity.this, Const.PANTALLA_CONTACTO, IncomingCallActivity.class.getSimpleName());
+                LogicaPantalla.personalizarIntentVistaPrincipal(IncomingCallActivity.this, Const.PANTALLA_CONTACTO, IncomingCallActivity.class.getSimpleName(),false);
             }
         }, 3000);
     }
@@ -381,7 +381,7 @@ public class IncomingCallActivity extends Activity implements SensorEventListene
         stopRinging();
         isKilled = true;
         communicator.getService().declineCall();
-        LogicaPantalla.personalizarIntentVistaPrincipal(IncomingCallActivity.this, Const.PANTALLA_CONTACTO, IncomingCallActivity.class.getSimpleName());
+        LogicaPantalla.personalizarIntentVistaPrincipal(IncomingCallActivity.this, Const.PANTALLA_CONTACTO, IncomingCallActivity.class.getSimpleName(),false);
     }
 
     private void fetchContact() {

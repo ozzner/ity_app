@@ -148,7 +148,7 @@ public class DialActivity extends BaseActivity implements View.OnClickListener, 
             Intent i = new Intent(getApplicationContext(), HowToCallActivity.class);
             startActivity(i);
         } else {
-            LogicaPantalla.personalizarIntentVistaPrincipal(DialActivity.this, Const.PANTALLA_CONTACTO, DialActivity.class.getSimpleName());
+            LogicaPantalla.personalizarIntentVistaPrincipal(DialActivity.this, Const.PANTALLA_CONTACTO, DialActivity.class.getSimpleName(),false);
         }
 
         return super.onOptionsItemSelected(item);
@@ -384,7 +384,7 @@ public class DialActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        LogicaPantalla.personalizarIntentVistaPrincipal(DialActivity.this, Const.PANTALLA_CONTACTO, DialActivity.class.getSimpleName());
+        LogicaPantalla.personalizarIntentVistaPrincipal(DialActivity.this, Const.PANTALLA_CONTACTO, DialActivity.class.getSimpleName(),false);
     }
 
 }

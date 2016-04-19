@@ -335,7 +335,7 @@ public class InicioSesion extends BaseInicioActivity implements OnClickListener 
 
                 if (e == null) {
                     app.setUsuarioChat(usuario);
-                    LogicaPantalla.personalizarIntentVistaPrincipal(InicioSesion.this, Const.PANTALLA_PRINCIPAL, InicioSesion.class.getSimpleName());
+                    LogicaPantalla.personalizarIntentVistaPrincipal(InicioSesion.this, Const.PANTALLA_PRINCIPAL, InicioSesion.class.getSimpleName(),false);
                 } else {
                     //Error to trying save user. Save eventually
                     usuario.saveEventually();
@@ -388,7 +388,7 @@ public class InicioSesion extends BaseInicioActivity implements OnClickListener 
                     app.setUsuarioChat(user);
 //                    getChats();
                     pdDialogoEspera.dismiss();
-                    LogicaPantalla.personalizarIntentVistaPrincipal(InicioSesion.this, Const.PANTALLA_PRINCIPAL, InicioSesion.class.getSimpleName());
+                    LogicaPantalla.personalizarIntentVistaPrincipal(InicioSesion.this, Const.PANTALLA_PRINCIPAL, InicioSesion.class.getSimpleName(),false);
                 } else {
                     //User no exist
                     registerUser(app.getUsuario());

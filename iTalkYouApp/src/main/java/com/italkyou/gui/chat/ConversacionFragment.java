@@ -251,7 +251,7 @@ public class ConversacionFragment extends Fragment
         ParseObject item = (ParseObject) adv.getItemAtPosition(posicion);
         ParseObject chatObject = item.getParseObject("chatId");
         String chatId = chatObject.getObjectId();
-        LogicaPantalla.personalizarIntentListaMensajes(getActivity(), chatId, false, item.getString(LogicChat.CHATUSER_COLUMN_TYPE));
+        LogicaPantalla.personalizarIntentListaMensajes(getActivity(), chatId, false, item.getString(LogicChat.CHATUSER_COLUMN_TYPE), false);
 
     }
 
